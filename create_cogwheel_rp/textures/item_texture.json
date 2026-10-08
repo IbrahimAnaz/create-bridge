@@ -30,7 +30,7 @@
       "textures": "textures/blocks/cogwheel"
     },
     "create_depot": {
-      "textures": "textures/blocks/brass_casing"
+      "textures": "textures/blocks/depot_top"
     },
     "create_chute": {
       "textures": "textures/blocks/andesite_casing"

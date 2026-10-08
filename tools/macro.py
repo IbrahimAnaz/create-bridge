@@ -137,10 +137,11 @@ def cmd_build_extension(args):
     if res.returncode != 0:
         print("Extension compilation failed:\n", res.stderr)
         return False
-    # Copy extension.yml into bin
-    yml_src = "tools/extension/resources/extension.yml"
-    if os.path.exists(yml_src):
-        shutil.copy2(yml_src, bin_dir)
+    # Copy all resources into bin
+    res_dir = "tools/extension/resources"
+    if os.path.exists(res_dir):
+        for f in os.listdir(res_dir):
+            shutil.copy2(os.path.join(res_dir, f), bin_dir)
     # Package into jar
     jar_out = "headless_server/geyser/extensions/CreateBridge.jar"
     res = subprocess.run([

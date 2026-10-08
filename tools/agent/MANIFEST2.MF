@@ -1,0 +1,3 @@
+Agent-Class: tools.agent.RegistryDumpAgent2
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true

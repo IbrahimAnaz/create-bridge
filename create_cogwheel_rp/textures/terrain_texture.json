@@ -30,6 +30,9 @@
     },
     "dirt": {
       "textures": "textures/blocks/dirt"
+    },
+    "create_depot": {
+      "textures": "textures/blocks/depot"
     }
   }
 }
