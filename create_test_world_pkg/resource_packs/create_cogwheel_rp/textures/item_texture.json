@@ -2,6 +2,42 @@
   "resource_pack_name": "create_cogwheel_rp",
   "texture_name": "atlas.items",
   "texture_data": {
+    "create_andesite_casing": {
+      "textures": "textures/blocks/andesite_casing"
+    },
+    "create_brass_casing": {
+      "textures": "textures/blocks/brass_casing"
+    },
+    "create_copper_casing": {
+      "textures": "textures/blocks/copper_casing"
+    },
+    "create_railway_casing": {
+      "textures": "textures/blocks/railway_casing"
+    },
+    "create_raw_zinc_block": {
+      "textures": "textures/blocks/raw_zinc_block"
+    },
+    "create_zinc_block": {
+      "textures": "textures/blocks/zinc_block"
+    },
+    "create_brass_block": {
+      "textures": "textures/blocks/brass_block"
+    },
+    "create_large_cogwheel": {
+      "textures": "textures/blocks/cogwheel"
+    },
+    "create_cogwheel": {
+      "textures": "textures/blocks/cogwheel"
+    },
+    "create_depot": {
+      "textures": "textures/blocks/brass_casing"
+    },
+    "create_chute": {
+      "textures": "textures/blocks/andesite_casing"
+    },
+    "create_schematicannon": {
+      "textures": "textures/blocks/copper_casing"
+    },
     "create_wrench": {
       "textures": "textures/items/create/wrench"
     }

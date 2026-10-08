@@ -293,7 +293,8 @@ enable-metrics: true
 metrics-uuid: 34b888c7-c228-45a3-a7b9-0798954beb48
 
 # If debug messages should be sent through console
-debug-mode: false
+debug-mode: true
 
 # Do not change!
 config-version: 8
+

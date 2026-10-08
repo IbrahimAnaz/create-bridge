@@ -2,6 +2,7 @@ package com.createbridge;
 
 import org.geysermc.event.subscribe.Subscribe;
 import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCustomBlocksEvent;
+import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCustomItemsEvent;
 import org.geysermc.geyser.api.event.lifecycle.GeyserPostInitializeEvent;
 import org.geysermc.geyser.api.event.bedrock.SessionJoinEvent;
 import org.geysermc.geyser.api.extension.Extension;
@@ -10,6 +11,7 @@ import org.geysermc.geyser.api.block.custom.nonvanilla.JavaBlockState;
 import org.geysermc.geyser.api.block.custom.nonvanilla.JavaBoundingBox;
 import org.geysermc.geyser.api.block.custom.component.CustomBlockComponents;
 import org.geysermc.geyser.api.block.custom.component.MaterialInstance;
+import org.geysermc.geyser.api.item.custom.NonVanillaCustomItemData;
 import org.geysermc.geyser.registry.BlockRegistries;
 import org.geysermc.geyser.registry.type.BlockMappings;
 import org.geysermc.geyser.registry.type.GeyserBedrockBlock;
@@ -21,6 +23,39 @@ public class CreateBridgeExtension implements Extension {
     private static final JavaBoundingBox[] CUBE_COLLISION = new JavaBoundingBox[]{
         new JavaBoundingBox(0.5, 0.5, 0.5, 1.0, 1.0, 1.0)
     };
+
+    @Subscribe
+    public void onDefineCustomItems(GeyserDefineCustomItemsEvent event) {
+        System.out.println("[CreateBridge] Registering Create custom items with exact Java IDs...");
+
+        registerItem(event, "andesite_casing", 1430, true);
+        registerItem(event, "brass_casing", 1431, true);
+        registerItem(event, "copper_casing", 1432, true);
+        registerItem(event, "railway_casing", 1441, true);
+        registerItem(event, "raw_zinc_block", 1675, true);
+        registerItem(event, "zinc_block", 1676, true);
+        registerItem(event, "brass_block", 1680, true);
+        registerItem(event, "large_cogwheel", 1337, true);
+        registerItem(event, "cogwheel", 1336, true);
+        registerItem(event, "depot", 1365, true);
+        registerItem(event, "chute", 1367, true);
+        registerItem(event, "schematicannon", 1333, true);
+        registerItem(event, "wrench", 1586, false);
+
+        System.out.println("[CreateBridge] Successfully registered Create custom items!");
+    }
+
+    private void registerItem(GeyserDefineCustomItemsEvent event, String name, int javaId, boolean isBlock) {
+        var builder = NonVanillaCustomItemData.builder()
+            .identifier("create:" + name)
+            .name(name)
+            .javaId(javaId)
+            .icon("create_" + name);
+        if (isBlock) {
+            builder.block("create:" + name);
+        }
+        event.register(builder.build());
+    }
 
     @Subscribe
     public void onDefineCustomBlocks(GeyserDefineCustomBlocksEvent event) {
@@ -40,6 +75,7 @@ public class CreateBridgeExtension implements Extension {
 
         System.out.println("[CreateBridge] Successfully registered Create blocks with Java ID overrides!");
     }
+
 
     private void registerCube(GeyserDefineCustomBlocksEvent event, String name, String texture, int[] rawIds) {
         CustomBlockComponents comps = CustomBlockComponents.builder()
