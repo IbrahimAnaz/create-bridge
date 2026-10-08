@@ -46,15 +46,18 @@ public class CreateBridgeExtension implements Extension {
     }
 
     private void registerItem(GeyserDefineCustomItemsEvent event, String name, int javaId, boolean isBlock) {
-        var builder = NonVanillaCustomItemData.builder()
-            .identifier("create:" + name)
-            .name(name)
-            .javaId(javaId)
-            .icon("create_" + name);
-        if (isBlock) {
-            builder.block("create:" + name);
+        try {
+            var builder = NonVanillaCustomItemData.builder()
+                .identifier("create:" + name)
+                .name(name)
+                .icon("create_" + name);
+            if (isBlock) {
+                builder.block("create:" + name);
+            }
+            event.register(builder.build());
+        } catch (Throwable t) {
+            System.out.println("[CreateBridge] Notice: item " + name + " skipped: " + t.getMessage());
         }
-        event.register(builder.build());
     }
 
     @Subscribe
@@ -116,7 +119,7 @@ public class CreateBridgeExtension implements Extension {
             BlockMappings bm = BlockRegistries.BLOCKS.forVersion(v);
             if (bm != null) {
                 System.out.println("[DIAGNOSTIC] Testing BlockMappings for Bedrock Default Protocol v" + v + ":");
-                int[] testIds = new int[]{132328, 132329, 127275, 127289, 147909, 146215, 151297};
+                int[] testIds = new int[]{32328, 32329, 32330, 32342, 27275, 27289, 47909, 46215, 51297};
                 for (int testId : testIds) {
                     GeyserBedrockBlock bb = bm.getBedrockBlock(testId);
                     boolean isAir = (bb == bm.getBedrockAir());
@@ -141,11 +144,11 @@ public class CreateBridgeExtension implements Extension {
                 Thread.sleep(2000);
                 if (event.connection() instanceof GeyserSession session) {
                     BlockMappings bm = session.getBlockMappings();
-                    GeyserBedrockBlock bb = bm.getBedrockBlock(132328);
+                    GeyserBedrockBlock bb = bm.getBedrockBlock(32328);
                     boolean isAir = (bb == bm.getBedrockAir());
                     System.out.println("=============================================================");
                     System.out.println("[CreateBridge LIVE SESSION PROBE] Player " + session.name());
-                    System.out.println("  >> Andesite Casing (132328) Bedrock Block: " + bb);
+                    System.out.println("  >> Andesite Casing (32328) Bedrock Block: " + bb);
                     System.out.println("  >> runtimeId: " + (bb != null ? bb.getRuntimeId() : -1));
                     System.out.println("  >> isAir: " + isAir);
                     System.out.println("=============================================================");

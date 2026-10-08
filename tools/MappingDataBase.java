@@ -390,6 +390,9 @@ public class MappingDataBase implements MappingData {
      */
     protected int checkValidity(final int id, final int mappedId, final String type) {
         if (mappedId == -1) {
+            if ("blockstate".equals(type) && id >= 25000) {
+                return 100000 + id;
+            }
             return id;
         }
         return mappedId;
