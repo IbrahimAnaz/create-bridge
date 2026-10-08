@@ -113,6 +113,7 @@ public class BackwardsMappingData extends MappingDataBase {
     @Override
     public int getNewItemId(final int id) {
         if (id >= 10000) return id - 10000;
+        if (this.itemMappings == null) return id;
         final int mapped = this.itemMappings.getNewId(id);
         return mapped != -1 ? mapped : id;
     }
@@ -120,6 +121,7 @@ public class BackwardsMappingData extends MappingDataBase {
     @Override
     public int getNewBlockId(final int id) {
         if (id >= 100000) return id - 100000;
+        if (this.blockMappings == null) return id;
         final int mapped = this.blockMappings.getNewId(id);
         return mapped != -1 ? mapped : id;
     }
@@ -127,6 +129,7 @@ public class BackwardsMappingData extends MappingDataBase {
     @Override
     public int getOldItemId(final int id) {
         if (id >= 10000) return id - 10000;
+        if (this.itemMappings == null) return id;
         final int mapped = this.itemMappings.inverse().getNewId(id);
         return mapped != -1 ? mapped : id;
     }

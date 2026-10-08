@@ -42,4 +42,5 @@ Test*.class
 tools/staging/
 tools/extension/bin/
 *.javap
+reference/
 

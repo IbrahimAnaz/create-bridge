@@ -41,7 +41,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
-import org.checkerframework.checker.nullness.qual.Nullable;
+// no nullable
 
 public class MappingDataBase implements MappingData {
 
@@ -140,36 +140,36 @@ public class MappingDataBase implements MappingData {
         loadExtras(data);
     }
 
-    protected @Nullable List<String> identifiersFromGlobalIds(final CompoundTag mappingsTag, final String key) {
+    protected List<String> identifiersFromGlobalIds(final CompoundTag mappingsTag, final String key) {
         return MappingDataLoader.INSTANCE.identifiersFromGlobalIds(mappingsTag, key);
     }
 
-    protected @Nullable IdentifiersPair identifiersFromGlobalIds(final CompoundTag unmappedTag, final CompoundTag mappedTag, final String key) {
+    protected IdentifiersPair identifiersFromGlobalIds(final CompoundTag unmappedTag, final CompoundTag mappedTag, final String key) {
         return MappingDataLoader.INSTANCE.identifiersFromGlobalIds(unmappedTag, mappedTag, key);
     }
 
-    protected @Nullable CompoundTag readMappingsFile(final String name) {
+    protected CompoundTag readMappingsFile(final String name) {
         return MappingDataLoader.INSTANCE.loadNBT(name);
     }
 
-    protected @Nullable CompoundTag readUnmappedIdentifiersFile(final String name) {
+    protected CompoundTag readUnmappedIdentifiersFile(final String name) {
         return MappingDataLoader.INSTANCE.loadNBT(name, true);
     }
 
-    protected @Nullable CompoundTag readMappedIdentifiersFile(final String name) {
+    protected CompoundTag readMappedIdentifiersFile(final String name) {
         return MappingDataLoader.INSTANCE.loadNBT(name, true);
     }
 
-    protected @Nullable Mappings loadMappings(final CompoundTag data, final String key) {
+    protected Mappings loadMappings(final CompoundTag data, final String key) {
         return MappingDataLoader.INSTANCE.loadMappings(data, key);
     }
 
-    protected @Nullable BiMappings loadFullOrBiMappings(final CompoundTag data, final CompoundTag unmappedIdentifiersTag, final CompoundTag mappedIdentifiersTag, final String key) {
+    protected BiMappings loadFullOrBiMappings(final CompoundTag data, final CompoundTag unmappedIdentifiersTag, final CompoundTag mappedIdentifiersTag, final String key) {
         final FullMappings mappings = loadFullMappings(data, unmappedIdentifiersTag, mappedIdentifiersTag, key);
         return mappings != null ? mappings : loadBiMappings(data, key);
     }
 
-    protected @Nullable FullMappings loadFullMappings(final CompoundTag data, final CompoundTag unmappedIdentifiersTag, final CompoundTag mappedIdentifiersTag, final String key) {
+    protected FullMappings loadFullMappings(final CompoundTag data, final CompoundTag unmappedIdentifiersTag, final CompoundTag mappedIdentifiersTag, final String key) {
         if (!unmappedIdentifiersTag.contains(key) || !mappedIdentifiersTag.contains(key)) {
             return null;
         }
@@ -186,7 +186,7 @@ public class MappingDataBase implements MappingData {
         return FullMappingsBase.of(identifiersPair, mappings);
     }
 
-    protected @Nullable BiMappings loadBiMappings(final CompoundTag data, final String key) {
+    protected BiMappings loadBiMappings(final CompoundTag data, final String key) {
         final Mappings mappings = loadMappings(data, key);
         return mappings != null ? BiMappings.of(mappings) : null;
     }
@@ -260,17 +260,17 @@ public class MappingDataBase implements MappingData {
     }
 
     @Override
-    public @Nullable List<TagData> getTags(final RegistryType type) {
+    public List<TagData> getTags(final RegistryType type) {
         return tags != null ? tags.get(type) : null;
     }
 
     @Override
-    public @Nullable BiMappings getItemMappings() {
+    public BiMappings getItemMappings() {
         return itemMappings;
     }
 
     @Override
-    public @Nullable FullMappings getFullItemMappings() {
+    public FullMappings getFullItemMappings() {
         if (itemMappings instanceof FullMappings fullItemMappings) {
             return fullItemMappings;
         }
@@ -278,17 +278,17 @@ public class MappingDataBase implements MappingData {
     }
 
     @Override
-    public @Nullable ParticleMappings getParticleMappings() {
+    public ParticleMappings getParticleMappings() {
         return particleMappings;
     }
 
     @Override
-    public @Nullable Mappings getBlockMappings() {
+    public Mappings getBlockMappings() {
         return blockMappings;
     }
 
     @Override
-    public @Nullable FullMappings getFullBlockMappings() {
+    public FullMappings getFullBlockMappings() {
         if (blockMappings instanceof FullMappings fullBlockMappings) {
             return fullBlockMappings;
         }
@@ -296,22 +296,22 @@ public class MappingDataBase implements MappingData {
     }
 
     @Override
-    public @Nullable FullMappings getBlockEntityMappings() {
+    public FullMappings getBlockEntityMappings() {
         return blockEntityMappings;
     }
 
     @Override
-    public @Nullable Mappings getBlockStateMappings() {
+    public Mappings getBlockStateMappings() {
         return blockStateMappings;
     }
 
     @Override
-    public @Nullable Mappings getSoundMappings() {
+    public Mappings getSoundMappings() {
         return soundMappings;
     }
 
     @Override
-    public @Nullable FullMappings getFullSoundMappings() {
+    public FullMappings getFullSoundMappings() {
         if (soundMappings instanceof FullMappings fullSoundMappings) {
             return fullSoundMappings;
         }
@@ -319,62 +319,62 @@ public class MappingDataBase implements MappingData {
     }
 
     @Override
-    public @Nullable Mappings getStatisticsMappings() {
+    public Mappings getStatisticsMappings() {
         return statisticsMappings;
     }
 
     @Override
-    public @Nullable Mappings getMenuMappings() {
+    public Mappings getMenuMappings() {
         return menuMappings;
     }
 
     @Override
-    public @Nullable Mappings getEnchantmentMappings() {
+    public Mappings getEnchantmentMappings() {
         return enchantmentMappings;
     }
 
     @Override
-    public @Nullable FullMappings getAttributeMappings() {
+    public FullMappings getAttributeMappings() {
         return attributeMappings;
     }
 
     @Override
-    public @Nullable FullMappings getEntityMappings() {
+    public FullMappings getEntityMappings() {
         return entityMappings;
     }
 
     @Override
-    public @Nullable FullMappings getArgumentTypeMappings() {
+    public FullMappings getArgumentTypeMappings() {
         return argumentTypeMappings;
     }
 
     @Override
-    public @Nullable FullMappings getDataComponentSerializerMappings() {
+    public FullMappings getDataComponentSerializerMappings() {
         return itemDataSerializerMappings;
     }
 
     @Override
-    public @Nullable Mappings getPaintingMappings() {
+    public Mappings getPaintingMappings() {
         return paintingMappings;
     }
 
     @Override
-    public @Nullable FullMappings getRecipeSerializerMappings() {
+    public FullMappings getRecipeSerializerMappings() {
         return recipeSerializerMappings;
     }
 
     @Override
-    public @Nullable FullMappings getSlotDisplayMappings() {
+    public FullMappings getSlotDisplayMappings() {
         return slotDisplayMappings;
     }
 
     @Override
-    public @Nullable IntSet changedBlocks() {
+    public IntSet changedBlocks() {
         return changedBlocks;
     }
 
     @Override
-    public @Nullable Set<String> changedEnvironmentAttributes() {
+    public Set<String> changedEnvironmentAttributes() {
         return changedEnvironmentAttributes;
     }
 
@@ -392,7 +392,7 @@ public class MappingDataBase implements MappingData {
      */
     protected int checkValidity(final int id, final int mappedId, final String type) {
         if (mappedId == -1) {
-            if ("blockstate".equals(type)) {
+            if ("blockstate".equals(type) || "block".equals(type)) {
                 if (id >= 100000) {
                     return id;
                 }

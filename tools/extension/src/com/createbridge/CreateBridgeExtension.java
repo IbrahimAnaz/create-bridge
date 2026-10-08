@@ -75,7 +75,10 @@ public class CreateBridgeExtension implements Extension {
         registerCube(event, "raw_zinc_block", "create_raw_zinc_block", new int[]{32338});
         registerCube(event, "zinc_block", "create_zinc_block", new int[]{32339});
         registerCube(event, "brass_block", "create_brass_block", new int[]{32342});
-        registerCube(event, "large_cogwheel", "create_cogwheel", new int[]{27275, 27289});
+        registerCube(event, "cogwheel", "create_cogwheel", new int[]{27268, 27269, 27270, 27271, 27272, 27273, 27274});
+        registerCube(event, "large_cogwheel", "create_cogwheel", new int[]{
+            27275, 27276, 27277, 27278, 27279, 27280, 27281, 27282, 27283, 27284, 27285, 27286, 27287, 27288, 27289
+        });
         registerCube(event, "depot", "create_brass_casing", new int[]{47909});
         registerCube(event, "chute", "create_andesite_casing", new int[]{46215});
         registerCube(event, "schematicannon", "create_copper_casing", new int[]{51297});

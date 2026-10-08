@@ -12,7 +12,7 @@ public class PatchViaProxyItems {
     private static void patchMappingDataBase() throws Exception {
         byte[] bytes = Files.readAllBytes(new File("tools/staging/MappingDataBase.class").toPath());
         ClassReader cr = new ClassReader(bytes);
-        ClassWriter cw = new ClassWriter(cr, ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
+        ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
         ClassVisitor cv = new ClassVisitor(Opcodes.ASM9, cw) {
             @Override
             public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {
@@ -194,7 +194,7 @@ public class PatchViaProxyItems {
     private static void patchBackwardsMappingData() throws Exception {
         byte[] bytes = Files.readAllBytes(new File("tools/staging/BackwardsMappingData.class").toPath());
         ClassReader cr = new ClassReader(bytes);
-        ClassWriter cw = new ClassWriter(cr, ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
+        ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_MAXS | ClassWriter.COMPUTE_FRAMES);
         ClassVisitor cv = new ClassVisitor(Opcodes.ASM9, cw) {
             @Override
             public MethodVisitor visitMethod(int access, String name, String descriptor, String signature, String[] exceptions) {

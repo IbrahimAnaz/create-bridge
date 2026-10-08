@@ -39,6 +39,21 @@ def cmd_inspect_jar(args):
         if len(matches) > 50:
             print(f" ... and {len(matches) - 50} more")
 
+def cmd_cat_zip(args):
+    if len(args) < 2:
+        print("Usage: python tools/macro.py cat-zip <zip_path> <file_path>")
+        return
+    zip_path, file_path = args[0], args[1]
+    if not os.path.exists(zip_path):
+        print(f"Error: {zip_path} not found")
+        return
+    with zipfile.ZipFile(zip_path, "r") as z:
+        try:
+            content = z.read(file_path).decode("utf-8", errors="replace")
+            print(content)
+        except KeyError:
+            print(f"File {file_path} not found in {zip_path}")
+
 def cmd_disassemble(args):
     if not args:
         print("Usage: python tools/macro.py javap <ClassName>")
@@ -162,6 +177,8 @@ def main():
 
     if cmd == "inspect-jar":
         cmd_inspect_jar(args)
+    elif cmd == "cat-zip":
+        cmd_cat_zip(args)
     elif cmd == "javap":
         cmd_disassemble(args)
     elif cmd == "patch-viaproxy":
