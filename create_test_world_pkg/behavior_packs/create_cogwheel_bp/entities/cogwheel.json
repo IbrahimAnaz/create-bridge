@@ -1,0 +1,133 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "create:cogwheel",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "stopped_state": {
+        "minecraft:type_family": {
+          "family": [
+            "create",
+            "inanimate",
+            "stopped"
+          ]
+        }
+      },
+      "spinning_state": {
+        "minecraft:type_family": {
+          "family": [
+            "create",
+            "inanimate",
+            "spinning"
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "create",
+          "inanimate",
+          "spinning"
+        ]
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "spinning"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "create:wrench"
+                  }
+                ]
+              },
+              "event": "event_toggle_brake"
+            },
+            "use_item": false,
+            "interact_text": "Engage Brake"
+          },
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "self",
+                    "value": "stopped"
+                  },
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "create:wrench"
+                  }
+                ]
+              },
+              "event": "event_release_brake"
+            },
+            "use_item": false,
+            "interact_text": "Release Brake"
+          }
+        ]
+      }
+    },
+    "events": {
+      "event_toggle_brake": {
+        "add": {
+          "component_groups": [
+            "stopped_state"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "spinning_state"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s add stop",
+            "tellraw @a {\"rawtext\":[{\"text\":\"\u00a7c[Create Wrench] \u00a7lBRAKE ENGAGED! \u00a7r\u00a77Cogwheel halted.\"}]}"
+          ]
+        }
+      },
+      "event_release_brake": {
+        "add": {
+          "component_groups": [
+            "spinning_state"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "stopped_state"
+          ]
+        },
+        "queue_command": {
+          "command": [
+            "tag @s remove stop",
+            "tellraw @a {\"rawtext\":[{\"text\":\"\u00a7a[Create Wrench] \u00a7lBRAKE RELEASED! \u00a7r\u00a77Cogwheel resumed spinning.\"}]}"
+          ]
+        }
+      }
+    }
+  }
+}

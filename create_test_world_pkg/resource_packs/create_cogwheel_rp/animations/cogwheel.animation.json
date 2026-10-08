@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.create.cogwheel.spin": {
+      "loop": true,
+      "bones": {
+        "cog": {
+          "rotation": [
+            0,
+            0,
+            "variable.cog_rot = (query.has_tag('stop') ? (variable.cog_rot ?? 0.0) : ((variable.cog_rot ?? 0.0) + query.delta_time * 192.0)); return variable.cog_rot;"
+          ]
+        },
+        "shaft": {
+          "rotation": [
+            0,
+            0,
+            "variable.cog_rot"
+          ]
+        }
+      }
+    }
+  }
+}

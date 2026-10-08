@@ -4,12 +4,24 @@ headless_server/world/
 headless_server/logs/
 headless_server/crash-reports/
 headless_server/libraries/
+headless_server/mods/
 *.jar
 *.class
 *.log
+*.log.gz
+*.gz
 *.zip
 *.mcpack
+*.mcaddon
+*.mcworld
 *.dat
+*.txt
+*.bak*
+*.bdbd
+*.bdbi
+headless_server/geyser/cache/
+headless_server/viaproxy/viabedrock/blob_cache/
+
 
 # Python caches
 __pycache__/
@@ -27,3 +39,4 @@ World*.class
 Resource*.class
 Header*.class
 Test*.class
+

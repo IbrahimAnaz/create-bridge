@@ -1,0 +1,9 @@
+{
+  "resource_pack_name": "create_cogwheel_rp",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "create_wrench": {
+      "textures": "textures/items/create/wrench"
+    }
+  }
+}

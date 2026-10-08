@@ -1,0 +1,29 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Create Cross-Play RP [V2 - Fresh Cache]",
+    "description": "RenderDragon continuous Molang kinetic puppet with live velocity control",
+    "uuid": "a8b023e1-ac8a-41e0-a933-f3011f2bb75c",
+    "version": [
+      2,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "460ef5a8-9745-44e9-9112-150937805f9d",
+      "version": [
+        2,
+        0,
+        0
+      ]
+    }
+  ]
+}
