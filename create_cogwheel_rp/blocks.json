@@ -44,11 +44,22 @@
     "sound": "metal"
   },
   "create:chute": {
-    "textures": "create_andesite_casing",
+    "textures": "create_chute",
+    "geometry": "geometry.create.chute",
     "sound": "metal"
   },
   "create:schematicannon": {
     "textures": "create_copper_casing",
+    "sound": "metal"
+  },
+  "create:gearbox": {
+    "textures": "create_gearbox",
+    "geometry": "geometry.create.gearbox",
+    "sound": "metal"
+  },
+  "create:shaft": {
+    "textures": "create_shaft",
+    "geometry": "geometry.create.shaft",
     "sound": "metal"
   }
 }

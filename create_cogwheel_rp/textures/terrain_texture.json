@@ -33,6 +33,15 @@
     },
     "create_depot": {
       "textures": "textures/blocks/depot"
+    },
+    "create_chute": {
+      "textures": "textures/blocks/chute"
+    },
+    "create_gearbox": {
+      "textures": "textures/blocks/gearbox"
+    },
+    "create_shaft": {
+      "textures": "textures/blocks/shaft"
     }
   }
 }

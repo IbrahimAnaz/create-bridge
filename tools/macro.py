@@ -190,6 +190,14 @@ def main():
         cmd_status(args)
     elif cmd == "stop-stack":
         cmd_stop_stack(args)
+    elif cmd == "convert-geo":
+        try:
+            import model_converter as mc
+        except ImportError:
+            import tools.model_converter as mc
+        bname = args[0] if len(args) > 0 else "chute"
+        mpath = args[1] if len(args) > 1 else None
+        mc.convert_block_geometry(bname, mpath)
     else:
         print(f"Unknown command: {cmd}")
 

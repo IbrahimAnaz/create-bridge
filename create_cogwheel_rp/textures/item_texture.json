@@ -33,13 +33,19 @@
       "textures": "textures/blocks/depot_top"
     },
     "create_chute": {
-      "textures": "textures/blocks/andesite_casing"
+      "textures": "textures/blocks/chute"
     },
     "create_schematicannon": {
       "textures": "textures/blocks/copper_casing"
     },
     "create_wrench": {
       "textures": "textures/items/create/wrench"
+    },
+    "create_gearbox": {
+      "textures": "textures/blocks/gearbox"
+    },
+    "create_shaft": {
+      "textures": "textures/blocks/shaft"
     }
   }
 }
