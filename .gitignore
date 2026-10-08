@@ -39,4 +39,7 @@ World*.class
 Resource*.class
 Header*.class
 Test*.class
+tools/staging/
+tools/extension/bin/
+*.javap
 

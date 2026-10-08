@@ -45,10 +45,14 @@ public class CreateBridgeExtension implements Extension {
         System.out.println("[CreateBridge] Successfully registered Create custom items!");
     }
 
+    private static final int ITEM_OFFSET = 10000;
+
     private void registerItem(GeyserDefineCustomItemsEvent event, String name, int javaId, boolean isBlock) {
         try {
+            int shiftedJavaId = ITEM_OFFSET + javaId;
             var builder = NonVanillaCustomItemData.builder()
                 .identifier("create:" + name)
+                .javaId(shiftedJavaId)
                 .name(name)
                 .icon("create_" + name);
             if (isBlock) {
@@ -121,11 +125,11 @@ public class CreateBridgeExtension implements Extension {
                 System.out.println("[DIAGNOSTIC] Testing BlockMappings for Bedrock Default Protocol v" + v + ":");
                 int[] testIds = new int[]{32328, 32329, 32330, 32342, 27275, 27289, 47909, 46215, 51297};
                 for (int testId : testIds) {
-                    GeyserBedrockBlock bb = bm.getBedrockBlock(testId);
-                    boolean isAir = (bb == bm.getBedrockAir());
-                    System.out.println("  >> Java ID " + testId + " -> Bedrock: " + (bb != null ? bb.toString() : "NULL")
-                        + " | runtimeId=" + (bb != null ? bb.getRuntimeId() : -1)
-                        + " | isAir=" + isAir);
+                    GeyserBedrockBlock bbRaw = bm.getBedrockBlock(testId);
+                    GeyserBedrockBlock bbShifted = bm.getBedrockBlock(OFFSET + testId);
+                    System.out.println("  >> Raw " + testId + " -> " + (bbRaw != null ? bbRaw.toString() : "NULL")
+                        + " | Shifted " + (OFFSET + testId) + " -> " + (bbShifted != null ? bbShifted.toString() : "NULL")
+                        + " | runtimeId=" + (bbShifted != null ? bbShifted.getRuntimeId() : -1));
                 }
             } else {
                 System.out.println("[DIAGNOSTIC] Warning: BlockMappings was null for protocol " + v);
@@ -144,13 +148,12 @@ public class CreateBridgeExtension implements Extension {
                 Thread.sleep(2000);
                 if (event.connection() instanceof GeyserSession session) {
                     BlockMappings bm = session.getBlockMappings();
-                    GeyserBedrockBlock bb = bm.getBedrockBlock(32328);
-                    boolean isAir = (bb == bm.getBedrockAir());
+                    GeyserBedrockBlock bbRaw = bm.getBedrockBlock(32328);
+                    GeyserBedrockBlock bbShifted = bm.getBedrockBlock(OFFSET + 32328);
                     System.out.println("=============================================================");
                     System.out.println("[CreateBridge LIVE SESSION PROBE] Player " + session.name());
-                    System.out.println("  >> Andesite Casing (32328) Bedrock Block: " + bb);
-                    System.out.println("  >> runtimeId: " + (bb != null ? bb.getRuntimeId() : -1));
-                    System.out.println("  >> isAir: " + isAir);
+                    System.out.println("  >> Andesite Casing Raw (32328) Bedrock: " + bbRaw + " | runtimeId=" + (bbRaw != null ? bbRaw.getRuntimeId() : -1));
+                    System.out.println("  >> Andesite Casing Shifted (132328) Bedrock: " + bbShifted + " | runtimeId=" + (bbShifted != null ? bbShifted.getRuntimeId() : -1));
                     System.out.println("=============================================================");
                 }
             } catch (Throwable t) {

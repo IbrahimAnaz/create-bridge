@@ -224,6 +224,7 @@ public class MappingDataBase implements MappingData {
 
     @Override
     public int getOldBlockId(final int id) {
+        if (id >= 100000) return id - 100000;
         return blockMappings.inverse().getNewIdOrDefault(id, id);
     }
 
@@ -234,6 +235,7 @@ public class MappingDataBase implements MappingData {
 
     @Override
     public int getOldItemId(final int id) {
+        if (id >= 10000) return id - 10000;
         return itemMappings.inverse().getNewIdOrDefault(id, id);
     }
 
@@ -390,8 +392,23 @@ public class MappingDataBase implements MappingData {
      */
     protected int checkValidity(final int id, final int mappedId, final String type) {
         if (mappedId == -1) {
-            if ("blockstate".equals(type) && id >= 25000) {
-                return 100000 + id;
+            if ("blockstate".equals(type)) {
+                if (id >= 100000) {
+                    return id;
+                }
+                if (id >= 25000) {
+                    return 100000 + id;
+                }
+                return id;
+            }
+            if ("item".equals(type)) {
+                if (id >= 10000) {
+                    return id;
+                }
+                if (id >= 1000) {
+                    return 10000 + id;
+                }
+                return id;
             }
             return id;
         }
