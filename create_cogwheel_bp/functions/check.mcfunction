@@ -1,0 +1,1 @@
+tellraw @a {"rawtext":[{"text":"§6========================================\n§6[Create Engine] §aVariant Sync Engine Active!\n§e- /function spin (32 RPM)\n§e- /function fast (128 RPM Turbo)\n§e- /function stop (0 RPM Brake)\n§6========================================"}]}

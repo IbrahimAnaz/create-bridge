@@ -1,0 +1,2015 @@
+Compiled from "BlockItemPacketRewriter1_21_2.java"
+public final class com.viaversion.viaversion.protocols.v1_21to1_21_2.rewriter.BlockItemPacketRewriter1_21_2 extends com.viaversion.viaversion.rewriter.StructuredItemRewriter<com.viaversion.viaversion.protocols.v1_20_5to1_21.packet.ClientboundPacket1_21, com.viaversion.viaversion.protocols.v1_21to1_21_2.packet.ServerboundPacket1_21_2, com.viaversion.viaversion.protocols.v1_21to1_21_2.Protocol1_21To1_21_2> {
+  public static final java.util.List<com.viaversion.viaversion.api.minecraft.data.StructuredDataKey<?>> NEW_DATA_TO_REMOVE;
+
+  private static final int RECIPE_NOTIFICATION_FLAG;
+
+  private static final int RECIPE_HIGHLIGHT_FLAG;
+
+  private static final int RECIPE_INIT;
+
+  private static final int RECIPE_ADD;
+
+  private static final int RECIPE_REMOVE;
+
+  public com.viaversion.viaversion.protocols.v1_21to1_21_2.rewriter.BlockItemPacketRewriter1_21_2(com.viaversion.viaversion.protocols.v1_21to1_21_2.Protocol1_21To1_21_2);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokespecial #43                 // Method com/viaversion/viaversion/rewriter/StructuredItemRewriter."<init>":(Lcom/viaversion/viaversion/api/protocol/Protocol;)V
+       5: return
+
+  public void registerPackets();
+    Code:
+       0: aload_0
+       1: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+       4: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+       7: getstatic     #60                 // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.COOLDOWN:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+      10: aload_0
+      11: invokedynamic #77,  0             // InvokeDynamic #0:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+      16: invokevirtual #81                 // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.replaceClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+      19: aload_0
+      20: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+      23: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+      26: getstatic     #84                 // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.CONTAINER_SET_CONTENT:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+      29: aload_0
+      30: invokedynamic #89,  0             // InvokeDynamic #1:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+      35: invokevirtual #81                 // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.replaceClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+      38: aload_0
+      39: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+      42: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+      45: getstatic     #92                 // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.CONTAINER_SET_SLOT:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+      48: aload_0
+      49: invokedynamic #97,  0             // InvokeDynamic #2:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+      54: invokevirtual #81                 // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.replaceClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+      57: aload_0
+      58: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+      61: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+      64: getstatic     #100                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.CONTAINER_CLOSE:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+      67: aload_0
+      68: invokedynamic #105,  0            // InvokeDynamic #3:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+      73: invokevirtual #108                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+      76: aload_0
+      77: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+      80: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+      83: getstatic     #111                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.CONTAINER_SET_DATA:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+      86: aload_0
+      87: invokedynamic #105,  0            // InvokeDynamic #3:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+      92: invokevirtual #108                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+      95: aload_0
+      96: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+      99: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     102: getstatic     #114                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.HORSE_SCREEN_OPEN:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+     105: aload_0
+     106: invokedynamic #105,  0            // InvokeDynamic #3:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     111: invokevirtual #108                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     114: aload_0
+     115: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     118: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     121: getstatic     #117                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.SET_CARRIED_ITEM:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+     124: getstatic     #123                // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.SET_HELD_SLOT:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+     127: invokevirtual #126                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;)V
+     130: aload_0
+     131: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     134: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     137: getstatic     #131                // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2.CONTAINER_CLOSE:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2;
+     140: aload_0
+     141: invokedynamic #136,  0            // InvokeDynamic #4:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     146: invokevirtual #140                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerServerbound:(Lcom/viaversion/viaversion/api/protocol/packet/ServerboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     149: aload_0
+     150: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     153: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     156: getstatic     #143                // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2.CONTAINER_CLICK:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2;
+     159: aload_0
+     160: invokedynamic #148,  0            // InvokeDynamic #5:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     165: invokevirtual #151                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.replaceServerbound:(Lcom/viaversion/viaversion/api/protocol/packet/ServerboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     168: aload_0
+     169: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     172: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     175: getstatic     #154                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.PLACE_GHOST_RECIPE:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+     178: aload_0
+     179: invokedynamic #159,  0            // InvokeDynamic #6:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     184: invokevirtual #108                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     187: aload_0
+     188: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     191: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     194: getstatic     #162                // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2.PLACE_RECIPE:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2;
+     197: aload_0
+     198: invokedynamic #167,  0            // InvokeDynamic #7:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     203: invokevirtual #140                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerServerbound:(Lcom/viaversion/viaversion/api/protocol/packet/ServerboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     206: aload_0
+     207: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     210: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     213: getstatic     #170                // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2.RECIPE_BOOK_SEEN_RECIPE:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2;
+     216: aload_0
+     217: invokedynamic #175,  0            // InvokeDynamic #8:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     222: invokevirtual #140                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerServerbound:(Lcom/viaversion/viaversion/api/protocol/packet/ServerboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     225: aload_0
+     226: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     229: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     232: getstatic     #178                // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2.USE_ITEM_ON:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ServerboundPackets1_21_2;
+     235: invokedynamic #185,  0            // InvokeDynamic #9:handle:()Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     240: invokevirtual #140                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerServerbound:(Lcom/viaversion/viaversion/api/protocol/packet/ServerboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     243: aload_0
+     244: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     247: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     250: getstatic     #188                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.EXPLODE:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+     253: aload_0
+     254: invokedynamic #193,  0            // InvokeDynamic #10:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     259: invokevirtual #81                 // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.replaceClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     262: aload_0
+     263: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     266: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     269: getstatic     #196                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.UPDATE_RECIPES:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+     272: aload_0
+     273: invokedynamic #201,  0            // InvokeDynamic #11:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     278: invokevirtual #108                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     281: aload_0
+     282: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     285: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     288: getstatic     #204                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.RECIPE:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+     291: getstatic     #207                // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.RECIPE_BOOK_ADD:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+     294: aload_0
+     295: invokedynamic #212,  0            // InvokeDynamic #12:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     300: invokevirtual #215                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     303: aload_0
+     304: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     307: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     310: getstatic     #218                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.LEVEL_CHUNK_WITH_LIGHT:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+     313: aload_0
+     314: invokedynamic #223,  0            // InvokeDynamic #13:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     319: invokevirtual #81                 // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.replaceClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     322: aload_0
+     323: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     326: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     329: getstatic     #226                // Field com/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21.FORGET_LEVEL_CHUNK:Lcom/viaversion/viaversion/protocols/v1_20_5to1_21/packet/ClientboundPackets1_21;
+     332: aload_0
+     333: invokedynamic #231,  0            // InvokeDynamic #14:handle:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/BlockItemPacketRewriter1_21_2;)Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     338: invokevirtual #108                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.registerClientbound:(Lcom/viaversion/viaversion/api/protocol/packet/ClientboundPacketType;Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;)V
+     341: return
+
+  private void convertServerboundRecipeDisplayId(com.viaversion.viaversion.api.protocol.packet.PacketWrapper);
+    Code:
+       0: aload_1
+       1: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+       4: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+       9: checkcast     #245                // class java/lang/Integer
+      12: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+      15: istore_2
+      16: aload_1
+      17: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+      22: ldc           #10                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2
+      24: invokeinterface #259,  2          // InterfaceMethod com/viaversion/viaversion/api/connection/UserConnection.get:(Ljava/lang/Class;)Lcom/viaversion/viaversion/api/connection/StorableObject;
+      29: checkcast     #10                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2
+      32: iload_2
+      33: invokevirtual #263                // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2.recipe:(I)Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe;
+      36: astore_3
+      37: aload_3
+      38: ifnonnull     48
+      41: aload_1
+      42: invokeinterface #266,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.cancel:()V
+      47: return
+      48: aload_1
+      49: getstatic     #270                // Field com/viaversion/viaversion/api/type/Types.STRING:Lcom/viaversion/viaversion/api/type/Type;
+      52: aload_3
+      53: invokeinterface #274,  1          // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.identifier:()Ljava/lang/String;
+      58: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+      63: return
+
+  public com.viaversion.viaversion.api.minecraft.item.Item handleItemToClient(com.viaversion.viaversion.api.connection.UserConnection, com.viaversion.viaversion.api.minecraft.item.Item);
+    Code:
+       0: aload_2
+       1: invokeinterface #290,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/item/Item.isEmpty:()Z
+       6: ifeq          11
+       9: aload_2
+      10: areturn
+      11: aload_0
+      12: aload_1
+      13: aload_2
+      14: invokespecial #292                // Method com/viaversion/viaversion/rewriter/StructuredItemRewriter.handleItemToClient:(Lcom/viaversion/viaversion/api/connection/UserConnection;Lcom/viaversion/viaversion/api/minecraft/item/Item;)Lcom/viaversion/viaversion/api/minecraft/item/Item;
+      17: pop
+      18: aload_2
+      19: invokeinterface #296,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/item/Item.dataContainer:()Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataContainer;
+      24: astore_3
+      25: aload_3
+      26: getstatic     #302                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.FOOD1_21:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      29: invokevirtual #307                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.get:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)Ljava/lang/Object;
+      32: checkcast     #15                 // class com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5
+      35: astore        4
+      37: aload         4
+      39: ifnull        61
+      42: aload         4
+      44: invokevirtual #311                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.usingConvertsTo:()Lcom/viaversion/viaversion/api/minecraft/item/Item;
+      47: ifnull        61
+      50: aload_0
+      51: aload_1
+      52: aload         4
+      54: invokevirtual #311                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.usingConvertsTo:()Lcom/viaversion/viaversion/api/minecraft/item/Item;
+      57: invokevirtual #312                // Method handleItemToClient:(Lcom/viaversion/viaversion/api/connection/UserConnection;Lcom/viaversion/viaversion/api/minecraft/item/Item;)Lcom/viaversion/viaversion/api/minecraft/item/Item;
+      60: pop
+      61: aload_2
+      62: invokestatic  #316                // Method updateItemData:(Lcom/viaversion/viaversion/api/minecraft/item/Item;)V
+      65: aload_3
+      66: getstatic     #319                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.ENCHANTMENTS1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      69: invokevirtual #307                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.get:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)Ljava/lang/Object;
+      72: checkcast     #321                // class com/viaversion/viaversion/api/minecraft/item/data/Enchantments
+      75: astore        5
+      77: aload         5
+      79: ifnull        211
+      82: aload         5
+      84: invokevirtual #324                // Method com/viaversion/viaversion/api/minecraft/item/data/Enchantments.size:()I
+      87: ifeq          211
+      90: new           #326                // class com/viaversion/viaversion/libs/fastutil/ints/IntArrayList
+      93: dup
+      94: invokespecial #328                // Method com/viaversion/viaversion/libs/fastutil/ints/IntArrayList."<init>":()V
+      97: astore        6
+      99: aload         5
+     101: invokevirtual #332                // Method com/viaversion/viaversion/api/minecraft/item/data/Enchantments.enchantments:()Lcom/viaversion/viaversion/libs/fastutil/ints/Int2IntMap;
+     104: invokeinterface #336,  1          // InterfaceMethod com/viaversion/viaversion/libs/fastutil/ints/Int2IntMap.int2IntEntrySet:()Lcom/viaversion/viaversion/libs/fastutil/objects/ObjectSet;
+     109: aload         6
+     111: invokedynamic #349,  0            // InvokeDynamic #15:test:(Lcom/viaversion/viaversion/libs/fastutil/ints/IntList;)Ljava/util/function/Predicate;
+     116: invokeinterface #355,  2          // InterfaceMethod com/viaversion/viaversion/libs/fastutil/objects/ObjectSet.removeIf:(Ljava/util/function/Predicate;)Z
+     121: pop
+     122: aload         6
+     124: invokeinterface #358,  1          // InterfaceMethod com/viaversion/viaversion/libs/fastutil/ints/IntList.isEmpty:()Z
+     129: ifne          162
+     132: new           #360                // class com/viaversion/nbt/tag/IntArrayTag
+     135: dup
+     136: aload         6
+     138: invokeinterface #364,  1          // InterfaceMethod com/viaversion/viaversion/libs/fastutil/ints/IntList.toIntArray:()[I
+     143: invokespecial #367                // Method com/viaversion/nbt/tag/IntArrayTag."<init>":([I)V
+     146: astore        7
+     148: aload_0
+     149: aload_0
+     150: aload_2
+     151: invokevirtual #371                // Method createCustomTag:(Lcom/viaversion/viaversion/api/minecraft/item/Item;)Lcom/viaversion/nbt/tag/CompoundTag;
+     154: aload         7
+     156: ldc_w         #373                // String 0_enchants
+     159: invokevirtual #377                // Method saveTag:(Lcom/viaversion/nbt/tag/CompoundTag;Lcom/viaversion/nbt/tag/Tag;Ljava/lang/String;)V
+     162: aload         5
+     164: invokevirtual #324                // Method com/viaversion/viaversion/api/minecraft/item/data/Enchantments.size:()I
+     167: ifne          211
+     170: aload_3
+     171: getstatic     #380                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.ENCHANTMENT_GLINT_OVERRIDE:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+     174: invokevirtual #384                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.has:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)Z
+     177: ifne          211
+     180: aload_3
+     181: getstatic     #380                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.ENCHANTMENT_GLINT_OVERRIDE:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+     184: iconst_1
+     185: invokestatic  #390                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     188: invokevirtual #394                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.set:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/lang/Object;)V
+     191: aload_0
+     192: aload_0
+     193: aload_2
+     194: invokevirtual #371                // Method createCustomTag:(Lcom/viaversion/viaversion/api/minecraft/item/Item;)Lcom/viaversion/nbt/tag/CompoundTag;
+     197: new           #396                // class com/viaversion/nbt/tag/ByteTag
+     200: dup
+     201: iconst_1
+     202: invokespecial #399                // Method com/viaversion/nbt/tag/ByteTag."<init>":(Z)V
+     205: ldc_w         #401                // String remove_glint
+     208: invokevirtual #377                // Method saveTag:(Lcom/viaversion/nbt/tag/CompoundTag;Lcom/viaversion/nbt/tag/Tag;Ljava/lang/String;)V
+     211: aload_2
+     212: invokeinterface #403,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/item/Item.identifier:()I
+     217: istore        6
+     219: iload         6
+     221: sipush        952
+     224: if_icmpeq     275
+     227: iload         6
+     229: sipush        1147
+     232: if_icmpeq     275
+     235: iload         6
+     237: sipush        1039
+     240: if_icmpeq     275
+     243: iload         6
+     245: sipush        1203
+     248: if_icmpeq     275
+     251: iload         6
+     253: sipush        1200
+     256: if_icmpeq     275
+     259: iload         6
+     261: sipush        1204
+     264: if_icmpeq     275
+     267: iload         6
+     269: sipush        1202
+     272: if_icmpne     381
+     275: aload_3
+     276: getstatic     #406                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.ITEM_NAME:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+     279: invokevirtual #307                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.get:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)Ljava/lang/Object;
+     282: checkcast     #408                // class com/viaversion/nbt/tag/Tag
+     285: astore        7
+     287: aload         7
+     289: ifnull        381
+     292: aload_3
+     293: getstatic     #411                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.CUSTOM_NAME:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+     296: invokevirtual #384                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.has:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)Z
+     299: ifne          381
+     302: new           #413                // class com/viaversion/nbt/tag/CompoundTag
+     305: dup
+     306: invokespecial #414                // Method com/viaversion/nbt/tag/CompoundTag."<init>":()V
+     309: astore        8
+     311: aload         8
+     313: ldc_w         #416                // String italic
+     316: iconst_0
+     317: invokevirtual #420                // Method com/viaversion/nbt/tag/CompoundTag.putBoolean:(Ljava/lang/String;Z)V
+     320: aload         8
+     322: ldc_w         #422                // String text
+     325: ldc_w         #424                // String
+     328: invokevirtual #428                // Method com/viaversion/nbt/tag/CompoundTag.putString:(Ljava/lang/String;Ljava/lang/String;)V
+     331: aload         8
+     333: ldc_w         #430                // String extra
+     336: new           #432                // class com/viaversion/nbt/tag/ListTag
+     339: dup
+     340: aload         7
+     342: invokestatic  #438                // Method java/util/Collections.singletonList:(Ljava/lang/Object;)Ljava/util/List;
+     345: invokespecial #441                // Method com/viaversion/nbt/tag/ListTag."<init>":(Ljava/util/List;)V
+     348: invokevirtual #445                // Method com/viaversion/nbt/tag/CompoundTag.put:(Ljava/lang/String;Lcom/viaversion/nbt/tag/Tag;)Lcom/viaversion/nbt/tag/Tag;
+     351: pop
+     352: aload_3
+     353: getstatic     #411                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.CUSTOM_NAME:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+     356: aload         8
+     358: invokevirtual #394                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.set:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/lang/Object;)V
+     361: aload_0
+     362: aload_0
+     363: aload_2
+     364: invokevirtual #371                // Method createCustomTag:(Lcom/viaversion/viaversion/api/minecraft/item/Item;)Lcom/viaversion/nbt/tag/CompoundTag;
+     367: new           #396                // class com/viaversion/nbt/tag/ByteTag
+     370: dup
+     371: iconst_1
+     372: invokespecial #399                // Method com/viaversion/nbt/tag/ByteTag."<init>":(Z)V
+     375: ldc_w         #447                // String remove_custom_name
+     378: invokevirtual #377                // Method saveTag:(Lcom/viaversion/nbt/tag/CompoundTag;Lcom/viaversion/nbt/tag/Tag;Ljava/lang/String;)V
+     381: aload_2
+     382: areturn
+
+  public com.viaversion.viaversion.api.minecraft.item.Item handleItemToServer(com.viaversion.viaversion.api.connection.UserConnection, com.viaversion.viaversion.api.minecraft.item.Item);
+    Code:
+       0: aload_2
+       1: invokeinterface #290,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/item/Item.isEmpty:()Z
+       6: ifeq          11
+       9: aload_2
+      10: areturn
+      11: aload_0
+      12: aload_1
+      13: aload_2
+      14: invokespecial #467                // Method com/viaversion/viaversion/rewriter/StructuredItemRewriter.handleItemToServer:(Lcom/viaversion/viaversion/api/connection/UserConnection;Lcom/viaversion/viaversion/api/minecraft/item/Item;)Lcom/viaversion/viaversion/api/minecraft/item/Item;
+      17: pop
+      18: aload_2
+      19: invokestatic  #470                // Method downgradeItemData:(Lcom/viaversion/viaversion/api/minecraft/item/Item;)V
+      22: aload_2
+      23: invokeinterface #296,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/item/Item.dataContainer:()Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataContainer;
+      28: astore_3
+      29: aload_3
+      30: getstatic     #473                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.CUSTOM_DATA:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      33: invokevirtual #307                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.get:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)Ljava/lang/Object;
+      36: checkcast     #413                // class com/viaversion/nbt/tag/CompoundTag
+      39: astore        4
+      41: aload         4
+      43: ifnonnull     48
+      46: aload_2
+      47: areturn
+      48: aload         4
+      50: aload_0
+      51: ldc_w         #447                // String remove_custom_name
+      54: invokevirtual #477                // Method nbtTagName:(Ljava/lang/String;)Ljava/lang/String;
+      57: invokevirtual #481                // Method com/viaversion/nbt/tag/CompoundTag.remove:(Ljava/lang/String;)Lcom/viaversion/nbt/tag/Tag;
+      60: ifnull        77
+      63: aload_3
+      64: getstatic     #411                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.CUSTOM_NAME:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      67: invokevirtual #484                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.remove:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)V
+      70: aload_0
+      71: aload_3
+      72: aload         4
+      74: invokevirtual #488                // Method removeCustomTag:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataContainer;Lcom/viaversion/nbt/tag/CompoundTag;)V
+      77: aload         4
+      79: aload_0
+      80: ldc_w         #373                // String 0_enchants
+      83: invokevirtual #477                // Method nbtTagName:(Ljava/lang/String;)Ljava/lang/String;
+      86: invokevirtual #492                // Method com/viaversion/nbt/tag/CompoundTag.getIntArrayTag:(Ljava/lang/String;)Lcom/viaversion/nbt/tag/IntArrayTag;
+      89: astore        5
+      91: aload         5
+      93: ifnull        223
+      96: aload_3
+      97: getstatic     #319                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.ENCHANTMENTS1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+     100: invokevirtual #307                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.get:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)Ljava/lang/Object;
+     103: checkcast     #321                // class com/viaversion/viaversion/api/minecraft/item/data/Enchantments
+     106: astore        6
+     108: aload         6
+     110: ifnonnull     132
+     113: new           #321                // class com/viaversion/viaversion/api/minecraft/item/data/Enchantments
+     116: dup
+     117: iconst_1
+     118: invokespecial #493                // Method com/viaversion/viaversion/api/minecraft/item/data/Enchantments."<init>":(Z)V
+     121: astore        6
+     123: aload_3
+     124: getstatic     #319                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.ENCHANTMENTS1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+     127: aload         6
+     129: invokevirtual #394                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.set:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/lang/Object;)V
+     132: aload         5
+     134: invokevirtual #496                // Method com/viaversion/nbt/tag/IntArrayTag.getValue:()[I
+     137: astore        7
+     139: aload         7
+     141: arraylength
+     142: istore        8
+     144: iconst_0
+     145: istore        9
+     147: iload         9
+     149: iload         8
+     151: if_icmpge     181
+     154: aload         7
+     156: iload         9
+     158: iaload
+     159: istore        10
+     161: aload         6
+     163: invokevirtual #332                // Method com/viaversion/viaversion/api/minecraft/item/data/Enchantments.enchantments:()Lcom/viaversion/viaversion/libs/fastutil/ints/Int2IntMap;
+     166: iload         10
+     168: iconst_0
+     169: invokeinterface #501,  3          // InterfaceMethod com/viaversion/viaversion/libs/fastutil/ints/Int2IntMap.put:(II)I
+     174: pop
+     175: iinc          9, 1
+     178: goto          147
+     181: aload         4
+     183: aload_0
+     184: ldc_w         #373                // String 0_enchants
+     187: invokevirtual #477                // Method nbtTagName:(Ljava/lang/String;)Ljava/lang/String;
+     190: invokevirtual #481                // Method com/viaversion/nbt/tag/CompoundTag.remove:(Ljava/lang/String;)Lcom/viaversion/nbt/tag/Tag;
+     193: pop
+     194: aload         4
+     196: aload_0
+     197: ldc_w         #401                // String remove_glint
+     200: invokevirtual #477                // Method nbtTagName:(Ljava/lang/String;)Ljava/lang/String;
+     203: invokevirtual #481                // Method com/viaversion/nbt/tag/CompoundTag.remove:(Ljava/lang/String;)Lcom/viaversion/nbt/tag/Tag;
+     206: ifnull        216
+     209: aload_3
+     210: getstatic     #380                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.ENCHANTMENT_GLINT_OVERRIDE:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+     213: invokevirtual #484                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.remove:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)V
+     216: aload_0
+     217: aload_3
+     218: aload         4
+     220: invokevirtual #488                // Method removeCustomTag:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataContainer;Lcom/viaversion/nbt/tag/CompoundTag;)V
+     223: aload_2
+     224: areturn
+
+  private void unsignedByteToVarInt(com.viaversion.viaversion.api.protocol.packet.PacketWrapper);
+    Code:
+       0: aload_1
+       1: getstatic     #508                // Field com/viaversion/viaversion/api/type/Types.UNSIGNED_BYTE:Lcom/viaversion/viaversion/api/type/types/UnsignedByteType;
+       4: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+       9: checkcast     #510                // class java/lang/Short
+      12: invokevirtual #514                // Method java/lang/Short.shortValue:()S
+      15: istore_2
+      16: aload_1
+      17: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      20: iload_2
+      21: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      24: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+      29: return
+
+  private void byteToVarInt(com.viaversion.viaversion.api.protocol.packet.PacketWrapper);
+    Code:
+       0: aload_1
+       1: getstatic     #524                // Field com/viaversion/viaversion/api/type/Types.BYTE:Lcom/viaversion/viaversion/api/type/types/ByteType;
+       4: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+       9: checkcast     #526                // class java/lang/Byte
+      12: invokevirtual #530                // Method java/lang/Byte.byteValue:()B
+      15: istore_2
+      16: aload_1
+      17: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      20: iload_2
+      21: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      24: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+      29: return
+
+  private void varIntToByte(com.viaversion.viaversion.api.protocol.packet.PacketWrapper);
+    Code:
+       0: aload_1
+       1: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+       4: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+       9: checkcast     #245                // class java/lang/Integer
+      12: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+      15: istore_2
+      16: aload_1
+      17: getstatic     #524                // Field com/viaversion/viaversion/api/type/Types.BYTE:Lcom/viaversion/viaversion/api/type/types/ByteType;
+      20: iload_2
+      21: i2b
+      22: invokestatic  #534                // Method java/lang/Byte.valueOf:(B)Ljava/lang/Byte;
+      25: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+      30: return
+
+  public static void updateItemData(com.viaversion.viaversion.api.minecraft.item.Item);
+    Code:
+       0: aload_0
+       1: invokeinterface #296,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/item/Item.dataContainer:()Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataContainer;
+       6: astore_1
+       7: aload_1
+       8: getstatic     #537                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.INSTRUMENT1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      11: getstatic     #540                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.INSTRUMENT1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      14: invokedynamic #552,  0            // InvokeDynamic #16:apply:()Ljava/util/function/Function;
+      19: invokevirtual #556                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;)V
+      22: aload_1
+      23: getstatic     #302                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.FOOD1_21:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      26: getstatic     #559                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.FOOD1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      29: aload_1
+      30: invokedynamic #569,  0            // InvokeDynamic #17:apply:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataContainer;)Ljava/util/function/Function;
+      35: aload_1
+      36: invokedynamic #579,  0            // InvokeDynamic #18:run:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataContainer;)Ljava/lang/Runnable;
+      41: invokevirtual #582                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;Ljava/lang/Runnable;)V
+      44: aload_1
+      45: getstatic     #585                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.POTION_CONTENTS1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      48: getstatic     #588                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.POTION_CONTENTS1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      51: invokevirtual #592                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replaceKey:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)V
+      54: aload_1
+      55: getstatic     #595                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.FIRE_RESISTANT:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      58: getstatic     #598                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.DAMAGE_RESISTANT1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      61: invokedynamic #605,  0            // InvokeDynamic #19:apply:()Ljava/util/function/Function;
+      66: invokevirtual #556                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;)V
+      69: aload_1
+      70: getstatic     #608                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.LOCK1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      73: getstatic     #611                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.LOCK1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      76: invokedynamic #618,  0            // InvokeDynamic #20:apply:()Ljava/util/function/Function;
+      81: invokevirtual #556                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;)V
+      84: aload_1
+      85: getstatic     #621                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.TRIM1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      88: getstatic     #624                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.TRIM1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      91: invokedynamic #631,  0            // InvokeDynamic #21:apply:()Ljava/util/function/Function;
+      96: invokevirtual #556                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;)V
+      99: return
+
+  public static void downgradeItemData(com.viaversion.viaversion.api.minecraft.item.Item);
+    Code:
+       0: aload_0
+       1: invokeinterface #296,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/item/Item.dataContainer:()Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataContainer;
+       6: astore_1
+       7: aload_1
+       8: getstatic     #611                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.LOCK1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      11: getstatic     #608                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.LOCK1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      14: invokedynamic #638,  0            // InvokeDynamic #22:apply:()Ljava/util/function/Function;
+      19: invokevirtual #556                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;)V
+      22: aload_1
+      23: getstatic     #540                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.INSTRUMENT1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      26: getstatic     #537                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.INSTRUMENT1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      29: invokedynamic #643,  0            // InvokeDynamic #23:apply:()Ljava/util/function/Function;
+      34: invokevirtual #556                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;)V
+      37: aload_1
+      38: getstatic     #559                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.FOOD1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      41: getstatic     #302                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.FOOD1_21:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      44: aload_1
+      45: invokedynamic #651,  0            // InvokeDynamic #24:apply:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataContainer;)Ljava/util/function/Function;
+      50: invokevirtual #556                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;)V
+      53: aload_1
+      54: getstatic     #624                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.TRIM1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      57: getstatic     #621                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.TRIM1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      60: invokedynamic #656,  0            // InvokeDynamic #25:apply:()Ljava/util/function/Function;
+      65: invokevirtual #556                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;)V
+      68: aload_1
+      69: getstatic     #588                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.POTION_CONTENTS1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      72: getstatic     #585                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.POTION_CONTENTS1_20_5:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      75: invokevirtual #592                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replaceKey:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)V
+      78: aload_1
+      79: getstatic     #598                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.DAMAGE_RESISTANT1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      82: getstatic     #595                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.FIRE_RESISTANT:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      85: invokedynamic #663,  0            // InvokeDynamic #26:apply:()Ljava/util/function/Function;
+      90: invokevirtual #556                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.replace:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/util/function/Function;)V
+      93: aload_1
+      94: getstatic     #665                // Field NEW_DATA_TO_REMOVE:Ljava/util/List;
+      97: invokevirtual #668                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.remove:(Ljava/util/Collection;)V
+     100: return
+
+  private static com.viaversion.viaversion.util.Unit lambda$downgradeItemData$24(com.viaversion.viaversion.api.minecraft.item.data.DamageResistant1_21_2);
+    Code:
+       0: aload_0
+       1: invokevirtual #674                // Method com/viaversion/viaversion/api/minecraft/item/data/DamageResistant1_21_2.typesTagKey:()Lcom/viaversion/viaversion/util/Key;
+       4: ldc_w         #676                // String is_fire
+       7: invokevirtual #682                // Method com/viaversion/viaversion/util/Key.equals:(Ljava/lang/String;)Z
+      10: ifeq          17
+      13: getstatic     #688                // Field com/viaversion/viaversion/util/Unit.INSTANCE:Lcom/viaversion/viaversion/util/Unit;
+      16: areturn
+      17: aconst_null
+      18: areturn
+
+  private static com.viaversion.viaversion.api.minecraft.item.data.trim.ArmorTrim1_20_5 lambda$downgradeItemData$23(com.viaversion.viaversion.api.minecraft.item.data.trim.ArmorTrim1_20_5);
+    Code:
+       0: aload_0
+       1: invokevirtual #696                // Method com/viaversion/viaversion/api/minecraft/item/data/trim/ArmorTrim1_20_5.material:()Lcom/viaversion/viaversion/api/minecraft/Holder;
+       4: invokeinterface #701,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.isDirect:()Z
+       9: ifeq          32
+      12: aload_0
+      13: invokevirtual #696                // Method com/viaversion/viaversion/api/minecraft/item/data/trim/ArmorTrim1_20_5.material:()Lcom/viaversion/viaversion/api/minecraft/Holder;
+      16: invokeinterface #705,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.value:()Ljava/lang/Object;
+      21: checkcast     #707                // class com/viaversion/viaversion/api/minecraft/item/data/trim/ArmorTrimMaterial1_20_5
+      24: invokevirtual #711                // Method com/viaversion/viaversion/api/minecraft/item/data/trim/ArmorTrimMaterial1_20_5.overrideArmorMaterials:()Ljava/util/Map;
+      27: invokeinterface #716,  1          // InterfaceMethod java/util/Map.clear:()V
+      32: aload_0
+      33: areturn
+
+  private static com.viaversion.viaversion.api.minecraft.item.data.FoodProperties1_20_5 lambda$downgradeItemData$22(com.viaversion.viaversion.api.minecraft.data.StructuredDataContainer, com.viaversion.viaversion.api.minecraft.item.data.FoodProperties1_21_2);
+    Code:
+       0: aload_0
+       1: getstatic     #721                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.CONSUMABLE1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+       4: invokevirtual #307                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.get:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)Ljava/lang/Object;
+       7: checkcast     #723                // class com/viaversion/viaversion/api/minecraft/item/data/consumable/Consumable1_21_2
+      10: astore_2
+      11: aload_0
+      12: getstatic     #727                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.V1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/version/StructuredDataKeys1_21_2;
+      15: getfield      #732                // Field com/viaversion/viaversion/api/minecraft/data/version/StructuredDataKeys1_21_2.useRemainder:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      18: invokevirtual #307                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.get:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)Ljava/lang/Object;
+      21: checkcast     #286                // class com/viaversion/viaversion/api/minecraft/item/Item
+      24: astore_3
+      25: aload_2
+      26: ifnull        36
+      29: aload_2
+      30: invokevirtual #736                // Method com/viaversion/viaversion/api/minecraft/item/data/consumable/Consumable1_21_2.consumeSeconds:()F
+      33: goto          39
+      36: ldc_w         #737                // float 1.6f
+      39: fstore        4
+      41: new           #739                // class java/util/ArrayList
+      44: dup
+      45: invokespecial #740                // Method java/util/ArrayList."<init>":()V
+      48: astore        5
+      50: aload_2
+      51: ifnull        167
+      54: aload_2
+      55: invokevirtual #744                // Method com/viaversion/viaversion/api/minecraft/item/data/consumable/Consumable1_21_2.consumeEffects:()[Lcom/viaversion/viaversion/api/minecraft/item/data/consumable/ConsumeEffect;
+      58: astore        6
+      60: aload         6
+      62: arraylength
+      63: istore        7
+      65: iconst_0
+      66: istore        8
+      68: iload         8
+      70: iload         7
+      72: if_icmpge     167
+      75: aload         6
+      77: iload         8
+      79: aaload
+      80: astore        9
+      82: aload         9
+      84: invokevirtual #753                // Method com/viaversion/viaversion/api/minecraft/item/data/consumable/ConsumeEffect.value:()Ljava/lang/Object;
+      87: astore        11
+      89: aload         11
+      91: instanceof    #755                // class com/viaversion/viaversion/api/minecraft/item/data/consumable/ApplyStatusEffects
+      94: ifeq          161
+      97: aload         11
+      99: checkcast     #755                // class com/viaversion/viaversion/api/minecraft/item/data/consumable/ApplyStatusEffects
+     102: astore        10
+     104: aload         10
+     106: invokevirtual #759                // Method com/viaversion/viaversion/api/minecraft/item/data/consumable/ApplyStatusEffects.effects:()[Lcom/viaversion/viaversion/api/minecraft/item/data/PotionEffect;
+     109: astore        11
+     111: aload         11
+     113: arraylength
+     114: istore        12
+     116: iconst_0
+     117: istore        13
+     119: iload         13
+     121: iload         12
+     123: if_icmpge     161
+     126: aload         11
+     128: iload         13
+     130: aaload
+     131: astore        14
+     133: aload         5
+     135: new           #13                 // class com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5$FoodEffect
+     138: dup
+     139: aload         14
+     141: aload         10
+     143: invokevirtual #764                // Method com/viaversion/viaversion/api/minecraft/item/data/consumable/ApplyStatusEffects.probability:()F
+     146: invokespecial #767                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5$FoodEffect."<init>":(Lcom/viaversion/viaversion/api/minecraft/item/data/PotionEffect;F)V
+     149: invokeinterface #770,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     154: pop
+     155: iinc          13, 1
+     158: goto          119
+     161: iinc          8, 1
+     164: goto          68
+     167: new           #15                 // class com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5
+     170: dup
+     171: aload_1
+     172: invokevirtual #773                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_21_2.nutrition:()I
+     175: aload_1
+     176: invokevirtual #776                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_21_2.saturationModifier:()F
+     179: aload_1
+     180: invokevirtual #779                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_21_2.canAlwaysEat:()Z
+     183: fload         4
+     185: aload_3
+     186: aload         5
+     188: iconst_0
+     189: anewarray     #13                 // class com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5$FoodEffect
+     192: invokeinterface #783,  2          // InterfaceMethod java/util/List.toArray:([Ljava/lang/Object;)[Ljava/lang/Object;
+     197: checkcast     #785                // class "[Lcom/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5$FoodEffect;"
+     200: invokespecial #788                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5."<init>":(IFZFLcom/viaversion/viaversion/api/minecraft/item/Item;[Lcom/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5$FoodEffect;)V
+     203: areturn
+
+  private static com.viaversion.viaversion.api.minecraft.Holder lambda$downgradeItemData$21(com.viaversion.viaversion.api.minecraft.Holder);
+    Code:
+       0: aload_0
+       1: invokeinterface #808,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.hasId:()Z
+       6: ifeq          19
+       9: aload_0
+      10: invokeinterface #811,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.id:()I
+      15: invokestatic  #815                // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.of:(I)Lcom/viaversion/viaversion/api/minecraft/Holder;
+      18: areturn
+      19: aload_0
+      20: invokeinterface #705,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.value:()Ljava/lang/Object;
+      25: checkcast     #817                // class com/viaversion/viaversion/api/minecraft/item/data/Instrument1_21_2
+      28: astore_1
+      29: new           #819                // class com/viaversion/viaversion/api/minecraft/item/data/Instrument1_20_5
+      32: dup
+      33: aload_1
+      34: invokevirtual #822                // Method com/viaversion/viaversion/api/minecraft/item/data/Instrument1_21_2.soundEvent:()Lcom/viaversion/viaversion/api/minecraft/Holder;
+      37: aload_1
+      38: invokevirtual #825                // Method com/viaversion/viaversion/api/minecraft/item/data/Instrument1_21_2.useDuration:()F
+      41: ldc_w         #826                // float 20.0f
+      44: fmul
+      45: f2i
+      46: aload_1
+      47: invokevirtual #829                // Method com/viaversion/viaversion/api/minecraft/item/data/Instrument1_21_2.range:()F
+      50: invokespecial #832                // Method com/viaversion/viaversion/api/minecraft/item/data/Instrument1_20_5."<init>":(Lcom/viaversion/viaversion/api/minecraft/Holder;IF)V
+      53: invokestatic  #835                // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.of:(Ljava/lang/Object;)Lcom/viaversion/viaversion/api/minecraft/Holder;
+      56: areturn
+
+  private static com.viaversion.nbt.tag.Tag lambda$downgradeItemData$20(com.viaversion.viaversion.api.minecraft.item.data.LockCode);
+    Code:
+       0: aload_0
+       1: invokevirtual #844                // Method com/viaversion/viaversion/api/minecraft/item/data/LockCode.tag:()Lcom/viaversion/nbt/tag/CompoundTag;
+       4: astore_1
+       5: aload_1
+       6: ldc_w         #846                // String components
+       9: invokevirtual #850                // Method com/viaversion/nbt/tag/CompoundTag.getCompoundTag:(Ljava/lang/String;)Lcom/viaversion/nbt/tag/CompoundTag;
+      12: astore_2
+      13: aload_2
+      14: ifnonnull     19
+      17: aconst_null
+      18: areturn
+      19: aload_2
+      20: ldc_w         #852                // String custom_name
+      23: invokestatic  #858                // Method com/viaversion/viaversion/util/TagUtil.getNamespacedStringTag:(Lcom/viaversion/nbt/tag/CompoundTag;Ljava/lang/String;)Lcom/viaversion/nbt/tag/StringTag;
+      26: astore_3
+      27: aload_3
+      28: ifnull        44
+      31: aload_3
+      32: invokevirtual #862                // Method com/viaversion/nbt/tag/StringTag.getValue:()Ljava/lang/String;
+      35: ldc_w         #864                // String null
+      38: invokevirtual #868                // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+      41: ifeq          46
+      44: aconst_null
+      45: areturn
+      46: new           #860                // class com/viaversion/nbt/tag/StringTag
+      49: dup
+      50: getstatic     #874                // Field com/viaversion/viaversion/util/SerializerVersion.V1_20_5:Lcom/viaversion/viaversion/util/SerializerVersion;
+      53: aload_3
+      54: invokevirtual #862                // Method com/viaversion/nbt/tag/StringTag.getValue:()Ljava/lang/String;
+      57: invokevirtual #878                // Method com/viaversion/viaversion/util/SerializerVersion.toComponent:(Ljava/lang/String;)Lcom/viaversion/viaversion/libs/mcstructs/text/TextComponent;
+      60: invokevirtual #883                // Method com/viaversion/viaversion/libs/mcstructs/text/TextComponent.asUnformattedString:()Ljava/lang/String;
+      63: invokespecial #886                // Method com/viaversion/nbt/tag/StringTag."<init>":(Ljava/lang/String;)V
+      66: areturn
+
+  private static com.viaversion.viaversion.api.minecraft.item.data.trim.ArmorTrim1_20_5 lambda$updateItemData$19(com.viaversion.viaversion.api.minecraft.item.data.trim.ArmorTrim1_20_5);
+    Code:
+       0: aload_0
+       1: invokevirtual #696                // Method com/viaversion/viaversion/api/minecraft/item/data/trim/ArmorTrim1_20_5.material:()Lcom/viaversion/viaversion/api/minecraft/Holder;
+       4: invokeinterface #701,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.isDirect:()Z
+       9: ifeq          32
+      12: aload_0
+      13: invokevirtual #696                // Method com/viaversion/viaversion/api/minecraft/item/data/trim/ArmorTrim1_20_5.material:()Lcom/viaversion/viaversion/api/minecraft/Holder;
+      16: invokeinterface #705,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.value:()Ljava/lang/Object;
+      21: checkcast     #707                // class com/viaversion/viaversion/api/minecraft/item/data/trim/ArmorTrimMaterial1_20_5
+      24: invokevirtual #711                // Method com/viaversion/viaversion/api/minecraft/item/data/trim/ArmorTrimMaterial1_20_5.overrideArmorMaterials:()Ljava/util/Map;
+      27: invokeinterface #716,  1          // InterfaceMethod java/util/Map.clear:()V
+      32: aload_0
+      33: areturn
+
+  private static com.viaversion.viaversion.api.minecraft.item.data.LockCode lambda$updateItemData$18(com.viaversion.nbt.tag.Tag);
+    Code:
+       0: aload_0
+       1: checkcast     #860                // class com/viaversion/nbt/tag/StringTag
+       4: invokevirtual #862                // Method com/viaversion/nbt/tag/StringTag.getValue:()Ljava/lang/String;
+       7: astore_1
+       8: new           #413                // class com/viaversion/nbt/tag/CompoundTag
+      11: dup
+      12: invokespecial #414                // Method com/viaversion/nbt/tag/CompoundTag."<init>":()V
+      15: astore_2
+      16: new           #413                // class com/viaversion/nbt/tag/CompoundTag
+      19: dup
+      20: invokespecial #414                // Method com/viaversion/nbt/tag/CompoundTag."<init>":()V
+      23: astore_3
+      24: aload_2
+      25: ldc_w         #846                // String components
+      28: aload_3
+      29: invokevirtual #445                // Method com/viaversion/nbt/tag/CompoundTag.put:(Ljava/lang/String;Lcom/viaversion/nbt/tag/Tag;)Lcom/viaversion/nbt/tag/Tag;
+      32: pop
+      33: aload_3
+      34: ldc_w         #852                // String custom_name
+      37: aload_1
+      38: invokestatic  #898                // Method com/viaversion/viaversion/util/ComponentUtil.plainToJson:(Ljava/lang/String;)Lcom/viaversion/viaversion/libs/gson/JsonObject;
+      41: invokevirtual #903                // Method com/viaversion/viaversion/libs/gson/JsonObject.toString:()Ljava/lang/String;
+      44: invokevirtual #428                // Method com/viaversion/nbt/tag/CompoundTag.putString:(Ljava/lang/String;Ljava/lang/String;)V
+      47: new           #840                // class com/viaversion/viaversion/api/minecraft/item/data/LockCode
+      50: dup
+      51: aload_2
+      52: invokespecial #906                // Method com/viaversion/viaversion/api/minecraft/item/data/LockCode."<init>":(Lcom/viaversion/nbt/tag/CompoundTag;)V
+      55: areturn
+
+  private static com.viaversion.viaversion.api.minecraft.item.data.DamageResistant1_21_2 lambda$updateItemData$17(com.viaversion.viaversion.util.Unit);
+    Code:
+       0: new           #670                // class com/viaversion/viaversion/api/minecraft/item/data/DamageResistant1_21_2
+       3: dup
+       4: ldc_w         #909                // String minecraft:is_fire
+       7: invokestatic  #912                // Method com/viaversion/viaversion/util/Key.of:(Ljava/lang/String;)Lcom/viaversion/viaversion/util/Key;
+      10: invokespecial #915                // Method com/viaversion/viaversion/api/minecraft/item/data/DamageResistant1_21_2."<init>":(Lcom/viaversion/viaversion/util/Key;)V
+      13: areturn
+
+  private static void lambda$updateItemData$16(com.viaversion.viaversion.api.minecraft.data.StructuredDataContainer);
+    Code:
+       0: aload_0
+       1: getstatic     #721                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.CONSUMABLE1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+       4: invokevirtual #919                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.setEmpty:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)V
+       7: aload_0
+       8: getstatic     #727                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.V1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/version/StructuredDataKeys1_21_2;
+      11: getfield      #732                // Field com/viaversion/viaversion/api/minecraft/data/version/StructuredDataKeys1_21_2.useRemainder:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      14: invokevirtual #919                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.setEmpty:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;)V
+      17: return
+
+  private static com.viaversion.viaversion.api.minecraft.item.data.FoodProperties1_21_2 lambda$updateItemData$15(com.viaversion.viaversion.api.minecraft.data.StructuredDataContainer, com.viaversion.viaversion.api.minecraft.item.data.FoodProperties1_20_5);
+    Code:
+       0: new           #921                // class com/viaversion/viaversion/api/minecraft/SoundEvent
+       3: dup
+       4: ldc_w         #923                // String minecraft:entity.generic.eat
+       7: aconst_null
+       8: invokespecial #926                // Method com/viaversion/viaversion/api/minecraft/SoundEvent."<init>":(Ljava/lang/String;Ljava/lang/Float;)V
+      11: invokestatic  #835                // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.of:(Ljava/lang/Object;)Lcom/viaversion/viaversion/api/minecraft/Holder;
+      14: astore_2
+      15: aload_1
+      16: invokevirtual #930                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.possibleEffects:()[Lcom/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5$FoodEffect;
+      19: arraylength
+      20: anewarray     #752                // class com/viaversion/viaversion/api/minecraft/item/data/consumable/ConsumeEffect
+      23: astore_3
+      24: iconst_0
+      25: istore        4
+      27: iload         4
+      29: aload_3
+      30: arraylength
+      31: if_icmpge     92
+      34: aload_1
+      35: invokevirtual #930                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.possibleEffects:()[Lcom/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5$FoodEffect;
+      38: iload         4
+      40: aaload
+      41: astore        5
+      43: new           #755                // class com/viaversion/viaversion/api/minecraft/item/data/consumable/ApplyStatusEffects
+      46: dup
+      47: iconst_1
+      48: anewarray     #932                // class com/viaversion/viaversion/api/minecraft/item/data/PotionEffect
+      51: dup
+      52: iconst_0
+      53: aload         5
+      55: invokevirtual #935                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5$FoodEffect.effect:()Lcom/viaversion/viaversion/api/minecraft/item/data/PotionEffect;
+      58: aastore
+      59: aload         5
+      61: invokevirtual #936                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5$FoodEffect.probability:()F
+      64: invokespecial #939                // Method com/viaversion/viaversion/api/minecraft/item/data/consumable/ApplyStatusEffects."<init>":([Lcom/viaversion/viaversion/api/minecraft/item/data/PotionEffect;F)V
+      67: astore        6
+      69: aload_3
+      70: iload         4
+      72: new           #752                // class com/viaversion/viaversion/api/minecraft/item/data/consumable/ConsumeEffect
+      75: dup
+      76: iconst_0
+      77: getstatic     #942                // Field com/viaversion/viaversion/api/minecraft/item/data/consumable/ApplyStatusEffects.TYPE:Lcom/viaversion/viaversion/api/type/Type;
+      80: aload         6
+      82: invokespecial #945                // Method com/viaversion/viaversion/api/minecraft/item/data/consumable/ConsumeEffect."<init>":(ILcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+      85: aastore
+      86: iinc          4, 1
+      89: goto          27
+      92: aload_0
+      93: getstatic     #721                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.CONSUMABLE1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      96: new           #723                // class com/viaversion/viaversion/api/minecraft/item/data/consumable/Consumable1_21_2
+      99: dup
+     100: aload_1
+     101: invokevirtual #947                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.eatSeconds:()F
+     104: iconst_1
+     105: aload_2
+     106: iconst_1
+     107: aload_3
+     108: invokespecial #950                // Method com/viaversion/viaversion/api/minecraft/item/data/consumable/Consumable1_21_2."<init>":(FILcom/viaversion/viaversion/api/minecraft/Holder;Z[Lcom/viaversion/viaversion/api/minecraft/item/data/consumable/ConsumeEffect;)V
+     111: invokevirtual #394                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.set:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/lang/Object;)V
+     114: aload_1
+     115: invokevirtual #311                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.usingConvertsTo:()Lcom/viaversion/viaversion/api/minecraft/item/Item;
+     118: ifnull        135
+     121: aload_0
+     122: getstatic     #727                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.V1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/version/StructuredDataKeys1_21_2;
+     125: getfield      #732                // Field com/viaversion/viaversion/api/minecraft/data/version/StructuredDataKeys1_21_2.useRemainder:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+     128: aload_1
+     129: invokevirtual #311                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.usingConvertsTo:()Lcom/viaversion/viaversion/api/minecraft/item/Item;
+     132: invokevirtual #394                // Method com/viaversion/viaversion/api/minecraft/data/StructuredDataContainer.set:(Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;Ljava/lang/Object;)V
+     135: new           #746                // class com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_21_2
+     138: dup
+     139: aload_1
+     140: invokevirtual #951                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.nutrition:()I
+     143: aload_1
+     144: invokevirtual #952                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.saturationModifier:()F
+     147: aload_1
+     148: invokevirtual #953                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_20_5.canAlwaysEat:()Z
+     151: invokespecial #956                // Method com/viaversion/viaversion/api/minecraft/item/data/FoodProperties1_21_2."<init>":(IFZ)V
+     154: areturn
+
+  private static com.viaversion.viaversion.api.minecraft.Holder lambda$updateItemData$14(com.viaversion.viaversion.api.minecraft.Holder);
+    Code:
+       0: aload_0
+       1: invokeinterface #808,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.hasId:()Z
+       6: ifeq          19
+       9: aload_0
+      10: invokeinterface #811,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.id:()I
+      15: invokestatic  #815                // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.of:(I)Lcom/viaversion/viaversion/api/minecraft/Holder;
+      18: areturn
+      19: aload_0
+      20: invokeinterface #705,  1          // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.value:()Ljava/lang/Object;
+      25: checkcast     #819                // class com/viaversion/viaversion/api/minecraft/item/data/Instrument1_20_5
+      28: astore_1
+      29: new           #817                // class com/viaversion/viaversion/api/minecraft/item/data/Instrument1_21_2
+      32: dup
+      33: aload_1
+      34: invokevirtual #962                // Method com/viaversion/viaversion/api/minecraft/item/data/Instrument1_20_5.soundEvent:()Lcom/viaversion/viaversion/api/minecraft/Holder;
+      37: aload_1
+      38: invokevirtual #964                // Method com/viaversion/viaversion/api/minecraft/item/data/Instrument1_20_5.useDuration:()I
+      41: i2f
+      42: ldc_w         #826                // float 20.0f
+      45: fdiv
+      46: aload_1
+      47: invokevirtual #965                // Method com/viaversion/viaversion/api/minecraft/item/data/Instrument1_20_5.range:()F
+      50: new           #860                // class com/viaversion/nbt/tag/StringTag
+      53: dup
+      54: ldc_w         #424                // String
+      57: invokespecial #886                // Method com/viaversion/nbt/tag/StringTag."<init>":(Ljava/lang/String;)V
+      60: invokespecial #968                // Method com/viaversion/viaversion/api/minecraft/item/data/Instrument1_21_2."<init>":(Lcom/viaversion/viaversion/api/minecraft/Holder;FFLcom/viaversion/nbt/tag/Tag;)V
+      63: invokestatic  #835                // InterfaceMethod com/viaversion/viaversion/api/minecraft/Holder.of:(Ljava/lang/Object;)Lcom/viaversion/viaversion/api/minecraft/Holder;
+      66: areturn
+
+  private static boolean lambda$handleItemToClient$13(com.viaversion.viaversion.libs.fastutil.ints.IntList, com.viaversion.viaversion.libs.fastutil.ints.Int2IntMap$Entry);
+    Code:
+       0: aload_1
+       1: invokeinterface #972,  1          // InterfaceMethod com/viaversion/viaversion/libs/fastutil/ints/Int2IntMap$Entry.getIntValue:()I
+       6: ifne          24
+       9: aload_0
+      10: aload_1
+      11: invokeinterface #975,  1          // InterfaceMethod com/viaversion/viaversion/libs/fastutil/ints/Int2IntMap$Entry.getIntKey:()I
+      16: invokeinterface #978,  2          // InterfaceMethod com/viaversion/viaversion/libs/fastutil/ints/IntList.add:(I)Z
+      21: pop
+      22: iconst_1
+      23: ireturn
+      24: iconst_0
+      25: ireturn
+
+  private void lambda$registerPackets$12(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_1
+       1: getstatic     #985                // Field com/viaversion/viaversion/api/type/Types.CHUNK_POSITION:Lcom/viaversion/viaversion/api/type/Type;
+       4: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+       9: checkcast     #990                // class com/viaversion/viaversion/api/minecraft/ChunkPosition
+      12: astore_2
+      13: aload_1
+      14: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+      19: aload_0
+      20: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+      23: invokeinterface #994,  2          // InterfaceMethod com/viaversion/viaversion/api/connection/UserConnection.storables:(Lcom/viaversion/viaversion/api/protocol/Protocol;)Lcom/viaversion/viaversion/api/connection/ProtocolStorables;
+      28: checkcast     #996                // class com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ProtocolStorables1_21_2
+      31: astore_3
+      32: aload_3
+      33: invokevirtual #1000               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ProtocolStorables1_21_2.chunkLoadTracker:()Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ChunkLoadTracker;
+      36: astore        4
+      38: aload         4
+      40: ifnull        56
+      43: aload         4
+      45: aload_2
+      46: invokevirtual #1003               // Method com/viaversion/viaversion/api/minecraft/ChunkPosition.chunkX:()I
+      49: aload_2
+      50: invokevirtual #1006               // Method com/viaversion/viaversion/api/minecraft/ChunkPosition.chunkZ:()I
+      53: invokevirtual #1012               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ChunkLoadTracker.removeChunk:(II)V
+      56: return
+
+  private void lambda$registerPackets$11(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_0
+       1: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+       4: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+       7: invokevirtual #1020               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.getBlockRewriter:()Lcom/viaversion/viaversion/rewriter/BlockRewriter;
+      10: aload_1
+      11: invokevirtual #1026               // Method com/viaversion/viaversion/rewriter/BlockRewriter.handleChunk1_18:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)Lcom/viaversion/viaversion/api/minecraft/chunks/Chunk;
+      14: astore_2
+      15: aload_0
+      16: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+      19: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+      22: invokevirtual #1030               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.getMappingData:()Lcom/viaversion/viaversion/api/data/MappingData;
+      25: invokeinterface #1036,  1         // InterfaceMethod com/viaversion/viaversion/api/data/MappingData.getBlockEntityMappings:()Lcom/viaversion/viaversion/api/data/FullMappings;
+      30: astore_3
+      31: aload_3
+      32: ifnull        125
+      35: aload_2
+      36: invokeinterface #1042,  1         // InterfaceMethod com/viaversion/viaversion/api/minecraft/chunks/Chunk.blockEntities:()Ljava/util/List;
+      41: astore        4
+      43: iconst_0
+      44: istore        5
+      46: iload         5
+      48: aload         4
+      50: invokeinterface #1045,  1         // InterfaceMethod java/util/List.size:()I
+      55: if_icmpge     125
+      58: aload         4
+      60: iload         5
+      62: invokeinterface #1048,  2         // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+      67: checkcast     #1050               // class com/viaversion/viaversion/api/minecraft/blockentity/BlockEntity
+      70: astore        6
+      72: aload         6
+      74: invokeinterface #1053,  1         // InterfaceMethod com/viaversion/viaversion/api/minecraft/blockentity/BlockEntity.typeId:()I
+      79: istore        7
+      81: aload_3
+      82: iload         7
+      84: iload         7
+      86: invokeinterface #1056,  3         // InterfaceMethod com/viaversion/viaversion/api/data/Mappings.getNewIdOrDefault:(II)I
+      91: istore        8
+      93: iload         7
+      95: iload         8
+      97: if_icmpeq     119
+     100: aload         4
+     102: iload         5
+     104: aload         6
+     106: iload         8
+     108: invokeinterface #1060,  2         // InterfaceMethod com/viaversion/viaversion/api/minecraft/blockentity/BlockEntity.withTypeId:(I)Lcom/viaversion/viaversion/api/minecraft/blockentity/BlockEntity;
+     113: invokeinterface #1063,  3         // InterfaceMethod java/util/List.set:(ILjava/lang/Object;)Ljava/lang/Object;
+     118: pop
+     119: iinc          5, 1
+     122: goto          46
+     125: aload_1
+     126: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+     131: aload_0
+     132: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     135: invokeinterface #994,  2          // InterfaceMethod com/viaversion/viaversion/api/connection/UserConnection.storables:(Lcom/viaversion/viaversion/api/protocol/Protocol;)Lcom/viaversion/viaversion/api/connection/ProtocolStorables;
+     140: checkcast     #996                // class com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ProtocolStorables1_21_2
+     143: astore        4
+     145: aload         4
+     147: invokevirtual #1000               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ProtocolStorables1_21_2.chunkLoadTracker:()Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ChunkLoadTracker;
+     150: astore        5
+     152: aload         5
+     154: ifnonnull     158
+     157: return
+     158: aload         5
+     160: aload_2
+     161: invokeinterface #1066,  1         // InterfaceMethod com/viaversion/viaversion/api/minecraft/chunks/Chunk.getX:()I
+     166: aload_2
+     167: invokeinterface #1069,  1         // InterfaceMethod com/viaversion/viaversion/api/minecraft/chunks/Chunk.getZ:()I
+     172: invokevirtual #1073               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ChunkLoadTracker.isChunkLoaded:(II)Z
+     175: ifeq          304
+     178: aload         4
+     180: invokevirtual #1077               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ProtocolStorables1_21_2.bundleStateTracker:()Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/storage/BundleStateTracker;
+     183: invokevirtual #1082               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/BundleStateTracker.isBundling:()Z
+     186: istore        6
+     188: iload         6
+     190: ifne          213
+     193: aload_1
+     194: getstatic     #1085               // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.BUNDLE_DELIMITER:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+     197: invokeinterface #1089,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.create:(Lcom/viaversion/viaversion/api/protocol/packet/PacketType;)Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;
+     202: astore        7
+     204: aload         7
+     206: ldc           #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     208: invokeinterface #1093,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.send:(Ljava/lang/Class;)V
+     213: aload_1
+     214: getstatic     #1095               // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.FORGET_LEVEL_CHUNK:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+     217: invokeinterface #1089,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.create:(Lcom/viaversion/viaversion/api/protocol/packet/PacketType;)Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;
+     222: astore        7
+     224: aload         7
+     226: getstatic     #985                // Field com/viaversion/viaversion/api/type/Types.CHUNK_POSITION:Lcom/viaversion/viaversion/api/type/Type;
+     229: new           #990                // class com/viaversion/viaversion/api/minecraft/ChunkPosition
+     232: dup
+     233: aload_2
+     234: invokeinterface #1066,  1         // InterfaceMethod com/viaversion/viaversion/api/minecraft/chunks/Chunk.getX:()I
+     239: aload_2
+     240: invokeinterface #1069,  1         // InterfaceMethod com/viaversion/viaversion/api/minecraft/chunks/Chunk.getZ:()I
+     245: invokespecial #1097               // Method com/viaversion/viaversion/api/minecraft/ChunkPosition."<init>":(II)V
+     248: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     253: aload         7
+     255: ldc           #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     257: invokeinterface #1093,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.send:(Ljava/lang/Class;)V
+     262: aload_1
+     263: ldc           #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     265: invokeinterface #1093,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.send:(Ljava/lang/Class;)V
+     270: aload_1
+     271: invokeinterface #266,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.cancel:()V
+     276: iload         6
+     278: ifne          301
+     281: aload_1
+     282: getstatic     #1085               // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.BUNDLE_DELIMITER:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+     285: invokeinterface #1089,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.create:(Lcom/viaversion/viaversion/api/protocol/packet/PacketType;)Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;
+     290: astore        8
+     292: aload         8
+     294: ldc           #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     296: invokeinterface #1093,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.send:(Ljava/lang/Class;)V
+     301: goto          321
+     304: aload         5
+     306: aload_2
+     307: invokeinterface #1066,  1         // InterfaceMethod com/viaversion/viaversion/api/minecraft/chunks/Chunk.getX:()I
+     312: aload_2
+     313: invokeinterface #1069,  1         // InterfaceMethod com/viaversion/viaversion/api/minecraft/chunks/Chunk.getZ:()I
+     318: invokevirtual #1100               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ChunkLoadTracker.addChunk:(II)V
+     321: return
+
+  private void lambda$registerPackets$10(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_1
+       1: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+       4: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+       9: checkcast     #245                // class java/lang/Integer
+      12: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+      15: istore_2
+      16: aload_1
+      17: getstatic     #1115               // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.RECIPE_BOOK_SETTINGS:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+      20: invokeinterface #1089,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.create:(Lcom/viaversion/viaversion/api/protocol/packet/PacketType;)Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;
+      25: astore_3
+      26: iconst_0
+      27: istore        4
+      29: iload         4
+      31: bipush        8
+      33: if_icmpge     63
+      36: aload_3
+      37: getstatic     #1119               // Field com/viaversion/viaversion/api/type/Types.BOOLEAN:Lcom/viaversion/viaversion/api/type/types/BooleanType;
+      40: aload_1
+      41: getstatic     #1119               // Field com/viaversion/viaversion/api/type/Types.BOOLEAN:Lcom/viaversion/viaversion/api/type/types/BooleanType;
+      44: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      49: checkcast     #386                // class java/lang/Boolean
+      52: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+      57: iinc          4, 1
+      60: goto          29
+      63: aload_3
+      64: ldc           #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+      66: invokeinterface #1093,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.send:(Ljava/lang/Class;)V
+      71: aload_1
+      72: getstatic     #1122               // Field com/viaversion/viaversion/api/type/Types.STRING_ARRAY:Lcom/viaversion/viaversion/api/type/Type;
+      75: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      80: checkcast     #1124               // class "[Ljava/lang/String;"
+      83: astore        4
+      85: invokestatic  #1129               // InterfaceMethod java/util/Set.of:()Ljava/util/Set;
+      88: astore        5
+      90: iload_2
+      91: ifne          115
+      94: aload_1
+      95: getstatic     #1122               // Field com/viaversion/viaversion/api/type/Types.STRING_ARRAY:Lcom/viaversion/viaversion/api/type/Type;
+      98: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     103: checkcast     #1124               // class "[Ljava/lang/String;"
+     106: astore        6
+     108: aload         6
+     110: invokestatic  #1132               // InterfaceMethod java/util/Set.of:([Ljava/lang/Object;)Ljava/util/Set;
+     113: astore        5
+     115: aload_1
+     116: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+     121: ldc           #10                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2
+     123: invokeinterface #259,  2          // InterfaceMethod com/viaversion/viaversion/api/connection/UserConnection.get:(Ljava/lang/Class;)Lcom/viaversion/viaversion/api/connection/StorableObject;
+     128: checkcast     #10                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2
+     131: astore        6
+     133: aload         6
+     135: ifnonnull     161
+     138: aload_0
+     139: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     142: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     145: invokevirtual #1136               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.getLogger:()Lcom/viaversion/viaversion/util/ProtocolLogger;
+     148: ldc_w         #1138               // String Recipes not yet sent for recipe add packet
+     151: invokevirtual #1143               // Method com/viaversion/viaversion/util/ProtocolLogger.severe:(Ljava/lang/String;)V
+     154: aload_1
+     155: invokeinterface #266,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.cancel:()V
+     160: return
+     161: aload_1
+     162: invokeinterface #1146,  1         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.clearPacket:()V
+     167: iload_2
+     168: iconst_2
+     169: if_icmpne     277
+     172: aload_1
+     173: getstatic     #1149               // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.RECIPE_BOOK_REMOVE:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+     176: invokeinterface #1153,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.setPacketType:(Lcom/viaversion/viaversion/api/protocol/packet/PacketType;)V
+     181: aload         4
+     183: arraylength
+     184: newarray       int
+     186: astore        7
+     188: iconst_0
+     189: istore        8
+     191: iload         8
+     193: aload         4
+     195: arraylength
+     196: if_icmpge     265
+     199: aload         4
+     201: iload         8
+     203: aaload
+     204: astore        9
+     206: aload         6
+     208: aload         9
+     210: invokevirtual #1156               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2.recipe:(Ljava/lang/String;)Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe;
+     213: astore        10
+     215: aload         10
+     217: ifnonnull     247
+     220: aload_0
+     221: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     224: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     227: invokevirtual #1136               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.getLogger:()Lcom/viaversion/viaversion/util/ProtocolLogger;
+     230: aload         9
+     232: invokedynamic #1167,  0           // InvokeDynamic #27:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+     237: invokevirtual #1143               // Method com/viaversion/viaversion/util/ProtocolLogger.severe:(Ljava/lang/String;)V
+     240: aload_1
+     241: invokeinterface #266,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.cancel:()V
+     246: return
+     247: aload         7
+     249: iload         8
+     251: aload         10
+     253: invokeinterface #1170,  1         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.index:()I
+     258: iastore
+     259: iinc          8, 1
+     262: goto          191
+     265: aload_1
+     266: getstatic     #1173               // Field com/viaversion/viaversion/api/type/Types.VAR_INT_ARRAY_PRIMITIVE:Lcom/viaversion/viaversion/api/type/Type;
+     269: aload         7
+     271: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     276: return
+     277: aload         4
+     279: arraylength
+     280: istore        7
+     282: aload_1
+     283: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     286: iload         7
+     288: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     291: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     296: aload         4
+     298: astore        8
+     300: aload         8
+     302: arraylength
+     303: istore        9
+     305: iconst_0
+     306: istore        10
+     308: iload         10
+     310: iload         9
+     312: if_icmpge     661
+     315: aload         8
+     317: iload         10
+     319: aaload
+     320: astore        11
+     322: aload         6
+     324: aload         11
+     326: invokevirtual #1156               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2.recipe:(Ljava/lang/String;)Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe;
+     329: astore        12
+     331: aload         12
+     333: ifnonnull     342
+     336: iinc          7, -1
+     339: goto          655
+     342: aload_1
+     343: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     346: aload         12
+     348: invokeinterface #1170,  1         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.index:()I
+     353: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     356: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     361: aload_1
+     362: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     365: aload         12
+     367: invokeinterface #1175,  1         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.recipeDisplayId:()I
+     372: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     375: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     380: aload         12
+     382: aload_1
+     383: invokeinterface #1178,  2         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.writeRecipeDisplay:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+     388: aload_1
+     389: getstatic     #1182               // Field com/viaversion/viaversion/api/type/Types.OPTIONAL_VAR_INT:Lcom/viaversion/viaversion/api/type/types/OptionalVarIntType;
+     392: aload         12
+     394: invokeinterface #1185,  1         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.group:()I
+     399: iconst_m1
+     400: if_icmpeq     416
+     403: aload         12
+     405: invokeinterface #1185,  1         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.group:()I
+     410: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     413: goto          417
+     416: aconst_null
+     417: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     422: aload_1
+     423: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     426: aload         12
+     428: invokeinterface #1190,  1         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.category:()I
+     433: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     436: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     441: aload         12
+     443: invokeinterface #1194,  1         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.ingredients:()[[Lcom/viaversion/viaversion/api/minecraft/item/Item;
+     448: astore        13
+     450: aload         13
+     452: ifnull        574
+     455: aload_1
+     456: getstatic     #1119               // Field com/viaversion/viaversion/api/type/Types.BOOLEAN:Lcom/viaversion/viaversion/api/type/types/BooleanType;
+     459: iconst_1
+     460: invokestatic  #390                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     463: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     468: aload         13
+     470: invokestatic  #1200               // Method java/util/Arrays.stream:([Ljava/lang/Object;)Ljava/util/stream/Stream;
+     473: invokedynamic #1209,  0           // InvokeDynamic #28:test:()Ljava/util/function/Predicate;
+     478: invokeinterface #1215,  2         // InterfaceMethod java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+     483: aload         6
+     485: dup
+     486: invokestatic  #1220               // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+     489: pop
+     490: invokedynamic #1229,  0           // InvokeDynamic #29:apply:(Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2;)Ljava/util/function/Function;
+     495: invokeinterface #1233,  2         // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+     500: invokeinterface #1236,  1         // InterfaceMethod java/util/stream/Stream.toList:()Ljava/util/List;
+     505: astore        14
+     507: aload_1
+     508: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     511: aload         14
+     513: invokeinterface #1045,  1         // InterfaceMethod java/util/List.size:()I
+     518: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     521: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     526: aload         14
+     528: invokeinterface #1240,  1         // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+     533: astore        15
+     535: aload         15
+     537: invokeinterface #1247,  1         // InterfaceMethod java/util/Iterator.hasNext:()Z
+     542: ifeq          571
+     545: aload         15
+     547: invokeinterface #1250,  1         // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     552: checkcast     #1252               // class com/viaversion/viaversion/api/minecraft/HolderSet
+     555: astore        16
+     557: aload_1
+     558: getstatic     #1255               // Field com/viaversion/viaversion/api/type/Types.HOLDER_SET:Lcom/viaversion/viaversion/api/type/Type;
+     561: aload         16
+     563: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     568: goto          535
+     571: goto          587
+     574: aload_1
+     575: getstatic     #1119               // Field com/viaversion/viaversion/api/type/Types.BOOLEAN:Lcom/viaversion/viaversion/api/type/types/BooleanType;
+     578: iconst_0
+     579: invokestatic  #390                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     582: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     587: iconst_0
+     588: istore        14
+     590: iload_2
+     591: iconst_1
+     592: if_icmpne     622
+     595: aload         12
+     597: invokeinterface #1258,  1         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.showNotification:()Z
+     602: ifeq          612
+     605: iload         14
+     607: iconst_1
+     608: ior
+     609: i2b
+     610: istore        14
+     612: iload         14
+     614: iconst_2
+     615: ior
+     616: i2b
+     617: istore        14
+     619: goto          641
+     622: aload         5
+     624: aload         11
+     626: invokeinterface #1261,  2         // InterfaceMethod java/util/Set.contains:(Ljava/lang/Object;)Z
+     631: ifeq          641
+     634: iload         14
+     636: iconst_2
+     637: ior
+     638: i2b
+     639: istore        14
+     641: aload_1
+     642: getstatic     #524                // Field com/viaversion/viaversion/api/type/Types.BYTE:Lcom/viaversion/viaversion/api/type/types/ByteType;
+     645: iload         14
+     647: invokestatic  #534                // Method java/lang/Byte.valueOf:(B)Ljava/lang/Byte;
+     650: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     655: iinc          10, 1
+     658: goto          308
+     661: aload_1
+     662: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     665: iconst_0
+     666: iload         7
+     668: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     671: invokeinterface #1264,  4         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.set:(Lcom/viaversion/viaversion/api/type/Type;ILjava/lang/Object;)V
+     676: aload_1
+     677: getstatic     #1119               // Field com/viaversion/viaversion/api/type/Types.BOOLEAN:Lcom/viaversion/viaversion/api/type/types/BooleanType;
+     680: iload_2
+     681: ifne          688
+     684: iconst_1
+     685: goto          689
+     688: iconst_0
+     689: invokestatic  #390                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     692: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     697: return
+
+  private static boolean lambda$registerPackets$9(com.viaversion.viaversion.api.minecraft.item.Item[]);
+    Code:
+       0: aload_0
+       1: arraylength
+       2: ifle          9
+       5: iconst_1
+       6: goto          10
+       9: iconst_0
+      10: ireturn
+
+  private void lambda$registerPackets$8(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_0
+       1: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+       4: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+       7: invokevirtual #1030               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.getMappingData:()Lcom/viaversion/viaversion/api/data/MappingData;
+      10: invokeinterface #1286,  1         // InterfaceMethod com/viaversion/viaversion/api/data/MappingData.getRecipeSerializerMappings:()Lcom/viaversion/viaversion/api/data/FullMappings;
+      15: astore_2
+      16: new           #10                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2
+      19: dup
+      20: aload_0
+      21: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+      24: invokespecial #1287               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2."<init>":(Lcom/viaversion/viaversion/api/protocol/Protocol;)V
+      27: astore_3
+      28: aload_1
+      29: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+      34: aload_3
+      35: invokeinterface #1290,  2         // InterfaceMethod com/viaversion/viaversion/api/connection/UserConnection.put:(Lcom/viaversion/viaversion/api/connection/StorableObject;)V
+      40: aload_1
+      41: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      44: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      49: checkcast     #245                // class java/lang/Integer
+      52: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+      55: istore        4
+      57: iconst_0
+      58: istore        5
+      60: iload         5
+      62: iload         4
+      64: if_icmpge     127
+      67: aload_1
+      68: getstatic     #270                // Field com/viaversion/viaversion/api/type/Types.STRING:Lcom/viaversion/viaversion/api/type/Type;
+      71: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      76: checkcast     #866                // class java/lang/String
+      79: astore        6
+      81: aload_1
+      82: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      85: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      90: checkcast     #245                // class java/lang/Integer
+      93: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+      96: istore        7
+      98: aload_2
+      99: iload         7
+     101: invokeinterface #1295,  2         // InterfaceMethod com/viaversion/viaversion/api/data/FullMappings.identifier:(I)Ljava/lang/String;
+     106: astore        8
+     108: aload_3
+     109: aload         6
+     111: invokevirtual #1298               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2.setCurrentRecipeIdentifier:(Ljava/lang/String;)V
+     114: aload_3
+     115: aload_1
+     116: aload         8
+     118: invokevirtual #1302               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2.handleRecipeType:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;Ljava/lang/String;)V
+     121: iinc          5, 1
+     124: goto          60
+     127: aload_3
+     128: invokevirtual #1305               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2.finalizeRecipes:()V
+     131: aload_3
+     132: aload_1
+     133: invokevirtual #1308               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2.writeUpdateRecipeInputs:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+     136: return
+
+  private void lambda$registerPackets$7(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_1
+       1: getstatic     #1318               // Field com/viaversion/viaversion/api/type/Types.DOUBLE:Lcom/viaversion/viaversion/api/type/types/DoubleType;
+       4: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+       9: checkcast     #1320               // class java/lang/Double
+      12: invokevirtual #1324               // Method java/lang/Double.doubleValue:()D
+      15: invokestatic  #1330               // Method java/lang/Math.floor:(D)D
+      18: d2i
+      19: istore_2
+      20: aload_1
+      21: getstatic     #1318               // Field com/viaversion/viaversion/api/type/Types.DOUBLE:Lcom/viaversion/viaversion/api/type/types/DoubleType;
+      24: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      29: checkcast     #1320               // class java/lang/Double
+      32: invokevirtual #1324               // Method java/lang/Double.doubleValue:()D
+      35: invokestatic  #1330               // Method java/lang/Math.floor:(D)D
+      38: d2i
+      39: istore_3
+      40: aload_1
+      41: getstatic     #1318               // Field com/viaversion/viaversion/api/type/Types.DOUBLE:Lcom/viaversion/viaversion/api/type/types/DoubleType;
+      44: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      49: checkcast     #1320               // class java/lang/Double
+      52: invokevirtual #1324               // Method java/lang/Double.doubleValue:()D
+      55: invokestatic  #1330               // Method java/lang/Math.floor:(D)D
+      58: d2i
+      59: istore        4
+      61: aload_1
+      62: getstatic     #1334               // Field com/viaversion/viaversion/api/type/Types.FLOAT:Lcom/viaversion/viaversion/api/type/types/FloatType;
+      65: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      70: checkcast     #1336               // class java/lang/Float
+      73: invokevirtual #1339               // Method java/lang/Float.floatValue:()F
+      76: fstore        5
+      78: new           #739                // class java/util/ArrayList
+      81: dup
+      82: invokespecial #740                // Method java/util/ArrayList."<init>":()V
+      85: astore        6
+      87: aload_1
+      88: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      91: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      96: checkcast     #245                // class java/lang/Integer
+      99: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+     102: istore        7
+     104: iconst_0
+     105: istore        8
+     107: iload         8
+     109: iload         7
+     111: if_icmpge     199
+     114: iload_2
+     115: aload_1
+     116: getstatic     #524                // Field com/viaversion/viaversion/api/type/Types.BYTE:Lcom/viaversion/viaversion/api/type/types/ByteType;
+     119: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     124: checkcast     #526                // class java/lang/Byte
+     127: invokevirtual #530                // Method java/lang/Byte.byteValue:()B
+     130: iadd
+     131: istore        9
+     133: iload_3
+     134: aload_1
+     135: getstatic     #524                // Field com/viaversion/viaversion/api/type/Types.BYTE:Lcom/viaversion/viaversion/api/type/types/ByteType;
+     138: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     143: checkcast     #526                // class java/lang/Byte
+     146: invokevirtual #530                // Method java/lang/Byte.byteValue:()B
+     149: iadd
+     150: istore        10
+     152: iload         4
+     154: aload_1
+     155: getstatic     #524                // Field com/viaversion/viaversion/api/type/Types.BYTE:Lcom/viaversion/viaversion/api/type/types/ByteType;
+     158: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     163: checkcast     #526                // class java/lang/Byte
+     166: invokevirtual #530                // Method java/lang/Byte.byteValue:()B
+     169: iadd
+     170: istore        11
+     172: aload         6
+     174: new           #1341               // class com/viaversion/viaversion/api/minecraft/BlockPosition
+     177: dup
+     178: iload         9
+     180: iload         10
+     182: iload         11
+     184: invokespecial #1344               // Method com/viaversion/viaversion/api/minecraft/BlockPosition."<init>":(III)V
+     187: invokeinterface #770,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+     192: pop
+     193: iinc          8, 1
+     196: goto          107
+     199: aload_1
+     200: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+     205: aload_0
+     206: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     209: invokeinterface #994,  2          // InterfaceMethod com/viaversion/viaversion/api/connection/UserConnection.storables:(Lcom/viaversion/viaversion/api/protocol/Protocol;)Lcom/viaversion/viaversion/api/connection/ProtocolStorables;
+     214: checkcast     #996                // class com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ProtocolStorables1_21_2
+     217: astore        8
+     219: aload         8
+     221: invokevirtual #1348               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/ProtocolStorables1_21_2.lastExplosionPowerStorage:()Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/storage/LastExplosionPowerStorage;
+     224: astore        9
+     226: aload         9
+     228: ifnull        250
+     231: aload         9
+     233: fload         5
+     235: invokevirtual #1354               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/LastExplosionPowerStorage.setPower:(F)V
+     238: aload         9
+     240: aload         6
+     242: invokeinterface #1045,  1         // InterfaceMethod java/util/List.size:()I
+     247: invokevirtual #1358               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/storage/LastExplosionPowerStorage.setAffectedBlocks:(I)V
+     250: aload_1
+     251: getstatic     #1334               // Field com/viaversion/viaversion/api/type/Types.FLOAT:Lcom/viaversion/viaversion/api/type/types/FloatType;
+     254: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     259: checkcast     #1336               // class java/lang/Float
+     262: invokevirtual #1339               // Method java/lang/Float.floatValue:()F
+     265: fstore        10
+     267: aload_1
+     268: getstatic     #1334               // Field com/viaversion/viaversion/api/type/Types.FLOAT:Lcom/viaversion/viaversion/api/type/types/FloatType;
+     271: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     276: checkcast     #1336               // class java/lang/Float
+     279: invokevirtual #1339               // Method java/lang/Float.floatValue:()F
+     282: fstore        11
+     284: aload_1
+     285: getstatic     #1334               // Field com/viaversion/viaversion/api/type/Types.FLOAT:Lcom/viaversion/viaversion/api/type/types/FloatType;
+     288: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     293: checkcast     #1336               // class java/lang/Float
+     296: invokevirtual #1339               // Method java/lang/Float.floatValue:()F
+     299: fstore        12
+     301: fload         10
+     303: fconst_0
+     304: fcmpl
+     305: ifne          322
+     308: fload         11
+     310: fconst_0
+     311: fcmpl
+     312: ifne          322
+     315: fload         12
+     317: fconst_0
+     318: fcmpl
+     319: ifeq          383
+     322: aload_1
+     323: getstatic     #1119               // Field com/viaversion/viaversion/api/type/Types.BOOLEAN:Lcom/viaversion/viaversion/api/type/types/BooleanType;
+     326: iconst_1
+     327: invokestatic  #390                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     330: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     335: aload_1
+     336: getstatic     #1318               // Field com/viaversion/viaversion/api/type/Types.DOUBLE:Lcom/viaversion/viaversion/api/type/types/DoubleType;
+     339: fload         10
+     341: f2d
+     342: invokestatic  #1361               // Method java/lang/Double.valueOf:(D)Ljava/lang/Double;
+     345: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     350: aload_1
+     351: getstatic     #1318               // Field com/viaversion/viaversion/api/type/Types.DOUBLE:Lcom/viaversion/viaversion/api/type/types/DoubleType;
+     354: fload         11
+     356: f2d
+     357: invokestatic  #1361               // Method java/lang/Double.valueOf:(D)Ljava/lang/Double;
+     360: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     365: aload_1
+     366: getstatic     #1318               // Field com/viaversion/viaversion/api/type/Types.DOUBLE:Lcom/viaversion/viaversion/api/type/types/DoubleType;
+     369: fload         12
+     371: f2d
+     372: invokestatic  #1361               // Method java/lang/Double.valueOf:(D)Ljava/lang/Double;
+     375: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     380: goto          396
+     383: aload_1
+     384: getstatic     #1119               // Field com/viaversion/viaversion/api/type/Types.BOOLEAN:Lcom/viaversion/viaversion/api/type/types/BooleanType;
+     387: iconst_0
+     388: invokestatic  #390                // Method java/lang/Boolean.valueOf:(Z)Ljava/lang/Boolean;
+     391: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     396: aload_1
+     397: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     400: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     405: checkcast     #245                // class java/lang/Integer
+     408: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+     411: istore        13
+     413: iload         13
+     415: iconst_1
+     416: if_icmpeq     425
+     419: iload         13
+     421: iconst_2
+     422: if_icmpne     508
+     425: aload         6
+     427: invokeinterface #1240,  1         // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+     432: astore        14
+     434: aload         14
+     436: invokeinterface #1247,  1         // InterfaceMethod java/util/Iterator.hasNext:()Z
+     441: ifeq          508
+     444: aload         14
+     446: invokeinterface #1250,  1         // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     451: checkcast     #1341               // class com/viaversion/viaversion/api/minecraft/BlockPosition
+     454: astore        15
+     456: getstatic     #1364               // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.BLOCK_UPDATE:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+     459: aload_1
+     460: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+     465: invokestatic  #1367               // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.create:(Lcom/viaversion/viaversion/api/protocol/packet/PacketType;Lcom/viaversion/viaversion/api/connection/UserConnection;)Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;
+     468: astore        16
+     470: aload         16
+     472: getstatic     #1370               // Field com/viaversion/viaversion/api/type/Types.BLOCK_POSITION1_14:Lcom/viaversion/viaversion/api/type/Type;
+     475: aload         15
+     477: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     482: aload         16
+     484: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     487: iconst_0
+     488: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     491: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     496: aload         16
+     498: ldc           #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     500: invokeinterface #1093,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.send:(Ljava/lang/Class;)V
+     505: goto          434
+     508: aload_1
+     509: getstatic     #1376               // Field com/viaversion/viaversion/api/type/types/version/VersionedTypes.V1_21:Lcom/viaversion/viaversion/api/type/types/version/Types1_21;
+     512: getfield      #1382               // Field com/viaversion/viaversion/api/type/types/version/Types1_21.particle:Lcom/viaversion/viaversion/api/type/types/misc/ParticleType;
+     515: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     520: checkcast     #1384               // class com/viaversion/viaversion/api/minecraft/Particle
+     523: astore        14
+     525: aload_1
+     526: getstatic     #1376               // Field com/viaversion/viaversion/api/type/types/version/VersionedTypes.V1_21:Lcom/viaversion/viaversion/api/type/types/version/Types1_21;
+     529: getfield      #1382               // Field com/viaversion/viaversion/api/type/types/version/Types1_21.particle:Lcom/viaversion/viaversion/api/type/types/misc/ParticleType;
+     532: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     537: checkcast     #1384               // class com/viaversion/viaversion/api/minecraft/Particle
+     540: astore        15
+     542: fload         5
+     544: fconst_2
+     545: fcmpl
+     546: iflt          592
+     549: iload         13
+     551: ifeq          592
+     554: aload_0
+     555: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     558: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     561: invokevirtual #1388               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.getParticleRewriter:()Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/ParticleRewriter1_21_2;
+     564: aload_1
+     565: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+     570: aload         15
+     572: invokevirtual #1394               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/ParticleRewriter1_21_2.rewriteParticle:(Lcom/viaversion/viaversion/api/connection/UserConnection;Lcom/viaversion/viaversion/api/minecraft/Particle;)V
+     575: aload_1
+     576: getstatic     #1397               // Field com/viaversion/viaversion/api/type/types/version/VersionedTypes.V1_21_2:Lcom/viaversion/viaversion/api/type/types/version/Types1_20_5;
+     579: getfield      #1400               // Field com/viaversion/viaversion/api/type/types/version/Types1_20_5.particle:Lcom/viaversion/viaversion/api/type/types/misc/ParticleType;
+     582: aload         15
+     584: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     589: goto          627
+     592: aload_0
+     593: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     596: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     599: invokevirtual #1388               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.getParticleRewriter:()Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/ParticleRewriter1_21_2;
+     602: aload_1
+     603: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+     608: aload         14
+     610: invokevirtual #1394               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/ParticleRewriter1_21_2.rewriteParticle:(Lcom/viaversion/viaversion/api/connection/UserConnection;Lcom/viaversion/viaversion/api/minecraft/Particle;)V
+     613: aload_1
+     614: getstatic     #1397               // Field com/viaversion/viaversion/api/type/types/version/VersionedTypes.V1_21_2:Lcom/viaversion/viaversion/api/type/types/version/Types1_20_5;
+     617: getfield      #1400               // Field com/viaversion/viaversion/api/type/types/version/Types1_20_5.particle:Lcom/viaversion/viaversion/api/type/types/misc/ParticleType;
+     620: aload         14
+     622: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     627: aload_0
+     628: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+     631: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+     634: invokevirtual #1404               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.getSoundRewriter:()Lcom/viaversion/viaversion/rewriter/SoundRewriter;
+     637: invokevirtual #1409               // Method com/viaversion/viaversion/rewriter/SoundRewriter.soundHolderHandler:()Lcom/viaversion/viaversion/api/protocol/remapper/PacketHandler;
+     640: aload_1
+     641: invokeinterface #1413,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/remapper/PacketHandler.handle:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+     646: return
+
+  private static void lambda$registerPackets$6(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_0
+       1: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+       4: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+       9: pop
+      10: aload_0
+      11: getstatic     #1370               // Field com/viaversion/viaversion/api/type/Types.BLOCK_POSITION1_14:Lcom/viaversion/viaversion/api/type/Type;
+      14: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      19: pop
+      20: aload_0
+      21: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      24: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      29: pop
+      30: aload_0
+      31: getstatic     #1334               // Field com/viaversion/viaversion/api/type/Types.FLOAT:Lcom/viaversion/viaversion/api/type/types/FloatType;
+      34: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      39: pop
+      40: aload_0
+      41: getstatic     #1334               // Field com/viaversion/viaversion/api/type/Types.FLOAT:Lcom/viaversion/viaversion/api/type/types/FloatType;
+      44: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      49: pop
+      50: aload_0
+      51: getstatic     #1334               // Field com/viaversion/viaversion/api/type/Types.FLOAT:Lcom/viaversion/viaversion/api/type/types/FloatType;
+      54: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      59: pop
+      60: aload_0
+      61: getstatic     #1119               // Field com/viaversion/viaversion/api/type/Types.BOOLEAN:Lcom/viaversion/viaversion/api/type/types/BooleanType;
+      64: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      69: pop
+      70: aload_0
+      71: getstatic     #1119               // Field com/viaversion/viaversion/api/type/Types.BOOLEAN:Lcom/viaversion/viaversion/api/type/types/BooleanType;
+      74: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      79: pop
+      80: return
+
+  private void lambda$registerPackets$5(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #134                // Method varIntToByte:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+       5: aload_0
+       6: aload_1
+       7: invokevirtual #173                // Method convertServerboundRecipeDisplayId:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+      10: return
+
+  private void lambda$registerPackets$4(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #1436               // Method byteToVarInt:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+       5: aload_1
+       6: getstatic     #270                // Field com/viaversion/viaversion/api/type/Types.STRING:Lcom/viaversion/viaversion/api/type/Type;
+       9: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      14: checkcast     #866                // class java/lang/String
+      17: astore_2
+      18: aload_1
+      19: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+      24: ldc           #10                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2
+      26: invokeinterface #259,  2          // InterfaceMethod com/viaversion/viaversion/api/connection/UserConnection.get:(Ljava/lang/Class;)Lcom/viaversion/viaversion/api/connection/StorableObject;
+      31: checkcast     #10                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2
+      34: aload_2
+      35: invokevirtual #1156               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2.recipe:(Ljava/lang/String;)Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe;
+      38: astore_3
+      39: aload_3
+      40: ifnonnull     50
+      43: aload_1
+      44: invokeinterface #266,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.cancel:()V
+      49: return
+      50: aload_1
+      51: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      54: aload_3
+      55: invokeinterface #1175,  1         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.recipeDisplayId:()I
+      60: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      63: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+      68: aload_3
+      69: aload_1
+      70: invokeinterface #1178,  2         // InterfaceMethod com/viaversion/viaversion/protocols/v1_21to1_21_2/rewriter/RecipeRewriter1_21_2$Recipe.writeRecipeDisplay:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+      75: return
+
+  private void lambda$registerPackets$3(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #134                // Method varIntToByte:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+       5: aload_1
+       6: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+       9: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      14: pop
+      15: aload_1
+      16: getstatic     #1440               // Field com/viaversion/viaversion/api/type/Types.SHORT:Lcom/viaversion/viaversion/api/type/types/ShortType;
+      19: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      24: pop
+      25: aload_1
+      26: getstatic     #524                // Field com/viaversion/viaversion/api/type/Types.BYTE:Lcom/viaversion/viaversion/api/type/types/ByteType;
+      29: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      34: pop
+      35: aload_1
+      36: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      39: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      44: pop
+      45: aload_1
+      46: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      49: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      54: checkcast     #245                // class java/lang/Integer
+      57: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+      60: sipush        128
+      63: invokestatic  #1445               // Method com/viaversion/viaversion/util/Limit.max:(II)I
+      66: istore_2
+      67: iconst_0
+      68: istore_3
+      69: iload_3
+      70: iload_2
+      71: if_icmpge     123
+      74: aload_1
+      75: getstatic     #1440               // Field com/viaversion/viaversion/api/type/Types.SHORT:Lcom/viaversion/viaversion/api/type/types/ShortType;
+      78: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      83: pop
+      84: aload_1
+      85: aload_0
+      86: invokevirtual #1449               // Method itemType:()Lcom/viaversion/viaversion/api/type/Type;
+      89: aload_0
+      90: aload_1
+      91: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+      96: aload_1
+      97: aload_0
+      98: invokevirtual #1452               // Method mappedItemType:()Lcom/viaversion/viaversion/api/type/Type;
+     101: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     106: checkcast     #286                // class com/viaversion/viaversion/api/minecraft/item/Item
+     109: invokevirtual #1453               // Method handleItemToServer:(Lcom/viaversion/viaversion/api/connection/UserConnection;Lcom/viaversion/viaversion/api/minecraft/item/Item;)Lcom/viaversion/viaversion/api/minecraft/item/Item;
+     112: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     117: iinc          3, 1
+     120: goto          69
+     123: aload_1
+     124: aload_0
+     125: invokevirtual #1449               // Method itemType:()Lcom/viaversion/viaversion/api/type/Type;
+     128: aload_0
+     129: aload_1
+     130: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+     135: aload_1
+     136: aload_0
+     137: invokevirtual #1452               // Method mappedItemType:()Lcom/viaversion/viaversion/api/type/Type;
+     140: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     145: checkcast     #286                // class com/viaversion/viaversion/api/minecraft/item/Item
+     148: invokevirtual #1453               // Method handleItemToServer:(Lcom/viaversion/viaversion/api/connection/UserConnection;Lcom/viaversion/viaversion/api/minecraft/item/Item;)Lcom/viaversion/viaversion/api/minecraft/item/Item;
+     151: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     156: return
+
+  private void lambda$registerPackets$2(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #1436               // Method byteToVarInt:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+       5: aload_1
+       6: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+       9: iconst_0
+      10: invokeinterface #1457,  3         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.get:(Lcom/viaversion/viaversion/api/type/Type;I)Ljava/lang/Object;
+      15: checkcast     #245                // class java/lang/Integer
+      18: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+      21: istore_2
+      22: iload_2
+      23: iconst_m1
+      24: if_icmpne     75
+      27: aload_1
+      28: getstatic     #1460               // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.SET_CURSOR_ITEM:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+      31: invokeinterface #1153,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.setPacketType:(Lcom/viaversion/viaversion/api/protocol/packet/PacketType;)V
+      36: aload_1
+      37: invokeinterface #1463,  1         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.resetReader:()V
+      42: aload_1
+      43: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      46: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      51: pop
+      52: aload_1
+      53: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      56: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      61: pop
+      62: aload_1
+      63: getstatic     #1440               // Field com/viaversion/viaversion/api/type/Types.SHORT:Lcom/viaversion/viaversion/api/type/types/ShortType;
+      66: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      71: pop
+      72: goto          166
+      75: iload_2
+      76: bipush        -2
+      78: if_icmpne     146
+      81: aload_1
+      82: getstatic     #1466               // Field com/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2.SET_PLAYER_INVENTORY:Lcom/viaversion/viaversion/protocols/v1_21to1_21_2/packet/ClientboundPackets1_21_2;
+      85: invokeinterface #1153,  2         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.setPacketType:(Lcom/viaversion/viaversion/api/protocol/packet/PacketType;)V
+      90: aload_1
+      91: invokeinterface #1463,  1         // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.resetReader:()V
+      96: aload_1
+      97: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     100: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     105: pop
+     106: aload_1
+     107: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     110: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     115: pop
+     116: aload_1
+     117: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     120: aload_1
+     121: getstatic     #1440               // Field com/viaversion/viaversion/api/type/Types.SHORT:Lcom/viaversion/viaversion/api/type/types/ShortType;
+     124: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     129: checkcast     #510                // class java/lang/Short
+     132: invokevirtual #514                // Method java/lang/Short.shortValue:()S
+     135: invokestatic  #517                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+     138: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+     143: goto          166
+     146: aload_1
+     147: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+     150: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     155: pop
+     156: aload_1
+     157: getstatic     #1440               // Field com/viaversion/viaversion/api/type/Types.SHORT:Lcom/viaversion/viaversion/api/type/types/ShortType;
+     160: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+     165: pop
+     166: aload_0
+     167: aload_1
+     168: invokevirtual #1469               // Method passthroughClientboundItem:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+     171: return
+
+  private void lambda$registerPackets$1(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #103                // Method unsignedByteToVarInt:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+       5: aload_1
+       6: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+       9: invokeinterface #988,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.passthrough:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      14: pop
+      15: aload_1
+      16: aload_0
+      17: invokevirtual #1472               // Method itemArrayType:()Lcom/viaversion/viaversion/api/type/Type;
+      20: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      25: checkcast     #1473               // class "[Lcom/viaversion/viaversion/api/minecraft/item/Item;"
+      28: astore_2
+      29: aload_1
+      30: aload_0
+      31: invokevirtual #1476               // Method mappedItemArrayType:()Lcom/viaversion/viaversion/api/type/Type;
+      34: aload_2
+      35: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+      40: iconst_0
+      41: istore_3
+      42: iload_3
+      43: aload_2
+      44: arraylength
+      45: if_icmpge     70
+      48: aload_2
+      49: iload_3
+      50: aload_0
+      51: aload_1
+      52: invokeinterface #253,  1          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.user:()Lcom/viaversion/viaversion/api/connection/UserConnection;
+      57: aload_2
+      58: iload_3
+      59: aaload
+      60: invokevirtual #312                // Method handleItemToClient:(Lcom/viaversion/viaversion/api/connection/UserConnection;Lcom/viaversion/viaversion/api/minecraft/item/Item;)Lcom/viaversion/viaversion/api/minecraft/item/Item;
+      63: aastore
+      64: iinc          3, 1
+      67: goto          42
+      70: aload_0
+      71: aload_1
+      72: invokevirtual #1469               // Method passthroughClientboundItem:(Lcom/viaversion/viaversion/api/protocol/packet/PacketWrapper;)V
+      75: return
+
+  private void lambda$registerPackets$0(com.viaversion.viaversion.api.protocol.packet.PacketWrapper) throws com.viaversion.viaversion.exception.InformativeException;
+    Code:
+       0: aload_0
+       1: getfield      #52                 // Field protocol:Lcom/viaversion/viaversion/api/protocol/Protocol;
+       4: checkcast     #54                 // class com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2
+       7: invokevirtual #1030               // Method com/viaversion/viaversion/protocols/v1_21to1_21_2/Protocol1_21To1_21_2.getMappingData:()Lcom/viaversion/viaversion/api/data/MappingData;
+      10: astore_2
+      11: aload_1
+      12: getstatic     #237                // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+      15: invokeinterface #243,  2          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.read:(Lcom/viaversion/viaversion/api/type/Type;)Ljava/lang/Object;
+      20: checkcast     #245                // class java/lang/Integer
+      23: invokevirtual #249                // Method java/lang/Integer.intValue:()I
+      26: istore_3
+      27: aload_2
+      28: iload_3
+      29: invokeinterface #1481,  2         // InterfaceMethod com/viaversion/viaversion/api/data/MappingData.getNewItemId:(I)I
+      34: istore        4
+      36: aload_1
+      37: getstatic     #270                // Field com/viaversion/viaversion/api/type/Types.STRING:Lcom/viaversion/viaversion/api/type/Type;
+      40: aload_2
+      41: invokeinterface #1484,  1         // InterfaceMethod com/viaversion/viaversion/api/data/MappingData.getFullItemMappings:()Lcom/viaversion/viaversion/api/data/FullMappings;
+      46: iload         4
+      48: invokeinterface #1487,  2         // InterfaceMethod com/viaversion/viaversion/api/data/FullMappings.mappedIdentifier:(I)Ljava/lang/String;
+      53: invokeinterface #278,  3          // InterfaceMethod com/viaversion/viaversion/api/protocol/packet/PacketWrapper.write:(Lcom/viaversion/viaversion/api/type/Type;Ljava/lang/Object;)V
+      58: return
+
+  static {};
+    Code:
+       0: getstatic     #1495               // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.REPAIRABLE:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+       3: getstatic     #1498               // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.ENCHANTABLE:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+       6: getstatic     #721                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.CONSUMABLE1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+       9: getstatic     #727                // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.V1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/version/StructuredDataKeys1_21_2;
+      12: getfield      #732                // Field com/viaversion/viaversion/api/minecraft/data/version/StructuredDataKeys1_21_2.useRemainder:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      15: getstatic     #1501               // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.USE_COOLDOWN:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      18: getstatic     #1504               // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.ITEM_MODEL:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      21: getstatic     #1507               // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.EQUIPPABLE1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      24: getstatic     #1510               // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.GLIDER:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      27: getstatic     #1513               // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.TOOLTIP_STYLE:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      30: getstatic     #1516               // Field com/viaversion/viaversion/api/minecraft/data/StructuredDataKey.DEATH_PROTECTION1_21_2:Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+      33: invokestatic  #1519               // InterfaceMethod java/util/List.of:(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/List;
+      36: putstatic     #665                // Field NEW_DATA_TO_REMOVE:Ljava/util/List;
+      39: return
+}

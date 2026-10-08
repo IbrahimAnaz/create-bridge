@@ -1,0 +1,372 @@
+Classfile jar:file:///C:/Users/ibrah/Downloads/crt%20aro/headless_server/viaproxy/ViaProxy.jar!/com/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType.class
+  Last modified 01-Feb-1980; size 4450 bytes
+  SHA-256 checksum b1d7eec041f0275f2d604873187dd6f1fcea58f6c6458adda457adea6b330408
+  Compiled from "LengthPrefixedStructuredDataType.java"
+public class com.viaversion.viaversion.api.type.types.item.LengthPrefixedStructuredDataType extends com.viaversion.viaversion.api.type.Type<com.viaversion.viaversion.api.minecraft.data.StructuredData<?>> implements com.viaversion.viaversion.api.type.types.item.StructuredDataTypeBase
+  minor version: 0
+  major version: 61
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #10                         // com/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType
+  super_class: #4                         // com/viaversion/viaversion/api/type/Type
+  interfaces: 1, fields: 1, methods: 6, attributes: 4
+Constant pool:
+    #1 = Class              #2            // com/viaversion/viaversion/api/minecraft/data/StructuredData
+    #2 = Utf8               com/viaversion/viaversion/api/minecraft/data/StructuredData
+    #3 = Methodref          #4.#5         // com/viaversion/viaversion/api/type/Type."<init>":(Ljava/lang/Class;)V
+    #4 = Class              #6            // com/viaversion/viaversion/api/type/Type
+    #5 = NameAndType        #7:#8         // "<init>":(Ljava/lang/Class;)V
+    #6 = Utf8               com/viaversion/viaversion/api/type/Type
+    #7 = Utf8               <init>
+    #8 = Utf8               (Ljava/lang/Class;)V
+    #9 = Fieldref           #10.#11       // com/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType.wrapped:Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+   #10 = Class              #12           // com/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType
+   #11 = NameAndType        #13:#14       // wrapped:Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+   #12 = Utf8               com/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType
+   #13 = Utf8               wrapped
+   #14 = Utf8               Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+   #15 = Fieldref           #16.#17       // com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+   #16 = Class              #18           // com/viaversion/viaversion/api/type/Types
+   #17 = NameAndType        #19:#20       // VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+   #18 = Utf8               com/viaversion/viaversion/api/type/Types
+   #19 = Utf8               VAR_INT
+   #20 = Utf8               Lcom/viaversion/viaversion/api/type/types/VarIntType;
+   #21 = InterfaceMethodref #1.#22        // com/viaversion/viaversion/api/minecraft/data/StructuredData.id:()I
+   #22 = NameAndType        #23:#24       // id:()I
+   #23 = Utf8               id
+   #24 = Utf8               ()I
+   #25 = Methodref          #26.#27       // com/viaversion/viaversion/api/type/types/VarIntType.writePrimitive:(Lio/netty/buffer/ByteBuf;I)V
+   #26 = Class              #28           // com/viaversion/viaversion/api/type/types/VarIntType
+   #27 = NameAndType        #29:#30       // writePrimitive:(Lio/netty/buffer/ByteBuf;I)V
+   #28 = Utf8               com/viaversion/viaversion/api/type/types/VarIntType
+   #29 = Utf8               writePrimitive
+   #30 = Utf8               (Lio/netty/buffer/ByteBuf;I)V
+   #31 = Methodref          #32.#33       // io/netty/buffer/ByteBuf.alloc:()Lio/netty/buffer/ByteBufAllocator;
+   #32 = Class              #34           // io/netty/buffer/ByteBuf
+   #33 = NameAndType        #35:#36       // alloc:()Lio/netty/buffer/ByteBufAllocator;
+   #34 = Utf8               io/netty/buffer/ByteBuf
+   #35 = Utf8               alloc
+   #36 = Utf8               ()Lio/netty/buffer/ByteBufAllocator;
+   #37 = InterfaceMethodref #38.#39       // io/netty/buffer/ByteBufAllocator.buffer:()Lio/netty/buffer/ByteBuf;
+   #38 = Class              #40           // io/netty/buffer/ByteBufAllocator
+   #39 = NameAndType        #41:#42       // buffer:()Lio/netty/buffer/ByteBuf;
+   #40 = Utf8               io/netty/buffer/ByteBufAllocator
+   #41 = Utf8               buffer
+   #42 = Utf8               ()Lio/netty/buffer/ByteBuf;
+   #43 = InterfaceMethodref #1.#44        // com/viaversion/viaversion/api/minecraft/data/StructuredData.write:(Lio/netty/buffer/ByteBuf;)V
+   #44 = NameAndType        #45:#46       // write:(Lio/netty/buffer/ByteBuf;)V
+   #45 = Utf8               write
+   #46 = Utf8               (Lio/netty/buffer/ByteBuf;)V
+   #47 = Methodref          #32.#48       // io/netty/buffer/ByteBuf.readableBytes:()I
+   #48 = NameAndType        #49:#24       // readableBytes:()I
+   #49 = Utf8               readableBytes
+   #50 = Methodref          #32.#51       // io/netty/buffer/ByteBuf.writeBytes:(Lio/netty/buffer/ByteBuf;)Lio/netty/buffer/ByteBuf;
+   #51 = NameAndType        #52:#53       // writeBytes:(Lio/netty/buffer/ByteBuf;)Lio/netty/buffer/ByteBuf;
+   #52 = Utf8               writeBytes
+   #53 = Utf8               (Lio/netty/buffer/ByteBuf;)Lio/netty/buffer/ByteBuf;
+   #54 = Methodref          #32.#55       // io/netty/buffer/ByteBuf.release:()Z
+   #55 = NameAndType        #56:#57       // release:()Z
+   #56 = Utf8               release
+   #57 = Utf8               ()Z
+   #58 = Methodref          #26.#59       // com/viaversion/viaversion/api/type/types/VarIntType.readPrimitive:(Lio/netty/buffer/ByteBuf;)I
+   #59 = NameAndType        #60:#61       // readPrimitive:(Lio/netty/buffer/ByteBuf;)I
+   #60 = Utf8               readPrimitive
+   #61 = Utf8               (Lio/netty/buffer/ByteBuf;)I
+   #62 = Methodref          #10.#63       // com/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType.key:(I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+   #63 = NameAndType        #64:#65       // key:(I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+   #64 = Utf8               key
+   #65 = Utf8               (I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+   #66 = Class              #67           // java/lang/IllegalArgumentException
+   #67 = Utf8               java/lang/IllegalArgumentException
+   #68 = InvokeDynamic      #0:#69        // #0:makeConcatWithConstants:(I)Ljava/lang/String;
+   #69 = NameAndType        #70:#71       // makeConcatWithConstants:(I)Ljava/lang/String;
+   #70 = Utf8               makeConcatWithConstants
+   #71 = Utf8               (I)Ljava/lang/String;
+   #72 = Methodref          #66.#73       // java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+   #73 = NameAndType        #7:#74        // "<init>":(Ljava/lang/String;)V
+   #74 = Utf8               (Ljava/lang/String;)V
+   #75 = Methodref          #32.#76       // io/netty/buffer/ByteBuf.readSlice:(I)Lio/netty/buffer/ByteBuf;
+   #76 = NameAndType        #77:#78       // readSlice:(I)Lio/netty/buffer/ByteBuf;
+   #77 = Utf8               readSlice
+   #78 = Utf8               (I)Lio/netty/buffer/ByteBuf;
+   #79 = Methodref          #80.#81       // com/viaversion/viaversion/api/type/types/item/StructuredDataType.readData:(Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+   #80 = Class              #82           // com/viaversion/viaversion/api/type/types/item/StructuredDataType
+   #81 = NameAndType        #83:#84       // readData:(Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+   #82 = Utf8               com/viaversion/viaversion/api/type/types/item/StructuredDataType
+   #83 = Utf8               readData
+   #84 = Utf8               (Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+   #85 = Methodref          #80.#63       // com/viaversion/viaversion/api/type/types/item/StructuredDataType.key:(I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+   #86 = Methodref          #10.#87       // com/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType.read:(Lio/netty/buffer/ByteBuf;)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+   #87 = NameAndType        #88:#89       // read:(Lio/netty/buffer/ByteBuf;)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+   #88 = Utf8               read
+   #89 = Utf8               (Lio/netty/buffer/ByteBuf;)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+   #90 = Methodref          #10.#91       // com/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType.write:(Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;)V
+   #91 = NameAndType        #45:#92       // write:(Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;)V
+   #92 = Utf8               (Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;)V
+   #93 = Class              #94           // com/viaversion/viaversion/api/type/types/item/StructuredDataTypeBase
+   #94 = Utf8               com/viaversion/viaversion/api/type/types/item/StructuredDataTypeBase
+   #95 = Utf8               (Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;)V
+   #96 = Utf8               Code
+   #97 = Utf8               LineNumberTable
+   #98 = Utf8               LocalVariableTable
+   #99 = Utf8               this
+  #100 = Utf8               Lcom/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType;
+  #101 = Utf8               dataType
+  #102 = Utf8               Lio/netty/buffer/ByteBuf;
+  #103 = Utf8               value
+  #104 = Utf8               Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+  #105 = Utf8               tempBuf
+  #106 = Utf8               LocalVariableTypeTable
+  #107 = Utf8               Lcom/viaversion/viaversion/api/minecraft/data/StructuredData<*>;
+  #108 = Utf8               StackMapTable
+  #109 = Class              #110          // java/lang/Throwable
+  #110 = Utf8               java/lang/Throwable
+  #111 = Utf8               Signature
+  #112 = Utf8               (Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredData<*>;)V
+  #113 = Utf8               I
+  #114 = Utf8               Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+  #115 = Utf8               size
+  #116 = Utf8               slicedBuf
+  #117 = Utf8               Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey<*>;
+  #118 = Class              #119          // com/viaversion/viaversion/api/minecraft/data/StructuredDataKey
+  #119 = Utf8               com/viaversion/viaversion/api/minecraft/data/StructuredDataKey
+  #120 = Utf8               (Lio/netty/buffer/ByteBuf;)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData<*>;
+  #121 = Utf8               (I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey<*>;
+  #122 = Utf8               RuntimeVisibleTypeAnnotations
+  #123 = Utf8               Lorg/checkerframework/checker/nullness/qual/Nullable;
+  #124 = Utf8               (Lio/netty/buffer/ByteBuf;)Ljava/lang/Object;
+  #125 = Utf8               (Lio/netty/buffer/ByteBuf;Ljava/lang/Object;)V
+  #126 = Utf8               Lcom/viaversion/viaversion/api/type/Type<Lcom/viaversion/viaversion/api/minecraft/data/StructuredData<*>;>;Lcom/viaversion/viaversion/api/type/types/item/StructuredDataTypeBase;
+  #127 = Utf8               SourceFile
+  #128 = Utf8               LengthPrefixedStructuredDataType.java
+  #129 = Utf8               BootstrapMethods
+  #130 = MethodHandle       6:#131        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #131 = Methodref          #132.#133     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #132 = Class              #134          // java/lang/invoke/StringConcatFactory
+  #133 = NameAndType        #70:#135      // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #134 = Utf8               java/lang/invoke/StringConcatFactory
+  #135 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #136 = String             #137          // No data component serializer found for id \u0001
+  #137 = Utf8               No data component serializer found for id \u0001
+  #138 = Utf8               InnerClasses
+  #139 = Class              #140          // java/lang/invoke/MethodHandles$Lookup
+  #140 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #141 = Class              #142          // java/lang/invoke/MethodHandles
+  #142 = Utf8               java/lang/invoke/MethodHandles
+  #143 = Utf8               Lookup
+{
+  private final com.viaversion.viaversion.api.type.types.item.StructuredDataType wrapped;
+    descriptor: Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+    flags: (0x0012) ACC_PRIVATE, ACC_FINAL
+
+  public com.viaversion.viaversion.api.type.types.item.LengthPrefixedStructuredDataType(com.viaversion.viaversion.api.type.types.item.StructuredDataType);
+    descriptor: (Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: ldc           #1                  // class com/viaversion/viaversion/api/minecraft/data/StructuredData
+         3: invokespecial #3                  // Method com/viaversion/viaversion/api/type/Type."<init>":(Ljava/lang/Class;)V
+         6: aload_0
+         7: aload_1
+         8: putfield      #9                  // Field wrapped:Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+        11: return
+      LineNumberTable:
+        line 40: 0
+        line 41: 6
+        line 42: 11
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      12     0  this   Lcom/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType;
+            0      12     1 dataType   Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+
+  public void write(io.netty.buffer.ByteBuf, com.viaversion.viaversion.api.minecraft.data.StructuredData<?>);
+    descriptor: (Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=5, args_size=3
+         0: getstatic     #15                 // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+         3: aload_1
+         4: aload_2
+         5: invokeinterface #21,  1           // InterfaceMethod com/viaversion/viaversion/api/minecraft/data/StructuredData.id:()I
+        10: invokevirtual #25                 // Method com/viaversion/viaversion/api/type/types/VarIntType.writePrimitive:(Lio/netty/buffer/ByteBuf;I)V
+        13: aload_1
+        14: invokevirtual #31                 // Method io/netty/buffer/ByteBuf.alloc:()Lio/netty/buffer/ByteBufAllocator;
+        17: invokeinterface #37,  1           // InterfaceMethod io/netty/buffer/ByteBufAllocator.buffer:()Lio/netty/buffer/ByteBuf;
+        22: astore_3
+        23: aload_2
+        24: aload_3
+        25: invokeinterface #43,  2           // InterfaceMethod com/viaversion/viaversion/api/minecraft/data/StructuredData.write:(Lio/netty/buffer/ByteBuf;)V
+        30: getstatic     #15                 // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+        33: aload_1
+        34: aload_3
+        35: invokevirtual #47                 // Method io/netty/buffer/ByteBuf.readableBytes:()I
+        38: invokevirtual #25                 // Method com/viaversion/viaversion/api/type/types/VarIntType.writePrimitive:(Lio/netty/buffer/ByteBuf;I)V
+        41: aload_1
+        42: aload_3
+        43: invokevirtual #50                 // Method io/netty/buffer/ByteBuf.writeBytes:(Lio/netty/buffer/ByteBuf;)Lio/netty/buffer/ByteBuf;
+        46: pop
+        47: aload_3
+        48: invokevirtual #54                 // Method io/netty/buffer/ByteBuf.release:()Z
+        51: pop
+        52: goto          65
+        55: astore        4
+        57: aload_3
+        58: invokevirtual #54                 // Method io/netty/buffer/ByteBuf.release:()Z
+        61: pop
+        62: aload         4
+        64: athrow
+        65: return
+      Exception table:
+         from    to  target type
+            23    47    55   any
+            55    57    55   any
+      LineNumberTable:
+        line 46: 0
+        line 49: 13
+        line 51: 23
+        line 52: 30
+        line 53: 41
+        line 55: 47
+        line 56: 52
+        line 55: 55
+        line 56: 62
+        line 57: 65
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      66     0  this   Lcom/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType;
+            0      66     1 buffer   Lio/netty/buffer/ByteBuf;
+            0      66     2 value   Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+           23      43     3 tempBuf   Lio/netty/buffer/ByteBuf;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0      66     2 value   Lcom/viaversion/viaversion/api/minecraft/data/StructuredData<*>;
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 55
+          locals = [ class com/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType, class io/netty/buffer/ByteBuf, class com/viaversion/viaversion/api/minecraft/data/StructuredData, class io/netty/buffer/ByteBuf ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 9 /* same */
+    Signature: #112                         // (Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredData<*>;)V
+
+  public com.viaversion.viaversion.api.minecraft.data.StructuredData<?> read(io.netty.buffer.ByteBuf);
+    descriptor: (Lio/netty/buffer/ByteBuf;)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=6, args_size=2
+         0: getstatic     #15                 // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+         3: aload_1
+         4: invokevirtual #58                 // Method com/viaversion/viaversion/api/type/types/VarIntType.readPrimitive:(Lio/netty/buffer/ByteBuf;)I
+         7: istore_2
+         8: aload_0
+         9: iload_2
+        10: invokevirtual #62                 // Method key:(I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+        13: astore_3
+        14: aload_3
+        15: ifnonnull     32
+        18: new           #66                 // class java/lang/IllegalArgumentException
+        21: dup
+        22: iload_2
+        23: invokedynamic #68,  0             // InvokeDynamic #0:makeConcatWithConstants:(I)Ljava/lang/String;
+        28: invokespecial #72                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        31: athrow
+        32: getstatic     #15                 // Field com/viaversion/viaversion/api/type/Types.VAR_INT:Lcom/viaversion/viaversion/api/type/types/VarIntType;
+        35: aload_1
+        36: invokevirtual #58                 // Method com/viaversion/viaversion/api/type/types/VarIntType.readPrimitive:(Lio/netty/buffer/ByteBuf;)I
+        39: istore        4
+        41: aload_1
+        42: iload         4
+        44: invokevirtual #75                 // Method io/netty/buffer/ByteBuf.readSlice:(I)Lio/netty/buffer/ByteBuf;
+        47: astore        5
+        49: aload_0
+        50: getfield      #9                  // Field wrapped:Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+        53: aload         5
+        55: aload_3
+        56: iload_2
+        57: invokevirtual #79                 // Method com/viaversion/viaversion/api/type/types/item/StructuredDataType.readData:(Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+        60: areturn
+      LineNumberTable:
+        line 61: 0
+        line 62: 8
+        line 63: 14
+        line 64: 18
+        line 67: 32
+        line 68: 41
+        line 69: 49
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      61     0  this   Lcom/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType;
+            0      61     1 buffer   Lio/netty/buffer/ByteBuf;
+            8      53     2    id   I
+           14      47     3   key   Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+           41      20     4  size   I
+           49      12     5 slicedBuf   Lio/netty/buffer/ByteBuf;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           14      47     3   key   Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey<*>;
+      StackMapTable: number_of_entries = 1
+        frame_type = 253 /* append */
+          offset_delta = 32
+          locals = [ int, class com/viaversion/viaversion/api/minecraft/data/StructuredDataKey ]
+    Signature: #120                         // (Lio/netty/buffer/ByteBuf;)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData<*>;
+
+  public com.viaversion.viaversion.api.minecraft.data.StructuredDataKey<?> key(int);
+    descriptor: (I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: getfield      #9                  // Field wrapped:Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+         4: iload_1
+         5: invokevirtual #85                 // Method com/viaversion/viaversion/api/type/types/item/StructuredDataType.key:(I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey;
+         8: areturn
+      LineNumberTable:
+        line 74: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lcom/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType;
+            0       9     1    id   I
+    Signature: #121                         // (I)Lcom/viaversion/viaversion/api/minecraft/data/StructuredDataKey<*>;
+    RuntimeVisibleTypeAnnotations:
+      0: #123(): METHOD_RETURN
+        org.checkerframework.checker.nullness.qual.Nullable
+
+  public java.lang.Object read(io.netty.buffer.ByteBuf);
+    descriptor: (Lio/netty/buffer/ByteBuf;)Ljava/lang/Object;
+    flags: (0x1041) ACC_PUBLIC, ACC_BRIDGE, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokevirtual #86                 // Method read:(Lio/netty/buffer/ByteBuf;)Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;
+         5: areturn
+      LineNumberTable:
+        line 35: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lcom/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType;
+
+  public void write(io.netty.buffer.ByteBuf, java.lang.Object);
+    descriptor: (Lio/netty/buffer/ByteBuf;Ljava/lang/Object;)V
+    flags: (0x1041) ACC_PUBLIC, ACC_BRIDGE, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=3, args_size=3
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: checkcast     #1                  // class com/viaversion/viaversion/api/minecraft/data/StructuredData
+         6: invokevirtual #90                 // Method write:(Lio/netty/buffer/ByteBuf;Lcom/viaversion/viaversion/api/minecraft/data/StructuredData;)V
+         9: return
+      LineNumberTable:
+        line 35: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      10     0  this   Lcom/viaversion/viaversion/api/type/types/item/LengthPrefixedStructuredDataType;
+}
+Signature: #126                         // Lcom/viaversion/viaversion/api/type/Type<Lcom/viaversion/viaversion/api/minecraft/data/StructuredData<*>;>;Lcom/viaversion/viaversion/api/type/types/item/StructuredDataTypeBase;
+SourceFile: "LengthPrefixedStructuredDataType.java"
+BootstrapMethods:
+  0: #130 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #136 No data component serializer found for id \u0001
+InnerClasses:
+  public static final #143= #139 of #141; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles

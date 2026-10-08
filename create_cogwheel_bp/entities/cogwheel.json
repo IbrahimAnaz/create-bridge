@@ -1,0 +1,171 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "create:cogwheel",
+      "is_spawnable": true,
+      "is_summonable": true
+    },
+    "component_groups": {
+      "stopped_state": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_equipment",
+                      "subject": "other",
+                      "domain": "hand",
+                      "value": "create:wrench"
+                    }
+                  ]
+                },
+                "event": "event_speed_32"
+              },
+              "use_item": false,
+              "interact_text": "Release Brake (Spin)"
+            }
+          ]
+        }
+      },
+      "spinning_state": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_equipment",
+                      "subject": "other",
+                      "domain": "hand",
+                      "value": "create:wrench"
+                    }
+                  ]
+                },
+                "event": "event_speed_stop"
+              },
+              "use_item": false,
+              "interact_text": "Apply Brake (Stop)"
+            }
+          ]
+        }
+      },
+      "turbo_state": {
+        "minecraft:variant": {
+          "value": 4
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_equipment",
+                      "subject": "other",
+                      "domain": "hand",
+                      "value": "create:wrench"
+                    }
+                  ]
+                },
+                "event": "event_speed_stop"
+              },
+              "use_item": false,
+              "interact_text": "Apply Brake (Stop)"
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 1.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "create",
+          "inanimate"
+        ]
+      },
+      "minecraft:variant": {
+        "value": 1
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "create:wrench"
+                  }
+                ]
+              },
+              "event": "event_speed_stop"
+            },
+            "use_item": false,
+            "interact_text": "Apply Brake (Stop)"
+          }
+        ]
+      }
+    },
+    "events": {
+      "event_speed_stop": {
+        "remove": {
+          "component_groups": [
+            "spinning_state",
+            "turbo_state"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "stopped_state"
+          ]
+        }
+      },
+      "event_speed_32": {
+        "remove": {
+          "component_groups": [
+            "stopped_state",
+            "turbo_state"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "spinning_state"
+          ]
+        }
+      },
+      "event_speed_128": {
+        "remove": {
+          "component_groups": [
+            "stopped_state",
+            "spinning_state"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "turbo_state"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "\ud83d\udd25 IBRAHIM'S CREATE ENGINE [BP] \ud83d\udd25",
+    "description": ">>> VERIFIED FOR IBRAHIM: Functional Emergency Brake, Create Wrench & Speed Control <<<",
+    "uuid": "1e3d6015-cd48-4802-b8d8-b3a2321f2e2c",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "4b6962cc-4e50-44d1-b19d-9e2cc7a70dba",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "8b5a618d-cafd-4cb5-832a-f56d9bf3fb29",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

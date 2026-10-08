@@ -1,0 +1,35 @@
+{
+  "resource_pack_name": "create_bedrock",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "create_andesite_casing": {
+      "textures": "textures/blocks/andesite_casing"
+    },
+    "create_brass_casing": {
+      "textures": "textures/blocks/brass_casing"
+    },
+    "create_copper_casing": {
+      "textures": "textures/blocks/copper_casing"
+    },
+    "create_railway_casing": {
+      "textures": "textures/blocks/railway_casing"
+    },
+    "create_raw_zinc_block": {
+      "textures": "textures/blocks/raw_zinc_block"
+    },
+    "create_zinc_block": {
+      "textures": "textures/blocks/zinc_block"
+    },
+    "create_brass_block": {
+      "textures": "textures/blocks/brass_block"
+    },
+    "create_cogwheel": {
+      "textures": "textures/entity/create/cogwheel"
+    },
+    "dirt": {
+      "textures": "textures/blocks/dirt"
+    }
+  }
+}

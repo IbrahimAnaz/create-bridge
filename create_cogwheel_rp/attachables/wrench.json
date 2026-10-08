@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "create:wrench",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/create/wrench"
+      },
+      "geometry": {
+        "default": "geometry.create.wrench"
+      },
+      "scripts": {
+        "parent_setup": "variable.item_use_normalized = 0.0;"
+      },
+      "render_controllers": [
+        "controller.render.item_default"
+      ]
+    }
+  }
+}

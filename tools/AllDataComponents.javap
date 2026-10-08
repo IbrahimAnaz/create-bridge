@@ -1,0 +1,911 @@
+Compiled from "AllDataComponents.java"
+public class com.simibubi.create.AllDataComponents {
+  private static final net.neoforged.neoforge.registries.DeferredRegister$DataComponents DATA_COMPONENTS;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Integer> BACKTANK_AIR;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.core.BlockPos> BELT_FIRST_SHAFT;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Boolean> INFERRED_FROM_RECIPE;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.equipment.zapper.PlacementPatterns> PLACEMENT_PATTERN;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.equipment.zapper.terrainzapper.TerrainBrushes> SHAPER_BRUSH;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.core.BlockPos> SHAPER_BRUSH_PARAMS;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.equipment.zapper.terrainzapper.PlacementOptions> SHAPER_PLACEMENT_OPTIONS;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.equipment.zapper.terrainzapper.TerrainTools> SHAPER_TOOL;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.world.level.block.state.BlockState> SHAPER_BLOCK_USED;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Boolean> SHAPER_SWAP;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.nbt.CompoundTag> SHAPER_BLOCK_DATA;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.world.item.component.ItemContainerContents> FILTER_ITEMS;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Boolean> FILTER_ITEMS_RESPECT_NBT;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Boolean> FILTER_ITEMS_BLACKLIST;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.logistics.filter.AttributeFilterWhitelistMode> ATTRIBUTE_FILTER_WHITELIST_MODE;
+
+  public static final net.minecraft.core.component.DataComponentType<java.util.List<com.simibubi.create.content.logistics.item.filter.attribute.ItemAttribute$ItemAttributeEntry>> ATTRIBUTE_FILTER_MATCHED_ATTRIBUTES;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.equipment.clipboard.ClipboardContent> CLIPBOARD_CONTENT;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.trains.track.TrackPlacement$ConnectingFrom> TRACK_CONNECTING_FROM;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Boolean> TRACK_EXTENDED_CURVE;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.core.BlockPos> TRACK_TARGETING_ITEM_SELECTED_POS;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Boolean> TRACK_TARGETING_ITEM_SELECTED_DIRECTION;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.trains.track.BezierTrackPointLocation> TRACK_TARGETING_ITEM_BEZIER;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Boolean> SCHEMATIC_DEPLOYED;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.String> SCHEMATIC_OWNER;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.String> SCHEMATIC_FILE;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.core.BlockPos> SCHEMATIC_ANCHOR;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.world.level.block.Rotation> SCHEMATIC_ROTATION;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.world.level.block.Mirror> SCHEMATIC_MIRROR;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.core.Vec3i> SCHEMATIC_BOUNDS;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Integer> SCHEMATIC_HASH;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Integer> CHROMATIC_COMPOUND_COLLECTING_LIGHT;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.equipment.sandPaper.SandPaperItemComponent> SAND_PAPER_POLISHING;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.util.Unit> SAND_PAPER_JEI;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.nbt.CompoundTag> MINECRAFT_CONTRAPTION_DATA;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.world.item.component.ItemContainerContents> LINKED_CONTROLLER_ITEMS;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.equipment.toolbox.ToolboxInventory> TOOLBOX_INVENTORY;
+
+  public static final net.minecraft.core.component.DataComponentType<java.util.UUID> TOOLBOX_UUID;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe$SequencedAssembly> SEQUENCED_ASSEMBLY;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.nbt.CompoundTag> TRAIN_SCHEDULE;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.equipment.symmetryWand.mirror.SymmetryMirror> SYMMETRY_WAND;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Boolean> SYMMETRY_WAND_ENABLE;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Boolean> SYMMETRY_WAND_SIMULATE;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.fluids.potion.PotionFluid$BottleType> POTION_FLUID_BOTTLE_TYPE;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.schematics.cannon.SchematicannonBlockEntity$SchematicannonOptions> SCHEMATICANNON_OPTIONS;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.logistics.redstoneRequester.AutoRequestData> AUTO_REQUEST_DATA;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.logistics.tableCloth.ShoppingListItem$ShoppingList> SHOPPING_LIST;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.String> SHOPPING_LIST_ADDRESS;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.String> PACKAGE_ADDRESS;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.world.item.component.ItemContainerContents> PACKAGE_CONTENTS;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.logistics.box.PackageItem$PackageOrderData> PACKAGE_ORDER_DATA;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.logistics.stockTicker.PackageOrderWithCrafts> PACKAGE_ORDER_CONTEXT;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.redstone.displayLink.ClickToLinkBlockItem$ClickToLinkData> CLICK_TO_LINK_DATA;
+
+  public static final net.minecraft.core.component.DataComponentType<com.simibubi.create.content.equipment.clipboard.ClipboardOverrides$ClipboardType> CLIPBOARD_TYPE;
+
+  public static final net.minecraft.core.component.DataComponentType<java.util.List<java.util.List<com.simibubi.create.content.equipment.clipboard.ClipboardEntry>>> CLIPBOARD_PAGES;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.util.Unit> CLIPBOARD_READ_ONLY;
+
+  public static final net.minecraft.core.component.DataComponentType<net.minecraft.nbt.CompoundTag> CLIPBOARD_COPIED_VALUES;
+
+  public static final net.minecraft.core.component.DataComponentType<java.lang.Integer> CLIPBOARD_PREVIOUSLY_OPENED_PAGE;
+
+  public com.simibubi.create.AllDataComponents();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  private static <T> net.minecraft.core.component.DataComponentType<T> register(java.lang.String, java.util.function.UnaryOperator<net.minecraft.core.component.DataComponentType$Builder<T>>);
+    Code:
+       0: aload_1
+       1: invokestatic  #7                  // InterfaceMethod net/minecraft/core/component/DataComponentType.builder:()Lnet/minecraft/core/component/DataComponentType$Builder;
+       4: invokeinterface #13,  2           // InterfaceMethod java/util/function/UnaryOperator.apply:(Ljava/lang/Object;)Ljava/lang/Object;
+       9: checkcast     #19                 // class net/minecraft/core/component/DataComponentType$Builder
+      12: invokevirtual #21                 // Method net/minecraft/core/component/DataComponentType$Builder.build:()Lnet/minecraft/core/component/DataComponentType;
+      15: astore_2
+      16: getstatic     #25                 // Field DATA_COMPONENTS:Lnet/neoforged/neoforge/registries/DeferredRegister$DataComponents;
+      19: aload_0
+      20: aload_2
+      21: invokedynamic #31,  0             // InvokeDynamic #0:get:(Lnet/minecraft/core/component/DataComponentType;)Ljava/util/function/Supplier;
+      26: invokevirtual #35                 // Method net/neoforged/neoforge/registries/DeferredRegister$DataComponents.register:(Ljava/lang/String;Ljava/util/function/Supplier;)Lnet/neoforged/neoforge/registries/DeferredHolder;
+      29: pop
+      30: aload_2
+      31: areturn
+
+  public static void register(net.neoforged.bus.api.IEventBus);
+    Code:
+       0: getstatic     #25                 // Field DATA_COMPONENTS:Lnet/neoforged/neoforge/registries/DeferredRegister$DataComponents;
+       3: aload_0
+       4: invokevirtual #41                 // Method net/neoforged/neoforge/registries/DeferredRegister$DataComponents.register:(Lnet/neoforged/bus/api/IEventBus;)V
+       7: return
+
+  private static net.minecraft.core.component.DataComponentType lambda$register$57(net.minecraft.core.component.DataComponentType);
+    Code:
+       0: aload_0
+       1: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$56(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #44                 // Field com/mojang/serialization/Codec.INT:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #54                 // Field net/minecraft/network/codec/ByteBufCodecs.INT:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$55(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #63                 // Field net/minecraft/nbt/CompoundTag.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #69                 // Field net/minecraft/network/codec/ByteBufCodecs.COMPOUND_TAG:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$54(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #72                 // Field net/minecraft/util/Unit.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #75                 // Field net/minecraft/util/Unit.INSTANCE:Lnet/minecraft/util/Unit;
+      10: invokestatic  #79                 // InterfaceMethod net/minecraft/network/codec/StreamCodec.unit:(Ljava/lang/Object;)Lnet/minecraft/network/codec/StreamCodec;
+      13: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      16: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$53(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #85                 // Field com/simibubi/create/content/equipment/clipboard/ClipboardEntry.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokeinterface #88,  1           // InterfaceMethod com/mojang/serialization/Codec.listOf:()Lcom/mojang/serialization/Codec;
+       9: invokeinterface #88,  1           // InterfaceMethod com/mojang/serialization/Codec.listOf:()Lcom/mojang/serialization/Codec;
+      14: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      17: getstatic     #92                 // Field com/simibubi/create/content/equipment/clipboard/ClipboardEntry.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      20: invokestatic  #95                 // InterfaceMethod net/createmod/catnip/codecs/stream/CatnipStreamCodecBuilders.list:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/network/codec/StreamCodec;
+      23: invokestatic  #95                 // InterfaceMethod net/createmod/catnip/codecs/stream/CatnipStreamCodecBuilders.list:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/network/codec/StreamCodec;
+      26: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      29: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$52(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #101                // Field com/simibubi/create/content/equipment/clipboard/ClipboardOverrides$ClipboardType.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #104                // Field com/simibubi/create/content/equipment/clipboard/ClipboardOverrides$ClipboardType.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$51(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #105                // Field com/simibubi/create/content/redstone/displayLink/ClickToLinkBlockItem$ClickToLinkData.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #108                // Field com/simibubi/create/content/redstone/displayLink/ClickToLinkBlockItem$ClickToLinkData.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$50(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #109                // Field com/simibubi/create/content/logistics/stockTicker/PackageOrderWithCrafts.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #112                // Field com/simibubi/create/content/logistics/stockTicker/PackageOrderWithCrafts.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$49(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #113                // Field com/simibubi/create/content/logistics/box/PackageItem$PackageOrderData.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #116                // Field com/simibubi/create/content/logistics/box/PackageItem$PackageOrderData.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$48(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #117                // Field net/minecraft/world/item/component/ItemContainerContents.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #120                // Field net/minecraft/world/item/component/ItemContainerContents.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$47(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #121                // Field com/mojang/serialization/Codec.STRING:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #124                // Field net/minecraft/network/codec/ByteBufCodecs.STRING_UTF8:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$46(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #121                // Field com/mojang/serialization/Codec.STRING:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #124                // Field net/minecraft/network/codec/ByteBufCodecs.STRING_UTF8:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$45(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #127                // Field com/simibubi/create/content/logistics/tableCloth/ShoppingListItem$ShoppingList.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #130                // Field com/simibubi/create/content/logistics/tableCloth/ShoppingListItem$ShoppingList.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$44(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #131                // Field com/simibubi/create/content/logistics/redstoneRequester/AutoRequestData.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #134                // Field com/simibubi/create/content/logistics/redstoneRequester/AutoRequestData.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$43(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #135                // Field com/simibubi/create/content/schematics/cannon/SchematicannonBlockEntity$SchematicannonOptions.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #138                // Field com/simibubi/create/content/schematics/cannon/SchematicannonBlockEntity$SchematicannonOptions.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$42(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #139                // Field com/simibubi/create/content/fluids/potion/PotionFluid$BottleType.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #142                // Field com/simibubi/create/content/fluids/potion/PotionFluid$BottleType.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$41(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #143                // Field com/mojang/serialization/Codec.BOOL:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #146                // Field net/minecraft/network/codec/ByteBufCodecs.BOOL:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$40(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #143                // Field com/mojang/serialization/Codec.BOOL:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #146                // Field net/minecraft/network/codec/ByteBufCodecs.BOOL:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$39(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #148                // Field com/simibubi/create/content/equipment/symmetryWand/mirror/SymmetryMirror.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #151                // Field com/simibubi/create/content/equipment/symmetryWand/mirror/SymmetryMirror.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$38(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #63                 // Field net/minecraft/nbt/CompoundTag.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #69                 // Field net/minecraft/network/codec/ByteBufCodecs.COMPOUND_TAG:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$37(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #152                // Field com/simibubi/create/content/processing/sequenced/SequencedAssemblyRecipe$SequencedAssembly.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #155                // Field com/simibubi/create/content/processing/sequenced/SequencedAssemblyRecipe$SequencedAssembly.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$36(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #156                // Field net/minecraft/core/UUIDUtil.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #159                // Field net/minecraft/core/UUIDUtil.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$35(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #160                // Field com/simibubi/create/content/equipment/toolbox/ToolboxInventory.BACKWARDS_COMPAT_CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #165                // Field com/simibubi/create/content/equipment/toolbox/ToolboxInventory.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$34(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #117                // Field net/minecraft/world/item/component/ItemContainerContents.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #120                // Field net/minecraft/world/item/component/ItemContainerContents.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$33(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #63                 // Field net/minecraft/nbt/CompoundTag.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #69                 // Field net/minecraft/network/codec/ByteBufCodecs.COMPOUND_TAG:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$32(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #72                 // Field net/minecraft/util/Unit.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #75                 // Field net/minecraft/util/Unit.INSTANCE:Lnet/minecraft/util/Unit;
+      10: invokestatic  #79                 // InterfaceMethod net/minecraft/network/codec/StreamCodec.unit:(Ljava/lang/Object;)Lnet/minecraft/network/codec/StreamCodec;
+      13: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      16: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$31(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #166                // Field com/simibubi/create/content/equipment/sandPaper/SandPaperItemComponent.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #169                // Field com/simibubi/create/content/equipment/sandPaper/SandPaperItemComponent.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$30(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #44                 // Field com/mojang/serialization/Codec.INT:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #54                 // Field net/minecraft/network/codec/ByteBufCodecs.INT:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$29(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #44                 // Field com/mojang/serialization/Codec.INT:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #54                 // Field net/minecraft/network/codec/ByteBufCodecs.INT:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$28(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #170                // Field net/minecraft/core/Vec3i.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #173                // Field net/createmod/catnip/codecs/stream/CatnipStreamCodecs.VEC3I:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$27(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #178                // Field net/minecraft/world/level/block/Mirror.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #181                // Field net/createmod/catnip/codecs/stream/CatnipStreamCodecs.MIRROR:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$26(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #184                // Field net/minecraft/world/level/block/Rotation.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #187                // Field net/createmod/catnip/codecs/stream/CatnipStreamCodecs.ROTATION:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$25(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #190                // Field net/minecraft/core/BlockPos.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #193                // Field net/minecraft/core/BlockPos.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$24(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #121                // Field com/mojang/serialization/Codec.STRING:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #124                // Field net/minecraft/network/codec/ByteBufCodecs.STRING_UTF8:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$23(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #121                // Field com/mojang/serialization/Codec.STRING:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #124                // Field net/minecraft/network/codec/ByteBufCodecs.STRING_UTF8:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$22(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #143                // Field com/mojang/serialization/Codec.BOOL:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #146                // Field net/minecraft/network/codec/ByteBufCodecs.BOOL:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$21(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #194                // Field com/simibubi/create/content/trains/track/BezierTrackPointLocation.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #197                // Field com/simibubi/create/content/trains/track/BezierTrackPointLocation.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$20(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #143                // Field com/mojang/serialization/Codec.BOOL:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #146                // Field net/minecraft/network/codec/ByteBufCodecs.BOOL:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$19(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #190                // Field net/minecraft/core/BlockPos.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #193                // Field net/minecraft/core/BlockPos.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$18(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #143                // Field com/mojang/serialization/Codec.BOOL:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #146                // Field net/minecraft/network/codec/ByteBufCodecs.BOOL:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$17(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #198                // Field com/simibubi/create/content/trains/track/TrackPlacement$ConnectingFrom.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #201                // Field com/simibubi/create/content/trains/track/TrackPlacement$ConnectingFrom.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$16(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #202                // Field com/simibubi/create/content/equipment/clipboard/ClipboardContent.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #205                // Field com/simibubi/create/content/equipment/clipboard/ClipboardContent.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$15(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #206                // Field com/simibubi/create/content/logistics/item/filter/attribute/ItemAttribute$ItemAttributeEntry.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokeinterface #88,  1           // InterfaceMethod com/mojang/serialization/Codec.listOf:()Lcom/mojang/serialization/Codec;
+       9: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      12: getstatic     #209                // Field com/simibubi/create/content/logistics/item/filter/attribute/ItemAttribute$ItemAttributeEntry.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      15: invokestatic  #95                 // InterfaceMethod net/createmod/catnip/codecs/stream/CatnipStreamCodecBuilders.list:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/network/codec/StreamCodec;
+      18: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      21: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$14(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #210                // Field com/simibubi/create/content/logistics/filter/AttributeFilterWhitelistMode.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #213                // Field com/simibubi/create/content/logistics/filter/AttributeFilterWhitelistMode.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$13(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #143                // Field com/mojang/serialization/Codec.BOOL:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #146                // Field net/minecraft/network/codec/ByteBufCodecs.BOOL:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$12(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #143                // Field com/mojang/serialization/Codec.BOOL:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #146                // Field net/minecraft/network/codec/ByteBufCodecs.BOOL:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$11(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #117                // Field net/minecraft/world/item/component/ItemContainerContents.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #120                // Field net/minecraft/world/item/component/ItemContainerContents.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$10(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #63                 // Field net/minecraft/nbt/CompoundTag.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #69                 // Field net/minecraft/network/codec/ByteBufCodecs.COMPOUND_TAG:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$9(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #143                // Field com/mojang/serialization/Codec.BOOL:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #146                // Field net/minecraft/network/codec/ByteBufCodecs.BOOL:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$8(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #214                // Field net/minecraft/world/level/block/state/BlockState.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #217                // Field net/minecraft/world/level/block/Block.BLOCK_STATE_REGISTRY:Lnet/minecraft/core/IdMapper;
+      10: invokestatic  #223                // InterfaceMethod net/minecraft/network/codec/ByteBufCodecs.idMapper:(Lnet/minecraft/core/IdMap;)Lnet/minecraft/network/codec/StreamCodec;
+      13: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      16: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$7(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #227                // Field com/simibubi/create/content/equipment/zapper/terrainzapper/TerrainTools.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #230                // Field com/simibubi/create/content/equipment/zapper/terrainzapper/TerrainTools.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$6(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #231                // Field com/simibubi/create/content/equipment/zapper/terrainzapper/PlacementOptions.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #234                // Field com/simibubi/create/content/equipment/zapper/terrainzapper/PlacementOptions.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$5(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #190                // Field net/minecraft/core/BlockPos.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #193                // Field net/minecraft/core/BlockPos.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$4(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #235                // Field com/simibubi/create/content/equipment/zapper/terrainzapper/TerrainBrushes.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #238                // Field com/simibubi/create/content/equipment/zapper/terrainzapper/TerrainBrushes.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$3(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #239                // Field com/simibubi/create/content/equipment/zapper/PlacementPatterns.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #242                // Field com/simibubi/create/content/equipment/zapper/PlacementPatterns.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$2(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #143                // Field com/mojang/serialization/Codec.BOOL:Lcom/mojang/serialization/codecs/PrimitiveCodec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #146                // Field net/minecraft/network/codec/ByteBufCodecs.BOOL:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$1(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #190                // Field net/minecraft/core/BlockPos.CODEC:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #193                // Field net/minecraft/core/BlockPos.STREAM_CODEC:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  private static net.minecraft.core.component.DataComponentType$Builder lambda$static$0(net.minecraft.core.component.DataComponentType$Builder);
+    Code:
+       0: aload_0
+       1: getstatic     #243                // Field net/minecraft/util/ExtraCodecs.NON_NEGATIVE_INT:Lcom/mojang/serialization/Codec;
+       4: invokevirtual #50                 // Method net/minecraft/core/component/DataComponentType$Builder.persistent:(Lcom/mojang/serialization/Codec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+       7: getstatic     #248                // Field net/minecraft/network/codec/ByteBufCodecs.VAR_INT:Lnet/minecraft/network/codec/StreamCodec;
+      10: invokevirtual #59                 // Method net/minecraft/core/component/DataComponentType$Builder.networkSynchronized:(Lnet/minecraft/network/codec/StreamCodec;)Lnet/minecraft/core/component/DataComponentType$Builder;
+      13: areturn
+
+  static {};
+    Code:
+       0: getstatic     #251                // Field net/minecraft/core/registries/Registries.DATA_COMPONENT_TYPE:Lnet/minecraft/resources/ResourceKey;
+       3: ldc_w         #259                // String create
+       6: invokestatic  #261                // Method net/neoforged/neoforge/registries/DeferredRegister.createDataComponents:(Lnet/minecraft/resources/ResourceKey;Ljava/lang/String;)Lnet/neoforged/neoforge/registries/DeferredRegister$DataComponents;
+       9: putstatic     #25                 // Field DATA_COMPONENTS:Lnet/neoforged/neoforge/registries/DeferredRegister$DataComponents;
+      12: ldc_w         #267                // String banktank_air
+      15: invokedynamic #269,  0            // InvokeDynamic #1:apply:()Ljava/util/function/UnaryOperator;
+      20: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+      23: putstatic     #275                // Field BACKTANK_AIR:Lnet/minecraft/core/component/DataComponentType;
+      26: ldc_w         #279                // String belt_first_shaft
+      29: invokedynamic #281,  0            // InvokeDynamic #2:apply:()Ljava/util/function/UnaryOperator;
+      34: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+      37: putstatic     #282                // Field BELT_FIRST_SHAFT:Lnet/minecraft/core/component/DataComponentType;
+      40: ldc_w         #285                // String inferred_from_recipe
+      43: invokedynamic #287,  0            // InvokeDynamic #3:apply:()Ljava/util/function/UnaryOperator;
+      48: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+      51: putstatic     #288                // Field INFERRED_FROM_RECIPE:Lnet/minecraft/core/component/DataComponentType;
+      54: ldc_w         #291                // String placement_pattern
+      57: invokedynamic #293,  0            // InvokeDynamic #4:apply:()Ljava/util/function/UnaryOperator;
+      62: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+      65: putstatic     #294                // Field PLACEMENT_PATTERN:Lnet/minecraft/core/component/DataComponentType;
+      68: ldc_w         #297                // String shaper_brush
+      71: invokedynamic #299,  0            // InvokeDynamic #5:apply:()Ljava/util/function/UnaryOperator;
+      76: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+      79: putstatic     #300                // Field SHAPER_BRUSH:Lnet/minecraft/core/component/DataComponentType;
+      82: ldc_w         #303                // String shaper_brush_params
+      85: invokedynamic #305,  0            // InvokeDynamic #6:apply:()Ljava/util/function/UnaryOperator;
+      90: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+      93: putstatic     #306                // Field SHAPER_BRUSH_PARAMS:Lnet/minecraft/core/component/DataComponentType;
+      96: ldc_w         #309                // String shaper_placement_options
+      99: invokedynamic #311,  0            // InvokeDynamic #7:apply:()Ljava/util/function/UnaryOperator;
+     104: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     107: putstatic     #312                // Field SHAPER_PLACEMENT_OPTIONS:Lnet/minecraft/core/component/DataComponentType;
+     110: ldc_w         #315                // String shaper_tool
+     113: invokedynamic #317,  0            // InvokeDynamic #8:apply:()Ljava/util/function/UnaryOperator;
+     118: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     121: putstatic     #318                // Field SHAPER_TOOL:Lnet/minecraft/core/component/DataComponentType;
+     124: ldc_w         #321                // String shaper_block_used
+     127: invokedynamic #323,  0            // InvokeDynamic #9:apply:()Ljava/util/function/UnaryOperator;
+     132: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     135: putstatic     #324                // Field SHAPER_BLOCK_USED:Lnet/minecraft/core/component/DataComponentType;
+     138: ldc_w         #327                // String shaper_swap
+     141: invokedynamic #329,  0            // InvokeDynamic #10:apply:()Ljava/util/function/UnaryOperator;
+     146: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     149: putstatic     #330                // Field SHAPER_SWAP:Lnet/minecraft/core/component/DataComponentType;
+     152: ldc_w         #333                // String shaper_block_data
+     155: invokedynamic #335,  0            // InvokeDynamic #11:apply:()Ljava/util/function/UnaryOperator;
+     160: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     163: putstatic     #336                // Field SHAPER_BLOCK_DATA:Lnet/minecraft/core/component/DataComponentType;
+     166: ldc_w         #339                // String filter_items
+     169: invokedynamic #341,  0            // InvokeDynamic #12:apply:()Ljava/util/function/UnaryOperator;
+     174: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     177: putstatic     #342                // Field FILTER_ITEMS:Lnet/minecraft/core/component/DataComponentType;
+     180: ldc_w         #345                // String filter_items_respect_nbt
+     183: invokedynamic #347,  0            // InvokeDynamic #13:apply:()Ljava/util/function/UnaryOperator;
+     188: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     191: putstatic     #348                // Field FILTER_ITEMS_RESPECT_NBT:Lnet/minecraft/core/component/DataComponentType;
+     194: ldc_w         #351                // String filter_items_blacklist
+     197: invokedynamic #353,  0            // InvokeDynamic #14:apply:()Ljava/util/function/UnaryOperator;
+     202: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     205: putstatic     #354                // Field FILTER_ITEMS_BLACKLIST:Lnet/minecraft/core/component/DataComponentType;
+     208: ldc_w         #357                // String attribute_filter_whitelist_mode
+     211: invokedynamic #359,  0            // InvokeDynamic #15:apply:()Ljava/util/function/UnaryOperator;
+     216: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     219: putstatic     #360                // Field ATTRIBUTE_FILTER_WHITELIST_MODE:Lnet/minecraft/core/component/DataComponentType;
+     222: ldc_w         #363                // String attribute_filter_matched_attributes
+     225: invokedynamic #365,  0            // InvokeDynamic #16:apply:()Ljava/util/function/UnaryOperator;
+     230: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     233: putstatic     #366                // Field ATTRIBUTE_FILTER_MATCHED_ATTRIBUTES:Lnet/minecraft/core/component/DataComponentType;
+     236: ldc_w         #369                // String clipboard_content
+     239: invokedynamic #371,  0            // InvokeDynamic #17:apply:()Ljava/util/function/UnaryOperator;
+     244: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     247: putstatic     #372                // Field CLIPBOARD_CONTENT:Lnet/minecraft/core/component/DataComponentType;
+     250: ldc_w         #375                // String track_connecting_from
+     253: invokedynamic #377,  0            // InvokeDynamic #18:apply:()Ljava/util/function/UnaryOperator;
+     258: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     261: putstatic     #378                // Field TRACK_CONNECTING_FROM:Lnet/minecraft/core/component/DataComponentType;
+     264: ldc_w         #381                // String track_extend_curve
+     267: invokedynamic #383,  0            // InvokeDynamic #19:apply:()Ljava/util/function/UnaryOperator;
+     272: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     275: putstatic     #384                // Field TRACK_EXTENDED_CURVE:Lnet/minecraft/core/component/DataComponentType;
+     278: ldc_w         #387                // String track_targeting_item_selected_pos
+     281: invokedynamic #389,  0            // InvokeDynamic #20:apply:()Ljava/util/function/UnaryOperator;
+     286: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     289: putstatic     #390                // Field TRACK_TARGETING_ITEM_SELECTED_POS:Lnet/minecraft/core/component/DataComponentType;
+     292: ldc_w         #393                // String track_targeting_item_selected_direction
+     295: invokedynamic #395,  0            // InvokeDynamic #21:apply:()Ljava/util/function/UnaryOperator;
+     300: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     303: putstatic     #396                // Field TRACK_TARGETING_ITEM_SELECTED_DIRECTION:Lnet/minecraft/core/component/DataComponentType;
+     306: ldc_w         #399                // String track_targeting_item_bezier
+     309: invokedynamic #401,  0            // InvokeDynamic #22:apply:()Ljava/util/function/UnaryOperator;
+     314: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     317: putstatic     #402                // Field TRACK_TARGETING_ITEM_BEZIER:Lnet/minecraft/core/component/DataComponentType;
+     320: ldc_w         #405                // String schematic_deployed
+     323: invokedynamic #407,  0            // InvokeDynamic #23:apply:()Ljava/util/function/UnaryOperator;
+     328: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     331: putstatic     #408                // Field SCHEMATIC_DEPLOYED:Lnet/minecraft/core/component/DataComponentType;
+     334: ldc_w         #411                // String schematic_owner
+     337: invokedynamic #413,  0            // InvokeDynamic #24:apply:()Ljava/util/function/UnaryOperator;
+     342: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     345: putstatic     #414                // Field SCHEMATIC_OWNER:Lnet/minecraft/core/component/DataComponentType;
+     348: ldc_w         #417                // String schematic_file
+     351: invokedynamic #419,  0            // InvokeDynamic #25:apply:()Ljava/util/function/UnaryOperator;
+     356: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     359: putstatic     #420                // Field SCHEMATIC_FILE:Lnet/minecraft/core/component/DataComponentType;
+     362: ldc_w         #423                // String schematic_anchor
+     365: invokedynamic #425,  0            // InvokeDynamic #26:apply:()Ljava/util/function/UnaryOperator;
+     370: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     373: putstatic     #426                // Field SCHEMATIC_ANCHOR:Lnet/minecraft/core/component/DataComponentType;
+     376: ldc_w         #429                // String schematic_rotation
+     379: invokedynamic #431,  0            // InvokeDynamic #27:apply:()Ljava/util/function/UnaryOperator;
+     384: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     387: putstatic     #432                // Field SCHEMATIC_ROTATION:Lnet/minecraft/core/component/DataComponentType;
+     390: ldc_w         #435                // String schematic_mirror
+     393: invokedynamic #437,  0            // InvokeDynamic #28:apply:()Ljava/util/function/UnaryOperator;
+     398: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     401: putstatic     #438                // Field SCHEMATIC_MIRROR:Lnet/minecraft/core/component/DataComponentType;
+     404: ldc_w         #441                // String schematic_bounds
+     407: invokedynamic #443,  0            // InvokeDynamic #29:apply:()Ljava/util/function/UnaryOperator;
+     412: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     415: putstatic     #444                // Field SCHEMATIC_BOUNDS:Lnet/minecraft/core/component/DataComponentType;
+     418: ldc_w         #447                // String schematic_hash
+     421: invokedynamic #449,  0            // InvokeDynamic #30:apply:()Ljava/util/function/UnaryOperator;
+     426: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     429: putstatic     #450                // Field SCHEMATIC_HASH:Lnet/minecraft/core/component/DataComponentType;
+     432: ldc_w         #453                // String chromatic_compound_collecting_light
+     435: invokedynamic #455,  0            // InvokeDynamic #31:apply:()Ljava/util/function/UnaryOperator;
+     440: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     443: putstatic     #456                // Field CHROMATIC_COMPOUND_COLLECTING_LIGHT:Lnet/minecraft/core/component/DataComponentType;
+     446: ldc_w         #459                // String sand_paper_polishing
+     449: invokedynamic #461,  0            // InvokeDynamic #32:apply:()Ljava/util/function/UnaryOperator;
+     454: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     457: putstatic     #462                // Field SAND_PAPER_POLISHING:Lnet/minecraft/core/component/DataComponentType;
+     460: ldc_w         #465                // String sand_paper_jei
+     463: invokedynamic #467,  0            // InvokeDynamic #33:apply:()Ljava/util/function/UnaryOperator;
+     468: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     471: putstatic     #468                // Field SAND_PAPER_JEI:Lnet/minecraft/core/component/DataComponentType;
+     474: ldc_w         #471                // String minecart_contraption_data
+     477: invokedynamic #473,  0            // InvokeDynamic #34:apply:()Ljava/util/function/UnaryOperator;
+     482: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     485: putstatic     #474                // Field MINECRAFT_CONTRAPTION_DATA:Lnet/minecraft/core/component/DataComponentType;
+     488: ldc_w         #477                // String linked_controller_items
+     491: invokedynamic #479,  0            // InvokeDynamic #35:apply:()Ljava/util/function/UnaryOperator;
+     496: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     499: putstatic     #480                // Field LINKED_CONTROLLER_ITEMS:Lnet/minecraft/core/component/DataComponentType;
+     502: ldc_w         #483                // String toolbox_inventory
+     505: invokedynamic #485,  0            // InvokeDynamic #36:apply:()Ljava/util/function/UnaryOperator;
+     510: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     513: putstatic     #486                // Field TOOLBOX_INVENTORY:Lnet/minecraft/core/component/DataComponentType;
+     516: ldc_w         #489                // String toolbox_uuid
+     519: invokedynamic #491,  0            // InvokeDynamic #37:apply:()Ljava/util/function/UnaryOperator;
+     524: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     527: putstatic     #492                // Field TOOLBOX_UUID:Lnet/minecraft/core/component/DataComponentType;
+     530: ldc_w         #495                // String sequenced_assembly
+     533: invokedynamic #497,  0            // InvokeDynamic #38:apply:()Ljava/util/function/UnaryOperator;
+     538: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     541: putstatic     #498                // Field SEQUENCED_ASSEMBLY:Lnet/minecraft/core/component/DataComponentType;
+     544: ldc_w         #501                // String train_schedule
+     547: invokedynamic #503,  0            // InvokeDynamic #39:apply:()Ljava/util/function/UnaryOperator;
+     552: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     555: putstatic     #504                // Field TRAIN_SCHEDULE:Lnet/minecraft/core/component/DataComponentType;
+     558: ldc_w         #507                // String symmetry_wand
+     561: invokedynamic #509,  0            // InvokeDynamic #40:apply:()Ljava/util/function/UnaryOperator;
+     566: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     569: putstatic     #510                // Field SYMMETRY_WAND:Lnet/minecraft/core/component/DataComponentType;
+     572: ldc_w         #513                // String symmetry_wand_enable
+     575: invokedynamic #515,  0            // InvokeDynamic #41:apply:()Ljava/util/function/UnaryOperator;
+     580: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     583: putstatic     #516                // Field SYMMETRY_WAND_ENABLE:Lnet/minecraft/core/component/DataComponentType;
+     586: ldc_w         #519                // String symmetry_wand_simulate
+     589: invokedynamic #521,  0            // InvokeDynamic #42:apply:()Ljava/util/function/UnaryOperator;
+     594: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     597: putstatic     #522                // Field SYMMETRY_WAND_SIMULATE:Lnet/minecraft/core/component/DataComponentType;
+     600: ldc_w         #525                // String potion_fluid_bottle_type
+     603: invokedynamic #527,  0            // InvokeDynamic #43:apply:()Ljava/util/function/UnaryOperator;
+     608: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     611: putstatic     #528                // Field POTION_FLUID_BOTTLE_TYPE:Lnet/minecraft/core/component/DataComponentType;
+     614: ldc_w         #531                // String schematicannon_options
+     617: invokedynamic #533,  0            // InvokeDynamic #44:apply:()Ljava/util/function/UnaryOperator;
+     622: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     625: putstatic     #534                // Field SCHEMATICANNON_OPTIONS:Lnet/minecraft/core/component/DataComponentType;
+     628: ldc_w         #537                // String auto_request_data
+     631: invokedynamic #539,  0            // InvokeDynamic #45:apply:()Ljava/util/function/UnaryOperator;
+     636: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     639: putstatic     #540                // Field AUTO_REQUEST_DATA:Lnet/minecraft/core/component/DataComponentType;
+     642: ldc_w         #543                // String shopping_list
+     645: invokedynamic #545,  0            // InvokeDynamic #46:apply:()Ljava/util/function/UnaryOperator;
+     650: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     653: putstatic     #546                // Field SHOPPING_LIST:Lnet/minecraft/core/component/DataComponentType;
+     656: ldc_w         #549                // String shopping_list_address
+     659: invokedynamic #551,  0            // InvokeDynamic #47:apply:()Ljava/util/function/UnaryOperator;
+     664: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     667: putstatic     #552                // Field SHOPPING_LIST_ADDRESS:Lnet/minecraft/core/component/DataComponentType;
+     670: ldc_w         #555                // String package_address
+     673: invokedynamic #557,  0            // InvokeDynamic #48:apply:()Ljava/util/function/UnaryOperator;
+     678: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     681: putstatic     #558                // Field PACKAGE_ADDRESS:Lnet/minecraft/core/component/DataComponentType;
+     684: ldc_w         #561                // String package_contents
+     687: invokedynamic #563,  0            // InvokeDynamic #49:apply:()Ljava/util/function/UnaryOperator;
+     692: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     695: putstatic     #564                // Field PACKAGE_CONTENTS:Lnet/minecraft/core/component/DataComponentType;
+     698: ldc_w         #567                // String package_order_data
+     701: invokedynamic #569,  0            // InvokeDynamic #50:apply:()Ljava/util/function/UnaryOperator;
+     706: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     709: putstatic     #570                // Field PACKAGE_ORDER_DATA:Lnet/minecraft/core/component/DataComponentType;
+     712: ldc_w         #573                // String package_order_context
+     715: invokedynamic #575,  0            // InvokeDynamic #51:apply:()Ljava/util/function/UnaryOperator;
+     720: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     723: putstatic     #576                // Field PACKAGE_ORDER_CONTEXT:Lnet/minecraft/core/component/DataComponentType;
+     726: ldc_w         #579                // String click_to_link_data
+     729: invokedynamic #581,  0            // InvokeDynamic #52:apply:()Ljava/util/function/UnaryOperator;
+     734: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     737: putstatic     #582                // Field CLICK_TO_LINK_DATA:Lnet/minecraft/core/component/DataComponentType;
+     740: ldc_w         #585                // String clipboard_type
+     743: invokedynamic #587,  0            // InvokeDynamic #53:apply:()Ljava/util/function/UnaryOperator;
+     748: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     751: putstatic     #588                // Field CLIPBOARD_TYPE:Lnet/minecraft/core/component/DataComponentType;
+     754: ldc_w         #591                // String clipboard_pages
+     757: invokedynamic #593,  0            // InvokeDynamic #54:apply:()Ljava/util/function/UnaryOperator;
+     762: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     765: putstatic     #594                // Field CLIPBOARD_PAGES:Lnet/minecraft/core/component/DataComponentType;
+     768: ldc_w         #597                // String clipboard_read_only
+     771: invokedynamic #599,  0            // InvokeDynamic #55:apply:()Ljava/util/function/UnaryOperator;
+     776: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     779: putstatic     #600                // Field CLIPBOARD_READ_ONLY:Lnet/minecraft/core/component/DataComponentType;
+     782: ldc_w         #603                // String clipboard_copied_values
+     785: invokedynamic #605,  0            // InvokeDynamic #56:apply:()Ljava/util/function/UnaryOperator;
+     790: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     793: putstatic     #606                // Field CLIPBOARD_COPIED_VALUES:Lnet/minecraft/core/component/DataComponentType;
+     796: ldc_w         #609                // String clipboard_previously_opened_page
+     799: invokedynamic #611,  0            // InvokeDynamic #57:apply:()Ljava/util/function/UnaryOperator;
+     804: invokestatic  #272                // Method register:(Ljava/lang/String;Ljava/util/function/UnaryOperator;)Lnet/minecraft/core/component/DataComponentType;
+     807: putstatic     #612                // Field CLIPBOARD_PREVIOUSLY_OPENED_PAGE:Lnet/minecraft/core/component/DataComponentType;
+     810: return
+}

@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.create.cogwheel.spin": {
+      "loop": true,
+      "bones": {
+        "shaft": {
+          "rotation": [
+            0,
+            0,
+            "query.variant * query.life_time * 192.0"
+          ]
+        }
+      }
+    }
+  }
+}

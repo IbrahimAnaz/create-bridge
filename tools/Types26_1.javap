@@ -1,0 +1,204 @@
+Classfile jar:file:///C:/Users/ibrah/Downloads/crt%20aro/headless_server/viaproxy/ViaProxy.jar!/com/viaversion/viaversion/api/type/types/version/Types26_1.class
+  Last modified 01-Feb-1980; size 3050 bytes
+  SHA-256 checksum e649f2fec95c6924e87d6e93ddf3b3dffeb0b2c0ed4a1937648453debfd6c6ff
+  Compiled from "Types26_1.java"
+public class com.viaversion.viaversion.api.type.types.version.Types26_1<K extends com.viaversion.viaversion.api.minecraft.data.version.VersionedStructuredDataKeys, E extends com.viaversion.viaversion.api.minecraft.entitydata.types.AbstractEntityDataTypes> extends com.viaversion.viaversion.api.type.types.version.Types1_20_5<K, E>
+  minor version: 0
+  major version: 61
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #10                         // com/viaversion/viaversion/api/type/types/version/Types26_1
+  super_class: #2                         // com/viaversion/viaversion/api/type/types/version/Types1_20_5
+  interfaces: 0, fields: 3, methods: 4, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // com/viaversion/viaversion/api/type/types/version/Types1_20_5."<init>":(Ljava/util/function/Function;Ljava/util/function/Function;)V
+   #2 = Class              #4             // com/viaversion/viaversion/api/type/types/version/Types1_20_5
+   #3 = NameAndType        #5:#6          // "<init>":(Ljava/util/function/Function;Ljava/util/function/Function;)V
+   #4 = Utf8               com/viaversion/viaversion/api/type/types/version/Types1_20_5
+   #5 = Utf8               <init>
+   #6 = Utf8               (Ljava/util/function/Function;Ljava/util/function/Function;)V
+   #7 = Class              #8             // com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1
+   #8 = Utf8               com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1
+   #9 = Fieldref           #10.#11        // com/viaversion/viaversion/api/type/types/version/Types26_1.structuredData:Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+  #10 = Class              #12            // com/viaversion/viaversion/api/type/types/version/Types26_1
+  #11 = NameAndType        #13:#14        // structuredData:Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+  #12 = Utf8               com/viaversion/viaversion/api/type/types/version/Types26_1
+  #13 = Utf8               structuredData
+  #14 = Utf8               Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+  #15 = Methodref          #7.#16         // com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1."<init>":(Lcom/viaversion/viaversion/api/type/types/item/StructuredDataTypeBase;)V
+  #16 = NameAndType        #5:#17         // "<init>":(Lcom/viaversion/viaversion/api/type/types/item/StructuredDataTypeBase;)V
+  #17 = Utf8               (Lcom/viaversion/viaversion/api/type/types/item/StructuredDataTypeBase;)V
+  #18 = Fieldref           #10.#19        // com/viaversion/viaversion/api/type/types/version/Types26_1.itemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+  #19 = NameAndType        #20:#21        // itemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+  #20 = Utf8               itemTemplate
+  #21 = Utf8               Lcom/viaversion/viaversion/api/type/Type;
+  #22 = Class              #23            // com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1$OptionalItemTemplateType
+  #23 = Utf8               com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1$OptionalItemTemplateType
+  #24 = Methodref          #22.#25        // com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1$OptionalItemTemplateType."<init>":(Lcom/viaversion/viaversion/api/type/Type;)V
+  #25 = NameAndType        #5:#26         // "<init>":(Lcom/viaversion/viaversion/api/type/Type;)V
+  #26 = Utf8               (Lcom/viaversion/viaversion/api/type/Type;)V
+  #27 = Fieldref           #10.#28        // com/viaversion/viaversion/api/type/types/version/Types26_1.optionalItemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+  #28 = NameAndType        #29:#21        // optionalItemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+  #29 = Utf8               optionalItemTemplate
+  #30 = Class              #31            // com/viaversion/viaversion/api/type/types/ArrayType
+  #31 = Utf8               com/viaversion/viaversion/api/type/types/ArrayType
+  #32 = Methodref          #30.#25        // com/viaversion/viaversion/api/type/types/ArrayType."<init>":(Lcom/viaversion/viaversion/api/type/Type;)V
+  #33 = Fieldref           #10.#34        // com/viaversion/viaversion/api/type/types/version/Types26_1.itemTemplateArray:Lcom/viaversion/viaversion/api/type/types/ArrayType;
+  #34 = NameAndType        #35:#36        // itemTemplateArray:Lcom/viaversion/viaversion/api/type/types/ArrayType;
+  #35 = Utf8               itemTemplateArray
+  #36 = Utf8               Lcom/viaversion/viaversion/api/type/types/ArrayType;
+  #37 = Methodref          #10.#38        // com/viaversion/viaversion/api/type/types/version/Types26_1.initKeys:(Ljava/util/function/Function;)V
+  #38 = NameAndType        #39:#40        // initKeys:(Ljava/util/function/Function;)V
+  #39 = Utf8               initKeys
+  #40 = Utf8               (Ljava/util/function/Function;)V
+  #41 = Utf8               Signature
+  #42 = Utf8               Lcom/viaversion/viaversion/api/type/Type<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+  #43 = Utf8               Lcom/viaversion/viaversion/api/type/types/ArrayType<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+  #44 = Utf8               Code
+  #45 = Utf8               LineNumberTable
+  #46 = Utf8               LocalVariableTable
+  #47 = Utf8               this
+  #48 = Utf8               Lcom/viaversion/viaversion/api/type/types/version/Types26_1;
+  #49 = Utf8               keysSupplier
+  #50 = Utf8               Ljava/util/function/Function;
+  #51 = Utf8               entityDataTypesSupplier
+  #52 = Utf8               LocalVariableTypeTable
+  #53 = Utf8               Lcom/viaversion/viaversion/api/type/types/version/Types26_1<TK;TE;>;
+  #54 = Utf8               Ljava/util/function/Function<Lcom/viaversion/viaversion/api/type/types/version/VersionedTypesHolder;TK;>;
+  #55 = Utf8               Ljava/util/function/Function<Lcom/viaversion/viaversion/api/type/types/version/VersionedTypesHolder;TE;>;
+  #56 = Utf8               (Ljava/util/function/Function<Lcom/viaversion/viaversion/api/type/types/version/VersionedTypesHolder;TK;>;Ljava/util/function/Function<Lcom/viaversion/viaversion/api/type/types/version/VersionedTypesHolder;TE;>;)V
+  #57 = Utf8               ()Lcom/viaversion/viaversion/api/type/Type;
+  #58 = Utf8               ()Lcom/viaversion/viaversion/api/type/Type<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+  #59 = Utf8               ()Lcom/viaversion/viaversion/api/type/types/ArrayType;
+  #60 = Utf8               ()Lcom/viaversion/viaversion/api/type/types/ArrayType<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+  #61 = Utf8               <K:Lcom/viaversion/viaversion/api/minecraft/data/version/VersionedStructuredDataKeys;E:Lcom/viaversion/viaversion/api/minecraft/entitydata/types/AbstractEntityDataTypes;>Lcom/viaversion/viaversion/api/type/types/version/Types1_20_5<TK;TE;>;
+  #62 = Utf8               SourceFile
+  #63 = Utf8               Types26_1.java
+  #64 = Utf8               InnerClasses
+  #65 = Utf8               OptionalItemTemplateType
+{
+  public final com.viaversion.viaversion.api.type.Type<com.viaversion.viaversion.api.minecraft.item.Item> itemTemplate;
+    descriptor: Lcom/viaversion/viaversion/api/type/Type;
+    flags: (0x0011) ACC_PUBLIC, ACC_FINAL
+    Signature: #42                          // Lcom/viaversion/viaversion/api/type/Type<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+
+  public final com.viaversion.viaversion.api.type.Type<com.viaversion.viaversion.api.minecraft.item.Item> optionalItemTemplate;
+    descriptor: Lcom/viaversion/viaversion/api/type/Type;
+    flags: (0x0011) ACC_PUBLIC, ACC_FINAL
+    Signature: #42                          // Lcom/viaversion/viaversion/api/type/Type<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+
+  public final com.viaversion.viaversion.api.type.types.ArrayType<com.viaversion.viaversion.api.minecraft.item.Item> itemTemplateArray;
+    descriptor: Lcom/viaversion/viaversion/api/type/types/ArrayType;
+    flags: (0x0011) ACC_PUBLIC, ACC_FINAL
+    Signature: #43                          // Lcom/viaversion/viaversion/api/type/types/ArrayType<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+
+  public com.viaversion.viaversion.api.type.types.version.Types26_1(java.util.function.Function<com.viaversion.viaversion.api.type.types.version.VersionedTypesHolder, K>, java.util.function.Function<com.viaversion.viaversion.api.type.types.version.VersionedTypesHolder, E>);
+    descriptor: (Ljava/util/function/Function;Ljava/util/function/Function;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=3, args_size=3
+         0: aload_0
+         1: aconst_null
+         2: aload_2
+         3: invokespecial #1                  // Method com/viaversion/viaversion/api/type/types/version/Types1_20_5."<init>":(Ljava/util/function/Function;Ljava/util/function/Function;)V
+         6: aload_0
+         7: new           #7                  // class com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1
+        10: dup
+        11: aload_0
+        12: getfield      #9                  // Field structuredData:Lcom/viaversion/viaversion/api/type/types/item/StructuredDataType;
+        15: invokespecial #15                 // Method com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1."<init>":(Lcom/viaversion/viaversion/api/type/types/item/StructuredDataTypeBase;)V
+        18: putfield      #18                 // Field itemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+        21: aload_0
+        22: new           #22                 // class com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1$OptionalItemTemplateType
+        25: dup
+        26: aload_0
+        27: getfield      #18                 // Field itemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+        30: invokespecial #24                 // Method com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1$OptionalItemTemplateType."<init>":(Lcom/viaversion/viaversion/api/type/Type;)V
+        33: putfield      #27                 // Field optionalItemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+        36: aload_0
+        37: new           #30                 // class com/viaversion/viaversion/api/type/types/ArrayType
+        40: dup
+        41: aload_0
+        42: getfield      #18                 // Field itemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+        45: invokespecial #32                 // Method com/viaversion/viaversion/api/type/types/ArrayType."<init>":(Lcom/viaversion/viaversion/api/type/Type;)V
+        48: putfield      #33                 // Field itemTemplateArray:Lcom/viaversion/viaversion/api/type/types/ArrayType;
+        51: aload_0
+        52: aload_1
+        53: invokevirtual #37                 // Method initKeys:(Ljava/util/function/Function;)V
+        56: return
+      LineNumberTable:
+        line 40: 0
+        line 35: 6
+        line 36: 21
+        line 37: 36
+        line 41: 51
+        line 42: 56
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      57     0  this   Lcom/viaversion/viaversion/api/type/types/version/Types26_1;
+            0      57     1 keysSupplier   Ljava/util/function/Function;
+            0      57     2 entityDataTypesSupplier   Ljava/util/function/Function;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0      57     0  this   Lcom/viaversion/viaversion/api/type/types/version/Types26_1<TK;TE;>;
+            0      57     1 keysSupplier   Ljava/util/function/Function<Lcom/viaversion/viaversion/api/type/types/version/VersionedTypesHolder;TK;>;
+            0      57     2 entityDataTypesSupplier   Ljava/util/function/Function<Lcom/viaversion/viaversion/api/type/types/version/VersionedTypesHolder;TE;>;
+    Signature: #56                          // (Ljava/util/function/Function<Lcom/viaversion/viaversion/api/type/types/version/VersionedTypesHolder;TK;>;Ljava/util/function/Function<Lcom/viaversion/viaversion/api/type/types/version/VersionedTypesHolder;TE;>;)V
+
+  public com.viaversion.viaversion.api.type.Type<com.viaversion.viaversion.api.minecraft.item.Item> itemTemplate();
+    descriptor: ()Lcom/viaversion/viaversion/api/type/Type;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #18                 // Field itemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+         4: areturn
+      LineNumberTable:
+        line 46: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/viaversion/viaversion/api/type/types/version/Types26_1;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/viaversion/viaversion/api/type/types/version/Types26_1<TK;TE;>;
+    Signature: #58                          // ()Lcom/viaversion/viaversion/api/type/Type<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+
+  public com.viaversion.viaversion.api.type.Type<com.viaversion.viaversion.api.minecraft.item.Item> optionalItemTemplate();
+    descriptor: ()Lcom/viaversion/viaversion/api/type/Type;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #27                 // Field optionalItemTemplate:Lcom/viaversion/viaversion/api/type/Type;
+         4: areturn
+      LineNumberTable:
+        line 51: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/viaversion/viaversion/api/type/types/version/Types26_1;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/viaversion/viaversion/api/type/types/version/Types26_1<TK;TE;>;
+    Signature: #58                          // ()Lcom/viaversion/viaversion/api/type/Type<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+
+  public com.viaversion.viaversion.api.type.types.ArrayType<com.viaversion.viaversion.api.minecraft.item.Item> itemTemplateArray();
+    descriptor: ()Lcom/viaversion/viaversion/api/type/types/ArrayType;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #33                 // Field itemTemplateArray:Lcom/viaversion/viaversion/api/type/types/ArrayType;
+         4: areturn
+      LineNumberTable:
+        line 56: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/viaversion/viaversion/api/type/types/version/Types26_1;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lcom/viaversion/viaversion/api/type/types/version/Types26_1<TK;TE;>;
+    Signature: #60                          // ()Lcom/viaversion/viaversion/api/type/types/ArrayType<Lcom/viaversion/viaversion/api/minecraft/item/Item;>;
+}
+Signature: #61                          // <K:Lcom/viaversion/viaversion/api/minecraft/data/version/VersionedStructuredDataKeys;E:Lcom/viaversion/viaversion/api/minecraft/entitydata/types/AbstractEntityDataTypes;>Lcom/viaversion/viaversion/api/type/types/version/Types1_20_5<TK;TE;>;
+SourceFile: "Types26_1.java"
+InnerClasses:
+  public static final #65= #22 of #7;     // OptionalItemTemplateType=class com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1$OptionalItemTemplateType of class com/viaversion/viaversion/api/type/types/item/ItemTemplateType26_1

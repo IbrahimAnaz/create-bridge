@@ -1,0 +1,29 @@
+# Large jars and server binaries
+headless_server/neoforge/
+headless_server/world/
+headless_server/logs/
+headless_server/crash-reports/
+headless_server/libraries/
+*.jar
+*.class
+*.log
+*.zip
+*.mcpack
+*.dat
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Temp / scratch dumps
+dump_*.class
+TargetBuilder*.class
+GBuilder*.class
+Block*.class
+Item*.class
+Mapping*.class
+Chunk*.class
+World*.class
+Resource*.class
+Header*.class
+Test*.class

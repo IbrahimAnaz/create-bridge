@@ -1,0 +1,51 @@
+{
+  "format_version": "1.20.10",
+  "create:andesite_casing": {
+    "textures": "create_andesite_casing",
+    "sound": "wood"
+  },
+  "create:brass_casing": {
+    "textures": "create_brass_casing",
+    "sound": "wood"
+  },
+  "create:copper_casing": {
+    "textures": "create_copper_casing",
+    "sound": "wood"
+  },
+  "create:railway_casing": {
+    "textures": "create_railway_casing",
+    "sound": "wood"
+  },
+  "create:raw_zinc_block": {
+    "textures": "create_raw_zinc_block",
+    "sound": "metal"
+  },
+  "create:zinc_block": {
+    "textures": "create_zinc_block",
+    "sound": "metal"
+  },
+  "create:brass_block": {
+    "textures": "create_brass_block",
+    "sound": "metal"
+  },
+  "create:large_cogwheel": {
+    "textures": "create_cogwheel",
+    "sound": "metal"
+  },
+  "create:depot": {
+    "textures": "create_brass_casing",
+    "sound": "metal"
+  },
+  "create:chute": {
+    "textures": "create_andesite_casing",
+    "sound": "metal"
+  },
+  "create:schematicannon": {
+    "textures": "create_copper_casing",
+    "sound": "metal"
+  },
+  "create:cogwheel": {
+    "textures": "create_cogwheel",
+    "sound": "wood"
+  }
+}

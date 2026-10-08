@@ -1,0 +1,7 @@
+id: createbridge
+name: CreateBridge
+version: 1.0.0
+main: com.createbridge.CreateBridgeExtension
+api: 2.11.3
+authors:
+  - Antigravity
