@@ -53,46 +53,35 @@ def cmd_disassemble(args):
 def cmd_patch_viaproxy(args):
     staging = "tools/staging"
     os.makedirs(staging, exist_ok=True)
-    
-    print("[1/4] Extracting targets from ViaProxy.jar...")
-    with zipfile.ZipFile(VIAPROXY_JAR, "r") as z:
-        with open(os.path.join(staging, "MappingDataBase.class"), "wb") as f:
-            f.write(z.read("com/viaversion/viaversion/api/data/MappingDataBase.class"))
-        with open(os.path.join(staging, "BackwardsMappingData.class"), "wb") as f:
-            f.write(z.read("com/viaversion/viabackwards/api/data/BackwardsMappingData.class"))
 
-    print("[2/4] Compiling PatchViaProxyItems.java...")
+    print("[1/3] Compiling MappingDataBase.java and BackwardsMappingData.java with javac...")
     res = subprocess.run([
-        JAVAC, "-cp", ASM_CP, "-d", "tools", "tools/PatchViaProxyItems.java"
+        JAVAC, "-proc:none", "-cp", VIAPROXY_JAR, "-d", staging,
+        "tools/MappingDataBase.java", "tools/BackwardsMappingData.java"
     ], capture_output=True, text=True)
     if res.returncode != 0:
-        print("Compilation failed:\n", res.stderr)
+        print("javac failed:\n", res.stderr)
         return False
 
-    print("[3/4] Executing bytecode transformer...")
-    res = subprocess.run([
-        JAVA, "-cp", f"tools;{ASM_CP}", "PatchViaProxyItems"
-    ], capture_output=True, text=True)
-    print(res.stdout)
-    if res.returncode != 0:
-        print("PatchViaProxyItems failed:\n", res.stderr)
-        return False
-
-    print("[4/4] Injecting patched classes into ViaProxy.jar...")
+    print("[2/3] Preparing clean baseline ViaProxy.jar...")
     backup = VIAPROXY_JAR + ".bak"
     if not os.path.exists(backup):
         shutil.copy2(VIAPROXY_JAR, backup)
         print(f"Backed up to {backup}")
 
+    print("[3/3] Injecting compiled classes into ViaProxy.jar...")
+    mdb_class = os.path.join(staging, "com/viaversion/viaversion/api/data/MappingDataBase.class")
+    bmd_class = os.path.join(staging, "com/viaversion/viabackwards/api/data/BackwardsMappingData.class")
+
     tmp_jar = VIAPROXY_JAR + ".tmp"
-    with zipfile.ZipFile(VIAPROXY_JAR, "r") as zin:
+    with zipfile.ZipFile(backup, "r") as zin:
         with zipfile.ZipFile(tmp_jar, "w", compression=zipfile.ZIP_DEFLATED) as zout:
             for item in zin.infolist():
                 if item.filename == "com/viaversion/viaversion/api/data/MappingDataBase.class":
-                    with open(os.path.join(staging, "MappingDataBase_patched.class"), "rb") as pf:
+                    with open(mdb_class, "rb") as pf:
                         zout.writestr(item, pf.read())
                 elif item.filename == "com/viaversion/viabackwards/api/data/BackwardsMappingData.class":
-                    with open(os.path.join(staging, "BackwardsMappingData_patched.class"), "rb") as pf:
+                    with open(bmd_class, "rb") as pf:
                         zout.writestr(item, pf.read())
                 else:
                     zout.writestr(item, zin.read(item.filename))

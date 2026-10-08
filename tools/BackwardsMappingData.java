@@ -38,7 +38,7 @@ import com.viaversion.viaversion.util.Key;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.checkerframework.checker.nullness.qual.Nullable;
+// no nullable
 
 public class BackwardsMappingData extends MappingDataBase {
 
@@ -50,7 +50,7 @@ public class BackwardsMappingData extends MappingDataBase {
         this(unmappedVersion, mappedVersion, null);
     }
 
-    public BackwardsMappingData(final String unmappedVersion, final String mappedVersion, @Nullable final Class<? extends Protocol<?, ?, ?, ?>> vvProtocolClass) {
+    public BackwardsMappingData(final String unmappedVersion, final String mappedVersion, final Class<? extends Protocol<?, ?, ?, ?>> vvProtocolClass) {
         super(unmappedVersion, mappedVersion);
         Preconditions.checkArgument(vvProtocolClass == null || !BackwardsProtocol.class.isAssignableFrom(vvProtocolClass));
         this.vvProtocolClass = vvProtocolClass;
@@ -77,7 +77,7 @@ public class BackwardsMappingData extends MappingDataBase {
         }
     }
 
-    private @Nullable Int2ObjectMap<String> loadNameByIdMappings(final CompoundTag data, final String key) {
+    private Int2ObjectMap<String> loadNameByIdMappings(final CompoundTag data, final String key) {
         final CompoundTag nameMappings = data.getCompoundTag(key);
         if (nameMappings == null) {
             return null;
@@ -92,7 +92,7 @@ public class BackwardsMappingData extends MappingDataBase {
     }
 
     @Override
-    protected @Nullable BiMappings loadBiMappings(final CompoundTag data, final String key) {
+    protected BiMappings loadBiMappings(final CompoundTag data, final String key) {
         if (key.equals("items") && vvProtocolClass != null) {
             Mappings mappings = super.loadMappings(data, key);
             final MappingData mappingData = Via.getManager().getProtocolManager().getProtocol(vvProtocolClass).getMappingData();
@@ -112,18 +112,21 @@ public class BackwardsMappingData extends MappingDataBase {
      */
     @Override
     public int getNewItemId(final int id) {
+        if (id >= 10000) return id - 10000;
         final int mapped = this.itemMappings.getNewId(id);
         return mapped != -1 ? mapped : id;
     }
 
     @Override
     public int getNewBlockId(final int id) {
+        if (id >= 100000) return id - 100000;
         final int mapped = this.blockMappings.getNewId(id);
         return mapped != -1 ? mapped : id;
     }
 
     @Override
     public int getOldItemId(final int id) {
+        if (id >= 10000) return id - 10000;
         final int mapped = this.itemMappings.inverse().getNewId(id);
         return mapped != -1 ? mapped : id;
     }
@@ -133,15 +136,15 @@ public class BackwardsMappingData extends MappingDataBase {
         return this.attributeMappings.getNewId(id);
     }
 
-    public @Nullable MappedItem getMappedItem(final int id) {
+    public MappedItem getMappedItem(final int id) {
         return backwardsItemMappings != null ? backwardsItemMappings.get(id) : null;
     }
 
-    public @Nullable String getMappedNamedSound(final String id) {
+    public String getMappedNamedSound(final String id) {
         return getFullSoundMappings().mappedIdentifier(id);
     }
 
-    public @Nullable String mappedEnchantmentName(final int enchantmentId) {
+    public String mappedEnchantmentName(final int enchantmentId) {
         if (enchantmentNames == null) {
             ViaBackwards.getPlatform().getLogger().log(Level.SEVERE, "No enchantment name mappings found when requesting " + enchantmentId, new RuntimeException());
             return null;
@@ -149,11 +152,11 @@ public class BackwardsMappingData extends MappingDataBase {
         return enchantmentNames.get(enchantmentId);
     }
 
-    public @Nullable Int2ObjectMap<MappedItem> getBackwardsItemMappings() {
+    public Int2ObjectMap<MappedItem> getBackwardsItemMappings() {
         return backwardsItemMappings;
     }
 
-    public @Nullable Class<? extends Protocol<?, ?, ?, ?>> getViaVersionProtocolClass() {
+    public Class<? extends Protocol<?, ?, ?, ?>> getViaVersionProtocolClass() {
         return vvProtocolClass;
     }
 
@@ -163,7 +166,7 @@ public class BackwardsMappingData extends MappingDataBase {
     }
 
     @Override
-    protected @Nullable CompoundTag readMappingsFile(final String name) {
+    protected CompoundTag readMappingsFile(final String name) {
         return BackwardsMappingDataLoader.INSTANCE.loadNBTFromDir(name);
     }
 
