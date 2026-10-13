@@ -1,0 +1,7 @@
+{
+  "repo": "IbrahimAnaz/create-bridge",
+  "branch": "master",
+  "remote_name": "origin",
+  "poll_interval_sec": 5,
+  "auto_compile": true
+}

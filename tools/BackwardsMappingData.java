@@ -42,6 +42,9 @@ import java.util.logging.Logger;
 
 public class BackwardsMappingData extends MappingDataBase {
 
+    private static final int CREATE_ITEM_ID_START = 1333;
+    private static final int CREATE_ITEM_ID_OFFSET = 10000;
+
     private final Class<? extends Protocol<?, ?, ?, ?>> vvProtocolClass;
     protected Int2ObjectMap<MappedItem> backwardsItemMappings;
     private Int2ObjectMap<String> enchantmentNames;
@@ -112,7 +115,8 @@ public class BackwardsMappingData extends MappingDataBase {
      */
     @Override
     public int getNewItemId(final int id) {
-        if (id >= 10000) return id - 10000;
+        if (id >= CREATE_ITEM_ID_OFFSET) return id;
+        if (id >= CREATE_ITEM_ID_START) return CREATE_ITEM_ID_OFFSET + id;
         if (this.itemMappings == null) return id;
         final int mapped = this.itemMappings.getNewId(id);
         return mapped != -1 ? mapped : id;
@@ -128,7 +132,7 @@ public class BackwardsMappingData extends MappingDataBase {
 
     @Override
     public int getOldItemId(final int id) {
-        if (id >= 10000) return id - 10000;
+        if (id >= CREATE_ITEM_ID_OFFSET) return id - CREATE_ITEM_ID_OFFSET;
         if (this.itemMappings == null) return id;
         final int mapped = this.itemMappings.inverse().getNewId(id);
         return mapped != -1 ? mapped : id;

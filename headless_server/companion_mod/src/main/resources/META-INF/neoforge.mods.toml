@@ -1,0 +1,34 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "createbridge_companion"
+version = "1.0.0"
+displayName = "CreateBridge Companion"
+authors = "CreateBridge"
+description = "Low-latency server sync bridge between Create Mod and Geyser"
+
+[[mixins]]
+config = "createbridge_companion.mixins.json"
+
+[[dependencies."createbridge_companion"]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.200,)"
+ordering = "NONE"
+side = "SERVER"
+
+[[dependencies."createbridge_companion"]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "SERVER"
+
+[[dependencies."createbridge_companion"]]
+modId = "create"
+type = "required"
+versionRange = "[6.0.0,)"
+ordering = "AFTER"
+side = "SERVER"

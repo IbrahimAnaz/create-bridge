@@ -1,5 +1,5 @@
 {
-  "format_version": "1.20.10",
+  "format_version": "1.21.0",
   "create:andesite_casing": {
     "textures": "create_andesite_casing",
     "sound": "wood"
@@ -10,11 +10,11 @@
   },
   "create:copper_casing": {
     "textures": "create_copper_casing",
-    "sound": "copper"
+    "sound": "wood"
   },
   "create:railway_casing": {
     "textures": "create_railway_casing",
-    "sound": "metal"
+    "sound": "wood"
   },
   "create:raw_zinc_block": {
     "textures": "create_raw_zinc_block",
@@ -30,36 +30,2518 @@
   },
   "create:cogwheel": {
     "textures": "create_cogwheel",
-    "geometry": "geometry.create.cogwheel",
-    "sound": "wood"
+    "sound": "metal"
   },
   "create:large_cogwheel": {
-    "textures": "create_cogwheel",
-    "geometry": "geometry.create.cogwheel",
+    "textures": "create_large_cogwheel",
     "sound": "metal"
   },
   "create:depot": {
     "textures": "create_depot",
-    "geometry": "geometry.create.depot",
     "sound": "metal"
   },
   "create:chute": {
     "textures": "create_chute",
-    "geometry": "geometry.create.chute",
     "sound": "metal"
   },
   "create:schematicannon": {
-    "textures": "create_copper_casing",
+    "textures": "create_schematicannon",
     "sound": "metal"
   },
   "create:gearbox": {
     "textures": "create_gearbox",
-    "geometry": "geometry.create.gearbox",
     "sound": "metal"
   },
   "create:shaft": {
     "textures": "create_shaft",
-    "geometry": "geometry.create.shaft",
+    "sound": "metal"
+  },
+  "create:basin": {
+    "textures": "create_basin",
+    "sound": "metal"
+  },
+  "create:water_wheel": {
+    "textures": "create_water_wheel",
+    "sound": "metal"
+  },
+  "create:mechanical_press": {
+    "textures": "create_mechanical_press",
+    "sound": "metal"
+  },
+  "create:millstone": {
+    "textures": "create_millstone",
+    "sound": "metal"
+  },
+  "create:hand_crank": {
+    "textures": "create_hand_crank",
+    "sound": "metal"
+  },
+  "create:copper_valve_handle": {
+    "textures": "create_copper_valve_handle",
+    "sound": "metal"
+  },
+  "create:white_valve_handle": {
+    "textures": "create_white_valve_handle",
+    "sound": "metal"
+  },
+  "create:orange_valve_handle": {
+    "textures": "create_orange_valve_handle",
+    "sound": "metal"
+  },
+  "create:magenta_valve_handle": {
+    "textures": "create_magenta_valve_handle",
+    "sound": "metal"
+  },
+  "create:light_blue_valve_handle": {
+    "textures": "create_light_blue_valve_handle",
+    "sound": "metal"
+  },
+  "create:yellow_valve_handle": {
+    "textures": "create_yellow_valve_handle",
+    "sound": "metal"
+  },
+  "create:lime_valve_handle": {
+    "textures": "create_lime_valve_handle",
+    "sound": "metal"
+  },
+  "create:pink_valve_handle": {
+    "textures": "create_pink_valve_handle",
+    "sound": "metal"
+  },
+  "create:gray_valve_handle": {
+    "textures": "create_gray_valve_handle",
+    "sound": "metal"
+  },
+  "create:light_gray_valve_handle": {
+    "textures": "create_light_gray_valve_handle",
+    "sound": "metal"
+  },
+  "create:cyan_valve_handle": {
+    "textures": "create_cyan_valve_handle",
+    "sound": "metal"
+  },
+  "create:purple_valve_handle": {
+    "textures": "create_purple_valve_handle",
+    "sound": "metal"
+  },
+  "create:blue_valve_handle": {
+    "textures": "create_blue_valve_handle",
+    "sound": "metal"
+  },
+  "create:brown_valve_handle": {
+    "textures": "create_brown_valve_handle",
+    "sound": "metal"
+  },
+  "create:green_valve_handle": {
+    "textures": "create_green_valve_handle",
+    "sound": "metal"
+  },
+  "create:red_valve_handle": {
+    "textures": "create_red_valve_handle",
+    "sound": "metal"
+  },
+  "create:black_valve_handle": {
+    "textures": "create_black_valve_handle",
+    "sound": "metal"
+  },
+  "create:valve_handle": {
+    "textures": "create_valve_handle",
+    "sound": "metal"
+  },
+  "create:speedometer": {
+    "textures": "create_speedometer",
+    "sound": "metal"
+  },
+  "create:stressometer": {
+    "textures": "create_stressometer",
+    "sound": "metal"
+  },
+  "create:clutch": {
+    "textures": "create_clutch",
+    "sound": "metal"
+  },
+  "create:gearshift": {
+    "textures": "create_gearshift",
+    "sound": "metal"
+  },
+  "create:encased_fan": {
+    "textures": "create_encased_fan",
+    "sound": "metal"
+  },
+  "create:mechanical_mixer": {
+    "textures": "create_mechanical_mixer",
+    "sound": "metal"
+  },
+  "create:mechanical_drill": {
+    "textures": "create_mechanical_drill",
+    "sound": "metal"
+  },
+  "create:mechanical_saw": {
+    "textures": "create_mechanical_saw",
+    "sound": "metal"
+  },
+  "create:mechanical_harvester": {
+    "textures": "create_mechanical_harvester",
+    "sound": "metal"
+  },
+  "create:mechanical_plough": {
+    "textures": "create_mechanical_plough",
+    "sound": "metal"
+  },
+  "create:cuckoo_clock": {
+    "textures": "create_cuckoo_clock",
+    "sound": "metal"
+  },
+  "create:deployer": {
+    "textures": "create_deployer",
+    "sound": "metal"
+  },
+  "create:spout": {
+    "textures": "create_spout",
+    "sound": "metal"
+  },
+  "create:item_drain": {
+    "textures": "create_item_drain",
+    "sound": "metal"
+  },
+  "create:creative_motor": {
+    "textures": "create_creative_motor",
+    "sound": "metal"
+  },
+  "create:crushing_wheel": {
+    "textures": "create_crushing_wheel",
+    "sound": "metal"
+  },
+  "create:brass_encased_shaft": {
+    "textures": "create_brass_encased_shaft",
+    "sound": "metal"
+  },
+  "create:fluid_pipe": {
+    "textures": "create_fluid_pipe",
+    "sound": "metal"
+  },
+  "create:cut_andesite_slab": {
+    "textures": "create_cut_andesite_slab",
+    "sound": "metal"
+  },
+  "create:cut_andesite_stairs": {
+    "textures": "create_cut_andesite_stairs",
+    "sound": "metal"
+  },
+  "create:andesite_pillar": {
+    "textures": "create_andesite_pillar",
+    "sound": "metal"
+  },
+  "create:andesite_encased_shaft": {
+    "textures": "create_andesite_encased_shaft",
+    "sound": "metal"
+  },
+  "create:controls": {
+    "textures": "create_controls",
+    "sound": "metal"
+  },
+  "create:mechanical_arm": {
+    "textures": "create_mechanical_arm",
+    "sound": "metal"
+  },
+  "create:smart_chute": {
+    "textures": "create_smart_chute",
+    "sound": "metal"
+  },
+  "create:weighted_ejector": {
+    "textures": "create_weighted_ejector",
+    "sound": "metal"
+  },
+  "create:steam_engine": {
+    "textures": "create_steam_engine",
+    "sound": "metal"
+  },
+  "create:steam_whistle": {
+    "textures": "create_steam_whistle",
+    "sound": "metal"
+  },
+  "create:display_link": {
+    "textures": "create_display_link",
+    "sound": "metal"
+  },
+  "create:nixie_tube": {
+    "textures": "create_nixie_tube",
+    "sound": "metal"
+  },
+  "create:copper_backtank": {
+    "textures": "create_copper_backtank",
+    "sound": "metal"
+  },
+  "create:netherite_backtank": {
+    "textures": "create_netherite_backtank",
+    "sound": "metal"
+  },
+  "create:acacia_window": {
+    "textures": "create_acacia_window",
+    "sound": "metal"
+  },
+  "create:acacia_window_pane": {
+    "textures": "create_acacia_window_pane",
+    "sound": "metal"
+  },
+  "create:adjustable_chain_gearshift": {
+    "textures": "create_adjustable_chain_gearshift",
+    "sound": "metal"
+  },
+  "create:analog_lever": {
+    "textures": "create_analog_lever",
+    "sound": "metal"
+  },
+  "create:andesite_alloy_block": {
+    "textures": "create_andesite_alloy_block",
+    "sound": "metal"
+  },
+  "create:andesite_bars": {
+    "textures": "create_andesite_bars",
+    "sound": "metal"
+  },
+  "create:andesite_belt_funnel": {
+    "textures": "create_andesite_belt_funnel",
+    "sound": "metal"
+  },
+  "create:andesite_door": {
+    "textures": "create_andesite_door",
+    "sound": "metal"
+  },
+  "create:andesite_encased_cogwheel": {
+    "textures": "create_andesite_encased_cogwheel",
+    "sound": "metal"
+  },
+  "create:andesite_encased_large_cogwheel": {
+    "textures": "create_andesite_encased_large_cogwheel",
+    "sound": "metal"
+  },
+  "create:andesite_funnel": {
+    "textures": "create_andesite_funnel",
+    "sound": "metal"
+  },
+  "create:andesite_ladder": {
+    "textures": "create_andesite_ladder",
+    "sound": "metal"
+  },
+  "create:andesite_scaffolding": {
+    "textures": "create_andesite_scaffolding",
+    "sound": "metal"
+  },
+  "create:andesite_table_cloth": {
+    "textures": "create_andesite_table_cloth",
+    "sound": "metal"
+  },
+  "create:andesite_tunnel": {
+    "textures": "create_andesite_tunnel",
+    "sound": "metal"
+  },
+  "create:asurine": {
+    "textures": "create_asurine",
+    "sound": "metal"
+  },
+  "create:asurine_pillar": {
+    "textures": "create_asurine_pillar",
+    "sound": "metal"
+  },
+  "create:bamboo_window": {
+    "textures": "create_bamboo_window",
+    "sound": "metal"
+  },
+  "create:bamboo_window_pane": {
+    "textures": "create_bamboo_window_pane",
+    "sound": "metal"
+  },
+  "create:birch_window": {
+    "textures": "create_birch_window",
+    "sound": "metal"
+  },
+  "create:birch_window_pane": {
+    "textures": "create_birch_window_pane",
+    "sound": "metal"
+  },
+  "create:black_nixie_tube": {
+    "textures": "create_black_nixie_tube",
+    "sound": "metal"
+  },
+  "create:black_postbox": {
+    "textures": "create_black_postbox",
+    "sound": "metal"
+  },
+  "create:black_sail": {
+    "textures": "create_black_sail",
+    "sound": "metal"
+  },
+  "create:black_seat": {
+    "textures": "create_black_seat",
+    "sound": "metal"
+  },
+  "create:black_table_cloth": {
+    "textures": "create_black_table_cloth",
+    "sound": "metal"
+  },
+  "create:black_toolbox": {
+    "textures": "create_black_toolbox",
+    "sound": "metal"
+  },
+  "create:blaze_burner": {
+    "textures": "create_blaze_burner",
+    "sound": "metal"
+  },
+  "create:blue_nixie_tube": {
+    "textures": "create_blue_nixie_tube",
+    "sound": "metal"
+  },
+  "create:blue_postbox": {
+    "textures": "create_blue_postbox",
+    "sound": "metal"
+  },
+  "create:blue_sail": {
+    "textures": "create_blue_sail",
+    "sound": "metal"
+  },
+  "create:blue_seat": {
+    "textures": "create_blue_seat",
+    "sound": "metal"
+  },
+  "create:blue_table_cloth": {
+    "textures": "create_blue_table_cloth",
+    "sound": "metal"
+  },
+  "create:blue_toolbox": {
+    "textures": "create_blue_toolbox",
+    "sound": "metal"
+  },
+  "create:bound_cardboard_block": {
+    "textures": "create_bound_cardboard_block",
+    "sound": "metal"
+  },
+  "create:brass_bars": {
+    "textures": "create_brass_bars",
+    "sound": "metal"
+  },
+  "create:brass_belt_funnel": {
+    "textures": "create_brass_belt_funnel",
+    "sound": "metal"
+  },
+  "create:brass_door": {
+    "textures": "create_brass_door",
+    "sound": "metal"
+  },
+  "create:brass_encased_cogwheel": {
+    "textures": "create_brass_encased_cogwheel",
+    "sound": "metal"
+  },
+  "create:brass_encased_large_cogwheel": {
+    "textures": "create_brass_encased_large_cogwheel",
+    "sound": "metal"
+  },
+  "create:brass_funnel": {
+    "textures": "create_brass_funnel",
+    "sound": "metal"
+  },
+  "create:brass_ladder": {
+    "textures": "create_brass_ladder",
+    "sound": "metal"
+  },
+  "create:brass_scaffolding": {
+    "textures": "create_brass_scaffolding",
+    "sound": "metal"
+  },
+  "create:brass_table_cloth": {
+    "textures": "create_brass_table_cloth",
+    "sound": "metal"
+  },
+  "create:brass_tunnel": {
+    "textures": "create_brass_tunnel",
+    "sound": "metal"
+  },
+  "create:brown_nixie_tube": {
+    "textures": "create_brown_nixie_tube",
+    "sound": "metal"
+  },
+  "create:brown_postbox": {
+    "textures": "create_brown_postbox",
+    "sound": "metal"
+  },
+  "create:brown_sail": {
+    "textures": "create_brown_sail",
+    "sound": "metal"
+  },
+  "create:brown_seat": {
+    "textures": "create_brown_seat",
+    "sound": "metal"
+  },
+  "create:brown_table_cloth": {
+    "textures": "create_brown_table_cloth",
+    "sound": "metal"
+  },
+  "create:brown_toolbox": {
+    "textures": "create_brown_toolbox",
+    "sound": "metal"
+  },
+  "create:calcite_pillar": {
+    "textures": "create_calcite_pillar",
+    "sound": "metal"
+  },
+  "create:cardboard_block": {
+    "textures": "create_cardboard_block",
+    "sound": "metal"
+  },
+  "create:cart_assembler": {
+    "textures": "create_cart_assembler",
+    "sound": "metal"
+  },
+  "create:chain_conveyor": {
+    "textures": "create_chain_conveyor",
+    "sound": "metal"
+  },
+  "create:cherry_window": {
+    "textures": "create_cherry_window",
+    "sound": "metal"
+  },
+  "create:cherry_window_pane": {
+    "textures": "create_cherry_window_pane",
+    "sound": "metal"
+  },
+  "create:clipboard": {
+    "textures": "create_clipboard",
+    "sound": "metal"
+  },
+  "create:clockwork_bearing": {
+    "textures": "create_clockwork_bearing",
+    "sound": "metal"
+  },
+  "create:content_observer": {
+    "textures": "create_content_observer",
+    "sound": "metal"
+  },
+  "create:contraption_controls": {
+    "textures": "create_contraption_controls",
+    "sound": "metal"
+  },
+  "create:controller_rail": {
+    "textures": "create_controller_rail",
+    "sound": "metal"
+  },
+  "create:copper_bars": {
+    "textures": "create_copper_bars",
+    "sound": "metal"
+  },
+  "create:copper_door": {
+    "textures": "create_copper_door",
+    "sound": "metal"
+  },
+  "create:copper_ladder": {
+    "textures": "create_copper_ladder",
+    "sound": "metal"
+  },
+  "create:copper_scaffolding": {
+    "textures": "create_copper_scaffolding",
+    "sound": "metal"
+  },
+  "create:copper_shingle_slab": {
+    "textures": "create_copper_shingle_slab",
+    "sound": "metal"
+  },
+  "create:copper_shingle_stairs": {
+    "textures": "create_copper_shingle_stairs",
+    "sound": "metal"
+  },
+  "create:copper_shingles": {
+    "textures": "create_copper_shingles",
+    "sound": "metal"
+  },
+  "create:copper_table_cloth": {
+    "textures": "create_copper_table_cloth",
+    "sound": "metal"
+  },
+  "create:copper_tile_slab": {
+    "textures": "create_copper_tile_slab",
+    "sound": "metal"
+  },
+  "create:copper_tile_stairs": {
+    "textures": "create_copper_tile_stairs",
+    "sound": "metal"
+  },
+  "create:copper_tiles": {
+    "textures": "create_copper_tiles",
+    "sound": "metal"
+  },
+  "create:copycat_bars": {
+    "textures": "create_copycat_bars",
+    "sound": "metal"
+  },
+  "create:copycat_base": {
+    "textures": "create_copycat_base",
+    "sound": "metal"
+  },
+  "create:copycat_panel": {
+    "textures": "create_copycat_panel",
+    "sound": "metal"
+  },
+  "create:copycat_step": {
+    "textures": "create_copycat_step",
+    "sound": "metal"
+  },
+  "create:creative_crate": {
+    "textures": "create_creative_crate",
+    "sound": "metal"
+  },
+  "create:creative_fluid_tank": {
+    "textures": "create_creative_fluid_tank",
+    "sound": "metal"
+  },
+  "create:crimsite": {
+    "textures": "create_crimsite",
+    "sound": "metal"
+  },
+  "create:crimsite_pillar": {
+    "textures": "create_crimsite_pillar",
+    "sound": "metal"
+  },
+  "create:crimson_window": {
+    "textures": "create_crimson_window",
+    "sound": "metal"
+  },
+  "create:crimson_window_pane": {
+    "textures": "create_crimson_window_pane",
+    "sound": "metal"
+  },
+  "create:cut_andesite": {
+    "textures": "create_cut_andesite",
+    "sound": "metal"
+  },
+  "create:cut_andesite_brick_slab": {
+    "textures": "create_cut_andesite_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_andesite_brick_stairs": {
+    "textures": "create_cut_andesite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_andesite_brick_wall": {
+    "textures": "create_cut_andesite_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_andesite_bricks": {
+    "textures": "create_cut_andesite_bricks",
+    "sound": "metal"
+  },
+  "create:cut_andesite_wall": {
+    "textures": "create_cut_andesite_wall",
+    "sound": "metal"
+  },
+  "create:cut_asurine": {
+    "textures": "create_cut_asurine",
+    "sound": "metal"
+  },
+  "create:cut_asurine_brick_slab": {
+    "textures": "create_cut_asurine_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_asurine_brick_stairs": {
+    "textures": "create_cut_asurine_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_asurine_brick_wall": {
+    "textures": "create_cut_asurine_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_asurine_bricks": {
+    "textures": "create_cut_asurine_bricks",
+    "sound": "metal"
+  },
+  "create:cut_asurine_slab": {
+    "textures": "create_cut_asurine_slab",
+    "sound": "metal"
+  },
+  "create:cut_asurine_stairs": {
+    "textures": "create_cut_asurine_stairs",
+    "sound": "metal"
+  },
+  "create:cut_asurine_wall": {
+    "textures": "create_cut_asurine_wall",
+    "sound": "metal"
+  },
+  "create:cut_calcite": {
+    "textures": "create_cut_calcite",
+    "sound": "metal"
+  },
+  "create:cut_calcite_brick_slab": {
+    "textures": "create_cut_calcite_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_calcite_brick_stairs": {
+    "textures": "create_cut_calcite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_calcite_brick_wall": {
+    "textures": "create_cut_calcite_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_calcite_bricks": {
+    "textures": "create_cut_calcite_bricks",
+    "sound": "metal"
+  },
+  "create:cut_calcite_slab": {
+    "textures": "create_cut_calcite_slab",
+    "sound": "metal"
+  },
+  "create:cut_calcite_stairs": {
+    "textures": "create_cut_calcite_stairs",
+    "sound": "metal"
+  },
+  "create:cut_calcite_wall": {
+    "textures": "create_cut_calcite_wall",
+    "sound": "metal"
+  },
+  "create:cut_crimsite": {
+    "textures": "create_cut_crimsite",
+    "sound": "metal"
+  },
+  "create:cut_crimsite_brick_slab": {
+    "textures": "create_cut_crimsite_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_crimsite_brick_stairs": {
+    "textures": "create_cut_crimsite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_crimsite_brick_wall": {
+    "textures": "create_cut_crimsite_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_crimsite_bricks": {
+    "textures": "create_cut_crimsite_bricks",
+    "sound": "metal"
+  },
+  "create:cut_crimsite_slab": {
+    "textures": "create_cut_crimsite_slab",
+    "sound": "metal"
+  },
+  "create:cut_crimsite_stairs": {
+    "textures": "create_cut_crimsite_stairs",
+    "sound": "metal"
+  },
+  "create:cut_crimsite_wall": {
+    "textures": "create_cut_crimsite_wall",
+    "sound": "metal"
+  },
+  "create:cut_deepslate": {
+    "textures": "create_cut_deepslate",
+    "sound": "metal"
+  },
+  "create:cut_deepslate_brick_slab": {
+    "textures": "create_cut_deepslate_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_deepslate_brick_stairs": {
+    "textures": "create_cut_deepslate_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_deepslate_brick_wall": {
+    "textures": "create_cut_deepslate_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_deepslate_bricks": {
+    "textures": "create_cut_deepslate_bricks",
+    "sound": "metal"
+  },
+  "create:cut_deepslate_slab": {
+    "textures": "create_cut_deepslate_slab",
+    "sound": "metal"
+  },
+  "create:cut_deepslate_stairs": {
+    "textures": "create_cut_deepslate_stairs",
+    "sound": "metal"
+  },
+  "create:cut_deepslate_wall": {
+    "textures": "create_cut_deepslate_wall",
+    "sound": "metal"
+  },
+  "create:cut_diorite": {
+    "textures": "create_cut_diorite",
+    "sound": "metal"
+  },
+  "create:cut_diorite_brick_slab": {
+    "textures": "create_cut_diorite_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_diorite_brick_stairs": {
+    "textures": "create_cut_diorite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_diorite_brick_wall": {
+    "textures": "create_cut_diorite_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_diorite_bricks": {
+    "textures": "create_cut_diorite_bricks",
+    "sound": "metal"
+  },
+  "create:cut_diorite_slab": {
+    "textures": "create_cut_diorite_slab",
+    "sound": "metal"
+  },
+  "create:cut_diorite_stairs": {
+    "textures": "create_cut_diorite_stairs",
+    "sound": "metal"
+  },
+  "create:cut_diorite_wall": {
+    "textures": "create_cut_diorite_wall",
+    "sound": "metal"
+  },
+  "create:cut_dripstone": {
+    "textures": "create_cut_dripstone",
+    "sound": "metal"
+  },
+  "create:cut_dripstone_brick_slab": {
+    "textures": "create_cut_dripstone_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_dripstone_brick_stairs": {
+    "textures": "create_cut_dripstone_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_dripstone_brick_wall": {
+    "textures": "create_cut_dripstone_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_dripstone_bricks": {
+    "textures": "create_cut_dripstone_bricks",
+    "sound": "metal"
+  },
+  "create:cut_dripstone_slab": {
+    "textures": "create_cut_dripstone_slab",
+    "sound": "metal"
+  },
+  "create:cut_dripstone_stairs": {
+    "textures": "create_cut_dripstone_stairs",
+    "sound": "metal"
+  },
+  "create:cut_dripstone_wall": {
+    "textures": "create_cut_dripstone_wall",
+    "sound": "metal"
+  },
+  "create:cut_granite": {
+    "textures": "create_cut_granite",
+    "sound": "metal"
+  },
+  "create:cut_granite_brick_slab": {
+    "textures": "create_cut_granite_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_granite_brick_stairs": {
+    "textures": "create_cut_granite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_granite_brick_wall": {
+    "textures": "create_cut_granite_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_granite_bricks": {
+    "textures": "create_cut_granite_bricks",
+    "sound": "metal"
+  },
+  "create:cut_granite_slab": {
+    "textures": "create_cut_granite_slab",
+    "sound": "metal"
+  },
+  "create:cut_granite_stairs": {
+    "textures": "create_cut_granite_stairs",
+    "sound": "metal"
+  },
+  "create:cut_granite_wall": {
+    "textures": "create_cut_granite_wall",
+    "sound": "metal"
+  },
+  "create:cut_limestone": {
+    "textures": "create_cut_limestone",
+    "sound": "metal"
+  },
+  "create:cut_limestone_brick_slab": {
+    "textures": "create_cut_limestone_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_limestone_brick_stairs": {
+    "textures": "create_cut_limestone_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_limestone_brick_wall": {
+    "textures": "create_cut_limestone_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_limestone_bricks": {
+    "textures": "create_cut_limestone_bricks",
+    "sound": "metal"
+  },
+  "create:cut_limestone_slab": {
+    "textures": "create_cut_limestone_slab",
+    "sound": "metal"
+  },
+  "create:cut_limestone_stairs": {
+    "textures": "create_cut_limestone_stairs",
+    "sound": "metal"
+  },
+  "create:cut_limestone_wall": {
+    "textures": "create_cut_limestone_wall",
+    "sound": "metal"
+  },
+  "create:cut_ochrum": {
+    "textures": "create_cut_ochrum",
+    "sound": "metal"
+  },
+  "create:cut_ochrum_brick_slab": {
+    "textures": "create_cut_ochrum_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_ochrum_brick_stairs": {
+    "textures": "create_cut_ochrum_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_ochrum_brick_wall": {
+    "textures": "create_cut_ochrum_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_ochrum_bricks": {
+    "textures": "create_cut_ochrum_bricks",
+    "sound": "metal"
+  },
+  "create:cut_ochrum_slab": {
+    "textures": "create_cut_ochrum_slab",
+    "sound": "metal"
+  },
+  "create:cut_ochrum_stairs": {
+    "textures": "create_cut_ochrum_stairs",
+    "sound": "metal"
+  },
+  "create:cut_ochrum_wall": {
+    "textures": "create_cut_ochrum_wall",
+    "sound": "metal"
+  },
+  "create:cut_scorchia": {
+    "textures": "create_cut_scorchia",
+    "sound": "metal"
+  },
+  "create:cut_scorchia_brick_slab": {
+    "textures": "create_cut_scorchia_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_scorchia_brick_stairs": {
+    "textures": "create_cut_scorchia_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_scorchia_brick_wall": {
+    "textures": "create_cut_scorchia_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_scorchia_bricks": {
+    "textures": "create_cut_scorchia_bricks",
+    "sound": "metal"
+  },
+  "create:cut_scorchia_slab": {
+    "textures": "create_cut_scorchia_slab",
+    "sound": "metal"
+  },
+  "create:cut_scorchia_stairs": {
+    "textures": "create_cut_scorchia_stairs",
+    "sound": "metal"
+  },
+  "create:cut_scorchia_wall": {
+    "textures": "create_cut_scorchia_wall",
+    "sound": "metal"
+  },
+  "create:cut_scoria": {
+    "textures": "create_cut_scoria",
+    "sound": "metal"
+  },
+  "create:cut_scoria_brick_slab": {
+    "textures": "create_cut_scoria_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_scoria_brick_stairs": {
+    "textures": "create_cut_scoria_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_scoria_brick_wall": {
+    "textures": "create_cut_scoria_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_scoria_bricks": {
+    "textures": "create_cut_scoria_bricks",
+    "sound": "metal"
+  },
+  "create:cut_scoria_slab": {
+    "textures": "create_cut_scoria_slab",
+    "sound": "metal"
+  },
+  "create:cut_scoria_stairs": {
+    "textures": "create_cut_scoria_stairs",
+    "sound": "metal"
+  },
+  "create:cut_scoria_wall": {
+    "textures": "create_cut_scoria_wall",
+    "sound": "metal"
+  },
+  "create:cut_tuff": {
+    "textures": "create_cut_tuff",
+    "sound": "metal"
+  },
+  "create:cut_tuff_brick_slab": {
+    "textures": "create_cut_tuff_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_tuff_brick_stairs": {
+    "textures": "create_cut_tuff_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_tuff_brick_wall": {
+    "textures": "create_cut_tuff_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_tuff_bricks": {
+    "textures": "create_cut_tuff_bricks",
+    "sound": "metal"
+  },
+  "create:cut_tuff_slab": {
+    "textures": "create_cut_tuff_slab",
+    "sound": "metal"
+  },
+  "create:cut_tuff_stairs": {
+    "textures": "create_cut_tuff_stairs",
+    "sound": "metal"
+  },
+  "create:cut_tuff_wall": {
+    "textures": "create_cut_tuff_wall",
+    "sound": "metal"
+  },
+  "create:cut_veridium": {
+    "textures": "create_cut_veridium",
+    "sound": "metal"
+  },
+  "create:cut_veridium_brick_slab": {
+    "textures": "create_cut_veridium_brick_slab",
+    "sound": "metal"
+  },
+  "create:cut_veridium_brick_stairs": {
+    "textures": "create_cut_veridium_brick_stairs",
+    "sound": "metal"
+  },
+  "create:cut_veridium_brick_wall": {
+    "textures": "create_cut_veridium_brick_wall",
+    "sound": "metal"
+  },
+  "create:cut_veridium_bricks": {
+    "textures": "create_cut_veridium_bricks",
+    "sound": "metal"
+  },
+  "create:cut_veridium_slab": {
+    "textures": "create_cut_veridium_slab",
+    "sound": "metal"
+  },
+  "create:cut_veridium_stairs": {
+    "textures": "create_cut_veridium_stairs",
+    "sound": "metal"
+  },
+  "create:cut_veridium_wall": {
+    "textures": "create_cut_veridium_wall",
+    "sound": "metal"
+  },
+  "create:cyan_nixie_tube": {
+    "textures": "create_cyan_nixie_tube",
+    "sound": "metal"
+  },
+  "create:cyan_postbox": {
+    "textures": "create_cyan_postbox",
+    "sound": "metal"
+  },
+  "create:cyan_sail": {
+    "textures": "create_cyan_sail",
+    "sound": "metal"
+  },
+  "create:cyan_seat": {
+    "textures": "create_cyan_seat",
+    "sound": "metal"
+  },
+  "create:cyan_table_cloth": {
+    "textures": "create_cyan_table_cloth",
+    "sound": "metal"
+  },
+  "create:cyan_toolbox": {
+    "textures": "create_cyan_toolbox",
+    "sound": "metal"
+  },
+  "create:dark_oak_window": {
+    "textures": "create_dark_oak_window",
+    "sound": "metal"
+  },
+  "create:dark_oak_window_pane": {
+    "textures": "create_dark_oak_window_pane",
+    "sound": "metal"
+  },
+  "create:deepslate_pillar": {
+    "textures": "create_deepslate_pillar",
+    "sound": "metal"
+  },
+  "create:deepslate_zinc_ore": {
+    "textures": "create_deepslate_zinc_ore",
+    "sound": "metal"
+  },
+  "create:desk_bell": {
+    "textures": "create_desk_bell",
+    "sound": "metal"
+  },
+  "create:diorite_pillar": {
+    "textures": "create_diorite_pillar",
+    "sound": "metal"
+  },
+  "create:display_board": {
+    "textures": "create_display_board",
+    "sound": "metal"
+  },
+  "create:dripstone_pillar": {
+    "textures": "create_dripstone_pillar",
+    "sound": "metal"
+  },
+  "create:elevator_contact": {
+    "textures": "create_elevator_contact",
+    "sound": "metal"
+  },
+  "create:elevator_pulley": {
+    "textures": "create_elevator_pulley",
+    "sound": "metal"
+  },
+  "create:encased_chain_drive": {
+    "textures": "create_encased_chain_drive",
+    "sound": "metal"
+  },
+  "create:encased_fluid_pipe": {
+    "textures": "create_encased_fluid_pipe",
+    "sound": "metal"
+  },
+  "create:experience_block": {
+    "textures": "create_experience_block",
+    "sound": "metal"
+  },
+  "create:exposed_copper_shingle_slab": {
+    "textures": "create_exposed_copper_shingle_slab",
+    "sound": "metal"
+  },
+  "create:exposed_copper_shingle_stairs": {
+    "textures": "create_exposed_copper_shingle_stairs",
+    "sound": "metal"
+  },
+  "create:exposed_copper_shingles": {
+    "textures": "create_exposed_copper_shingles",
+    "sound": "metal"
+  },
+  "create:exposed_copper_tile_slab": {
+    "textures": "create_exposed_copper_tile_slab",
+    "sound": "metal"
+  },
+  "create:exposed_copper_tile_stairs": {
+    "textures": "create_exposed_copper_tile_stairs",
+    "sound": "metal"
+  },
+  "create:exposed_copper_tiles": {
+    "textures": "create_exposed_copper_tiles",
+    "sound": "metal"
+  },
+  "create:fluid_tank": {
+    "textures": "create_fluid_tank",
+    "sound": "metal"
+  },
+  "create:fluid_valve": {
+    "textures": "create_fluid_valve",
+    "sound": "metal"
+  },
+  "create:flywheel": {
+    "textures": "create_flywheel",
+    "sound": "metal"
+  },
+  "create:framed_glass": {
+    "textures": "create_framed_glass",
+    "sound": "metal"
+  },
+  "create:framed_glass_door": {
+    "textures": "create_framed_glass_door",
+    "sound": "metal"
+  },
+  "create:framed_glass_pane": {
+    "textures": "create_framed_glass_pane",
+    "sound": "metal"
+  },
+  "create:framed_glass_trapdoor": {
+    "textures": "create_framed_glass_trapdoor",
+    "sound": "metal"
+  },
+  "create:gantry_carriage": {
+    "textures": "create_gantry_carriage",
+    "sound": "metal"
+  },
+  "create:gantry_shaft": {
+    "textures": "create_gantry_shaft",
+    "sound": "metal"
+  },
+  "create:glass_fluid_pipe": {
+    "textures": "create_glass_fluid_pipe",
+    "sound": "metal"
+  },
+  "create:granite_pillar": {
+    "textures": "create_granite_pillar",
+    "sound": "metal"
+  },
+  "create:gray_nixie_tube": {
+    "textures": "create_gray_nixie_tube",
+    "sound": "metal"
+  },
+  "create:gray_postbox": {
+    "textures": "create_gray_postbox",
+    "sound": "metal"
+  },
+  "create:gray_sail": {
+    "textures": "create_gray_sail",
+    "sound": "metal"
+  },
+  "create:gray_seat": {
+    "textures": "create_gray_seat",
+    "sound": "metal"
+  },
+  "create:gray_table_cloth": {
+    "textures": "create_gray_table_cloth",
+    "sound": "metal"
+  },
+  "create:gray_toolbox": {
+    "textures": "create_gray_toolbox",
+    "sound": "metal"
+  },
+  "create:green_nixie_tube": {
+    "textures": "create_green_nixie_tube",
+    "sound": "metal"
+  },
+  "create:green_postbox": {
+    "textures": "create_green_postbox",
+    "sound": "metal"
+  },
+  "create:green_sail": {
+    "textures": "create_green_sail",
+    "sound": "metal"
+  },
+  "create:green_seat": {
+    "textures": "create_green_seat",
+    "sound": "metal"
+  },
+  "create:green_table_cloth": {
+    "textures": "create_green_table_cloth",
+    "sound": "metal"
+  },
+  "create:green_toolbox": {
+    "textures": "create_green_toolbox",
+    "sound": "metal"
+  },
+  "create:haunted_bell": {
+    "textures": "create_haunted_bell",
+    "sound": "metal"
+  },
+  "create:horizontal_framed_glass": {
+    "textures": "create_horizontal_framed_glass",
+    "sound": "metal"
+  },
+  "create:horizontal_framed_glass_pane": {
+    "textures": "create_horizontal_framed_glass_pane",
+    "sound": "metal"
+  },
+  "create:hose_pulley": {
+    "textures": "create_hose_pulley",
+    "sound": "metal"
+  },
+  "create:industrial_iron_block": {
+    "textures": "create_industrial_iron_block",
+    "sound": "metal"
+  },
+  "create:industrial_iron_window": {
+    "textures": "create_industrial_iron_window",
+    "sound": "metal"
+  },
+  "create:industrial_iron_window_pane": {
+    "textures": "create_industrial_iron_window_pane",
+    "sound": "metal"
+  },
+  "create:item_hatch": {
+    "textures": "create_item_hatch",
+    "sound": "metal"
+  },
+  "create:item_vault": {
+    "textures": "create_item_vault",
+    "sound": "metal"
+  },
+  "create:jungle_window": {
+    "textures": "create_jungle_window",
+    "sound": "metal"
+  },
+  "create:jungle_window_pane": {
+    "textures": "create_jungle_window_pane",
+    "sound": "metal"
+  },
+  "create:large_bogey": {
+    "textures": "create_large_bogey",
+    "sound": "metal"
+  },
+  "create:large_water_wheel": {
+    "textures": "create_large_water_wheel",
+    "sound": "metal"
+  },
+  "create:layered_andesite": {
+    "textures": "create_layered_andesite",
+    "sound": "metal"
+  },
+  "create:layered_asurine": {
+    "textures": "create_layered_asurine",
+    "sound": "metal"
+  },
+  "create:layered_calcite": {
+    "textures": "create_layered_calcite",
+    "sound": "metal"
+  },
+  "create:layered_crimsite": {
+    "textures": "create_layered_crimsite",
+    "sound": "metal"
+  },
+  "create:layered_deepslate": {
+    "textures": "create_layered_deepslate",
+    "sound": "metal"
+  },
+  "create:layered_diorite": {
+    "textures": "create_layered_diorite",
+    "sound": "metal"
+  },
+  "create:layered_dripstone": {
+    "textures": "create_layered_dripstone",
+    "sound": "metal"
+  },
+  "create:layered_granite": {
+    "textures": "create_layered_granite",
+    "sound": "metal"
+  },
+  "create:layered_limestone": {
+    "textures": "create_layered_limestone",
+    "sound": "metal"
+  },
+  "create:layered_ochrum": {
+    "textures": "create_layered_ochrum",
+    "sound": "metal"
+  },
+  "create:layered_scorchia": {
+    "textures": "create_layered_scorchia",
+    "sound": "metal"
+  },
+  "create:layered_scoria": {
+    "textures": "create_layered_scoria",
+    "sound": "metal"
+  },
+  "create:layered_tuff": {
+    "textures": "create_layered_tuff",
+    "sound": "metal"
+  },
+  "create:layered_veridium": {
+    "textures": "create_layered_veridium",
+    "sound": "metal"
+  },
+  "create:light_blue_nixie_tube": {
+    "textures": "create_light_blue_nixie_tube",
+    "sound": "metal"
+  },
+  "create:light_blue_postbox": {
+    "textures": "create_light_blue_postbox",
+    "sound": "metal"
+  },
+  "create:light_blue_sail": {
+    "textures": "create_light_blue_sail",
+    "sound": "metal"
+  },
+  "create:light_blue_seat": {
+    "textures": "create_light_blue_seat",
+    "sound": "metal"
+  },
+  "create:light_blue_table_cloth": {
+    "textures": "create_light_blue_table_cloth",
+    "sound": "metal"
+  },
+  "create:light_blue_toolbox": {
+    "textures": "create_light_blue_toolbox",
+    "sound": "metal"
+  },
+  "create:light_gray_nixie_tube": {
+    "textures": "create_light_gray_nixie_tube",
+    "sound": "metal"
+  },
+  "create:light_gray_postbox": {
+    "textures": "create_light_gray_postbox",
+    "sound": "metal"
+  },
+  "create:light_gray_sail": {
+    "textures": "create_light_gray_sail",
+    "sound": "metal"
+  },
+  "create:light_gray_seat": {
+    "textures": "create_light_gray_seat",
+    "sound": "metal"
+  },
+  "create:light_gray_table_cloth": {
+    "textures": "create_light_gray_table_cloth",
+    "sound": "metal"
+  },
+  "create:light_gray_toolbox": {
+    "textures": "create_light_gray_toolbox",
+    "sound": "metal"
+  },
+  "create:lime_nixie_tube": {
+    "textures": "create_lime_nixie_tube",
+    "sound": "metal"
+  },
+  "create:lime_postbox": {
+    "textures": "create_lime_postbox",
+    "sound": "metal"
+  },
+  "create:lime_sail": {
+    "textures": "create_lime_sail",
+    "sound": "metal"
+  },
+  "create:lime_seat": {
+    "textures": "create_lime_seat",
+    "sound": "metal"
+  },
+  "create:lime_table_cloth": {
+    "textures": "create_lime_table_cloth",
+    "sound": "metal"
+  },
+  "create:lime_toolbox": {
+    "textures": "create_lime_toolbox",
+    "sound": "metal"
+  },
+  "create:limestone": {
+    "textures": "create_limestone",
+    "sound": "metal"
+  },
+  "create:limestone_pillar": {
+    "textures": "create_limestone_pillar",
+    "sound": "metal"
+  },
+  "create:linear_chassis": {
+    "textures": "create_linear_chassis",
+    "sound": "metal"
+  },
+  "create:lit_blaze_burner": {
+    "textures": "create_lit_blaze_burner",
+    "sound": "metal"
+  },
+  "create:magenta_nixie_tube": {
+    "textures": "create_magenta_nixie_tube",
+    "sound": "metal"
+  },
+  "create:magenta_postbox": {
+    "textures": "create_magenta_postbox",
+    "sound": "metal"
+  },
+  "create:magenta_sail": {
+    "textures": "create_magenta_sail",
+    "sound": "metal"
+  },
+  "create:magenta_seat": {
+    "textures": "create_magenta_seat",
+    "sound": "metal"
+  },
+  "create:magenta_table_cloth": {
+    "textures": "create_magenta_table_cloth",
+    "sound": "metal"
+  },
+  "create:magenta_toolbox": {
+    "textures": "create_magenta_toolbox",
+    "sound": "metal"
+  },
+  "create:mangrove_window": {
+    "textures": "create_mangrove_window",
+    "sound": "metal"
+  },
+  "create:mangrove_window_pane": {
+    "textures": "create_mangrove_window_pane",
+    "sound": "metal"
+  },
+  "create:mechanical_bearing": {
+    "textures": "create_mechanical_bearing",
+    "sound": "metal"
+  },
+  "create:mechanical_crafter": {
+    "textures": "create_mechanical_crafter",
+    "sound": "metal"
+  },
+  "create:mechanical_piston": {
+    "textures": "create_mechanical_piston",
+    "sound": "metal"
+  },
+  "create:mechanical_piston_head": {
+    "textures": "create_mechanical_piston_head",
+    "sound": "metal"
+  },
+  "create:mechanical_pump": {
+    "textures": "create_mechanical_pump",
+    "sound": "metal"
+  },
+  "create:mechanical_roller": {
+    "textures": "create_mechanical_roller",
+    "sound": "metal"
+  },
+  "create:metal_bracket": {
+    "textures": "create_metal_bracket",
+    "sound": "metal"
+  },
+  "create:metal_girder": {
+    "textures": "create_metal_girder",
+    "sound": "metal"
+  },
+  "create:metal_girder_encased_shaft": {
+    "textures": "create_metal_girder_encased_shaft",
+    "sound": "metal"
+  },
+  "create:minecart_anchor": {
+    "textures": "create_minecart_anchor",
+    "sound": "metal"
+  },
+  "create:mysterious_cuckoo_clock": {
+    "textures": "create_mysterious_cuckoo_clock",
+    "sound": "metal"
+  },
+  "create:nozzle": {
+    "textures": "create_nozzle",
+    "sound": "metal"
+  },
+  "create:oak_window": {
+    "textures": "create_oak_window",
+    "sound": "metal"
+  },
+  "create:oak_window_pane": {
+    "textures": "create_oak_window_pane",
+    "sound": "metal"
+  },
+  "create:ochrum": {
+    "textures": "create_ochrum",
+    "sound": "metal"
+  },
+  "create:ochrum_pillar": {
+    "textures": "create_ochrum_pillar",
+    "sound": "metal"
+  },
+  "create:orange_postbox": {
+    "textures": "create_orange_postbox",
+    "sound": "metal"
+  },
+  "create:orange_sail": {
+    "textures": "create_orange_sail",
+    "sound": "metal"
+  },
+  "create:orange_seat": {
+    "textures": "create_orange_seat",
+    "sound": "metal"
+  },
+  "create:orange_table_cloth": {
+    "textures": "create_orange_table_cloth",
+    "sound": "metal"
+  },
+  "create:orange_toolbox": {
+    "textures": "create_orange_toolbox",
+    "sound": "metal"
+  },
+  "create:ornate_iron_window": {
+    "textures": "create_ornate_iron_window",
+    "sound": "metal"
+  },
+  "create:ornate_iron_window_pane": {
+    "textures": "create_ornate_iron_window_pane",
+    "sound": "metal"
+  },
+  "create:oxidized_copper_shingle_slab": {
+    "textures": "create_oxidized_copper_shingle_slab",
+    "sound": "metal"
+  },
+  "create:oxidized_copper_shingle_stairs": {
+    "textures": "create_oxidized_copper_shingle_stairs",
+    "sound": "metal"
+  },
+  "create:oxidized_copper_shingles": {
+    "textures": "create_oxidized_copper_shingles",
+    "sound": "metal"
+  },
+  "create:oxidized_copper_tile_slab": {
+    "textures": "create_oxidized_copper_tile_slab",
+    "sound": "metal"
+  },
+  "create:oxidized_copper_tile_stairs": {
+    "textures": "create_oxidized_copper_tile_stairs",
+    "sound": "metal"
+  },
+  "create:oxidized_copper_tiles": {
+    "textures": "create_oxidized_copper_tiles",
+    "sound": "metal"
+  },
+  "create:package_frogport": {
+    "textures": "create_package_frogport",
+    "sound": "metal"
+  },
+  "create:packager": {
+    "textures": "create_packager",
+    "sound": "metal"
+  },
+  "create:peculiar_bell": {
+    "textures": "create_peculiar_bell",
+    "sound": "metal"
+  },
+  "create:pink_nixie_tube": {
+    "textures": "create_pink_nixie_tube",
+    "sound": "metal"
+  },
+  "create:pink_postbox": {
+    "textures": "create_pink_postbox",
+    "sound": "metal"
+  },
+  "create:pink_sail": {
+    "textures": "create_pink_sail",
+    "sound": "metal"
+  },
+  "create:pink_seat": {
+    "textures": "create_pink_seat",
+    "sound": "metal"
+  },
+  "create:pink_table_cloth": {
+    "textures": "create_pink_table_cloth",
+    "sound": "metal"
+  },
+  "create:pink_toolbox": {
+    "textures": "create_pink_toolbox",
+    "sound": "metal"
+  },
+  "create:piston_extension_pole": {
+    "textures": "create_piston_extension_pole",
+    "sound": "metal"
+  },
+  "create:placard": {
+    "textures": "create_placard",
+    "sound": "metal"
+  },
+  "create:polished_cut_andesite": {
+    "textures": "create_polished_cut_andesite",
+    "sound": "metal"
+  },
+  "create:polished_cut_andesite_slab": {
+    "textures": "create_polished_cut_andesite_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_andesite_stairs": {
+    "textures": "create_polished_cut_andesite_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_andesite_wall": {
+    "textures": "create_polished_cut_andesite_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_asurine": {
+    "textures": "create_polished_cut_asurine",
+    "sound": "metal"
+  },
+  "create:polished_cut_asurine_slab": {
+    "textures": "create_polished_cut_asurine_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_asurine_stairs": {
+    "textures": "create_polished_cut_asurine_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_asurine_wall": {
+    "textures": "create_polished_cut_asurine_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_calcite": {
+    "textures": "create_polished_cut_calcite",
+    "sound": "metal"
+  },
+  "create:polished_cut_calcite_slab": {
+    "textures": "create_polished_cut_calcite_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_calcite_stairs": {
+    "textures": "create_polished_cut_calcite_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_calcite_wall": {
+    "textures": "create_polished_cut_calcite_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_crimsite": {
+    "textures": "create_polished_cut_crimsite",
+    "sound": "metal"
+  },
+  "create:polished_cut_crimsite_slab": {
+    "textures": "create_polished_cut_crimsite_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_crimsite_stairs": {
+    "textures": "create_polished_cut_crimsite_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_crimsite_wall": {
+    "textures": "create_polished_cut_crimsite_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_deepslate": {
+    "textures": "create_polished_cut_deepslate",
+    "sound": "metal"
+  },
+  "create:polished_cut_deepslate_slab": {
+    "textures": "create_polished_cut_deepslate_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_deepslate_stairs": {
+    "textures": "create_polished_cut_deepslate_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_deepslate_wall": {
+    "textures": "create_polished_cut_deepslate_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_diorite": {
+    "textures": "create_polished_cut_diorite",
+    "sound": "metal"
+  },
+  "create:polished_cut_diorite_slab": {
+    "textures": "create_polished_cut_diorite_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_diorite_stairs": {
+    "textures": "create_polished_cut_diorite_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_diorite_wall": {
+    "textures": "create_polished_cut_diorite_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_dripstone": {
+    "textures": "create_polished_cut_dripstone",
+    "sound": "metal"
+  },
+  "create:polished_cut_dripstone_slab": {
+    "textures": "create_polished_cut_dripstone_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_dripstone_stairs": {
+    "textures": "create_polished_cut_dripstone_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_dripstone_wall": {
+    "textures": "create_polished_cut_dripstone_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_granite": {
+    "textures": "create_polished_cut_granite",
+    "sound": "metal"
+  },
+  "create:polished_cut_granite_slab": {
+    "textures": "create_polished_cut_granite_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_granite_stairs": {
+    "textures": "create_polished_cut_granite_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_granite_wall": {
+    "textures": "create_polished_cut_granite_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_limestone": {
+    "textures": "create_polished_cut_limestone",
+    "sound": "metal"
+  },
+  "create:polished_cut_limestone_slab": {
+    "textures": "create_polished_cut_limestone_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_limestone_stairs": {
+    "textures": "create_polished_cut_limestone_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_limestone_wall": {
+    "textures": "create_polished_cut_limestone_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_ochrum": {
+    "textures": "create_polished_cut_ochrum",
+    "sound": "metal"
+  },
+  "create:polished_cut_ochrum_slab": {
+    "textures": "create_polished_cut_ochrum_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_ochrum_stairs": {
+    "textures": "create_polished_cut_ochrum_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_ochrum_wall": {
+    "textures": "create_polished_cut_ochrum_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_scorchia": {
+    "textures": "create_polished_cut_scorchia",
+    "sound": "metal"
+  },
+  "create:polished_cut_scorchia_slab": {
+    "textures": "create_polished_cut_scorchia_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_scorchia_stairs": {
+    "textures": "create_polished_cut_scorchia_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_scorchia_wall": {
+    "textures": "create_polished_cut_scorchia_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_scoria": {
+    "textures": "create_polished_cut_scoria",
+    "sound": "metal"
+  },
+  "create:polished_cut_scoria_slab": {
+    "textures": "create_polished_cut_scoria_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_scoria_stairs": {
+    "textures": "create_polished_cut_scoria_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_scoria_wall": {
+    "textures": "create_polished_cut_scoria_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_tuff": {
+    "textures": "create_polished_cut_tuff",
+    "sound": "metal"
+  },
+  "create:polished_cut_tuff_slab": {
+    "textures": "create_polished_cut_tuff_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_tuff_stairs": {
+    "textures": "create_polished_cut_tuff_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_tuff_wall": {
+    "textures": "create_polished_cut_tuff_wall",
+    "sound": "metal"
+  },
+  "create:polished_cut_veridium": {
+    "textures": "create_polished_cut_veridium",
+    "sound": "metal"
+  },
+  "create:polished_cut_veridium_slab": {
+    "textures": "create_polished_cut_veridium_slab",
+    "sound": "metal"
+  },
+  "create:polished_cut_veridium_stairs": {
+    "textures": "create_polished_cut_veridium_stairs",
+    "sound": "metal"
+  },
+  "create:polished_cut_veridium_wall": {
+    "textures": "create_polished_cut_veridium_wall",
+    "sound": "metal"
+  },
+  "create:portable_fluid_interface": {
+    "textures": "create_portable_fluid_interface",
+    "sound": "metal"
+  },
+  "create:portable_storage_interface": {
+    "textures": "create_portable_storage_interface",
+    "sound": "metal"
+  },
+  "create:powered_latch": {
+    "textures": "create_powered_latch",
+    "sound": "metal"
+  },
+  "create:powered_shaft": {
+    "textures": "create_powered_shaft",
+    "sound": "metal"
+  },
+  "create:powered_toggle_latch": {
+    "textures": "create_powered_toggle_latch",
+    "sound": "metal"
+  },
+  "create:pulley_magnet": {
+    "textures": "create_pulley_magnet",
+    "sound": "metal"
+  },
+  "create:pulse_extender": {
+    "textures": "create_pulse_extender",
+    "sound": "metal"
+  },
+  "create:pulse_repeater": {
+    "textures": "create_pulse_repeater",
+    "sound": "metal"
+  },
+  "create:pulse_timer": {
+    "textures": "create_pulse_timer",
+    "sound": "metal"
+  },
+  "create:purple_nixie_tube": {
+    "textures": "create_purple_nixie_tube",
+    "sound": "metal"
+  },
+  "create:purple_postbox": {
+    "textures": "create_purple_postbox",
+    "sound": "metal"
+  },
+  "create:purple_sail": {
+    "textures": "create_purple_sail",
+    "sound": "metal"
+  },
+  "create:purple_seat": {
+    "textures": "create_purple_seat",
+    "sound": "metal"
+  },
+  "create:purple_table_cloth": {
+    "textures": "create_purple_table_cloth",
+    "sound": "metal"
+  },
+  "create:purple_toolbox": {
+    "textures": "create_purple_toolbox",
+    "sound": "metal"
+  },
+  "create:radial_chassis": {
+    "textures": "create_radial_chassis",
+    "sound": "metal"
+  },
+  "create:red_nixie_tube": {
+    "textures": "create_red_nixie_tube",
+    "sound": "metal"
+  },
+  "create:red_postbox": {
+    "textures": "create_red_postbox",
+    "sound": "metal"
+  },
+  "create:red_sail": {
+    "textures": "create_red_sail",
+    "sound": "metal"
+  },
+  "create:red_seat": {
+    "textures": "create_red_seat",
+    "sound": "metal"
+  },
+  "create:red_table_cloth": {
+    "textures": "create_red_table_cloth",
+    "sound": "metal"
+  },
+  "create:red_toolbox": {
+    "textures": "create_red_toolbox",
+    "sound": "metal"
+  },
+  "create:redstone_contact": {
+    "textures": "create_redstone_contact",
+    "sound": "metal"
+  },
+  "create:redstone_link": {
+    "textures": "create_redstone_link",
+    "sound": "metal"
+  },
+  "create:redstone_requester": {
+    "textures": "create_redstone_requester",
+    "sound": "metal"
+  },
+  "create:refined_radiance_casing": {
+    "textures": "create_refined_radiance_casing",
+    "sound": "wood"
+  },
+  "create:repackager": {
+    "textures": "create_repackager",
+    "sound": "metal"
+  },
+  "create:rope": {
+    "textures": "create_rope",
+    "sound": "metal"
+  },
+  "create:rope_pulley": {
+    "textures": "create_rope_pulley",
+    "sound": "metal"
+  },
+  "create:rose_quartz_block": {
+    "textures": "create_rose_quartz_block",
+    "sound": "metal"
+  },
+  "create:rose_quartz_lamp": {
+    "textures": "create_rose_quartz_lamp",
+    "sound": "metal"
+  },
+  "create:rose_quartz_tiles": {
+    "textures": "create_rose_quartz_tiles",
+    "sound": "metal"
+  },
+  "create:rotation_speed_controller": {
+    "textures": "create_rotation_speed_controller",
+    "sound": "metal"
+  },
+  "create:sail_frame": {
+    "textures": "create_sail_frame",
+    "sound": "metal"
+  },
+  "create:schematic_table": {
+    "textures": "create_schematic_table",
+    "sound": "metal"
+  },
+  "create:scorchia": {
+    "textures": "create_scorchia",
+    "sound": "metal"
+  },
+  "create:scorchia_pillar": {
+    "textures": "create_scorchia_pillar",
+    "sound": "metal"
+  },
+  "create:scoria": {
+    "textures": "create_scoria",
+    "sound": "metal"
+  },
+  "create:scoria_pillar": {
+    "textures": "create_scoria_pillar",
+    "sound": "metal"
+  },
+  "create:secondary_linear_chassis": {
+    "textures": "create_secondary_linear_chassis",
+    "sound": "metal"
+  },
+  "create:sequenced_gearshift": {
+    "textures": "create_sequenced_gearshift",
+    "sound": "metal"
+  },
+  "create:shadow_steel_casing": {
+    "textures": "create_shadow_steel_casing",
+    "sound": "wood"
+  },
+  "create:small_andesite_brick_slab": {
+    "textures": "create_small_andesite_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_andesite_brick_stairs": {
+    "textures": "create_small_andesite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_andesite_brick_wall": {
+    "textures": "create_small_andesite_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_andesite_bricks": {
+    "textures": "create_small_andesite_bricks",
+    "sound": "metal"
+  },
+  "create:small_asurine_brick_slab": {
+    "textures": "create_small_asurine_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_asurine_brick_stairs": {
+    "textures": "create_small_asurine_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_asurine_brick_wall": {
+    "textures": "create_small_asurine_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_asurine_bricks": {
+    "textures": "create_small_asurine_bricks",
+    "sound": "metal"
+  },
+  "create:small_bogey": {
+    "textures": "create_small_bogey",
+    "sound": "metal"
+  },
+  "create:small_calcite_brick_slab": {
+    "textures": "create_small_calcite_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_calcite_brick_stairs": {
+    "textures": "create_small_calcite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_calcite_brick_wall": {
+    "textures": "create_small_calcite_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_calcite_bricks": {
+    "textures": "create_small_calcite_bricks",
+    "sound": "metal"
+  },
+  "create:small_crimsite_brick_slab": {
+    "textures": "create_small_crimsite_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_crimsite_brick_stairs": {
+    "textures": "create_small_crimsite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_crimsite_brick_wall": {
+    "textures": "create_small_crimsite_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_crimsite_bricks": {
+    "textures": "create_small_crimsite_bricks",
+    "sound": "metal"
+  },
+  "create:small_deepslate_brick_slab": {
+    "textures": "create_small_deepslate_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_deepslate_brick_stairs": {
+    "textures": "create_small_deepslate_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_deepslate_brick_wall": {
+    "textures": "create_small_deepslate_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_deepslate_bricks": {
+    "textures": "create_small_deepslate_bricks",
+    "sound": "metal"
+  },
+  "create:small_diorite_brick_slab": {
+    "textures": "create_small_diorite_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_diorite_brick_stairs": {
+    "textures": "create_small_diorite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_diorite_brick_wall": {
+    "textures": "create_small_diorite_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_diorite_bricks": {
+    "textures": "create_small_diorite_bricks",
+    "sound": "metal"
+  },
+  "create:small_dripstone_brick_slab": {
+    "textures": "create_small_dripstone_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_dripstone_brick_stairs": {
+    "textures": "create_small_dripstone_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_dripstone_brick_wall": {
+    "textures": "create_small_dripstone_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_dripstone_bricks": {
+    "textures": "create_small_dripstone_bricks",
+    "sound": "metal"
+  },
+  "create:small_granite_brick_slab": {
+    "textures": "create_small_granite_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_granite_brick_stairs": {
+    "textures": "create_small_granite_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_granite_brick_wall": {
+    "textures": "create_small_granite_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_granite_bricks": {
+    "textures": "create_small_granite_bricks",
+    "sound": "metal"
+  },
+  "create:small_limestone_brick_slab": {
+    "textures": "create_small_limestone_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_limestone_brick_stairs": {
+    "textures": "create_small_limestone_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_limestone_brick_wall": {
+    "textures": "create_small_limestone_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_limestone_bricks": {
+    "textures": "create_small_limestone_bricks",
+    "sound": "metal"
+  },
+  "create:small_ochrum_brick_slab": {
+    "textures": "create_small_ochrum_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_ochrum_brick_stairs": {
+    "textures": "create_small_ochrum_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_ochrum_brick_wall": {
+    "textures": "create_small_ochrum_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_ochrum_bricks": {
+    "textures": "create_small_ochrum_bricks",
+    "sound": "metal"
+  },
+  "create:small_rose_quartz_tiles": {
+    "textures": "create_small_rose_quartz_tiles",
+    "sound": "metal"
+  },
+  "create:small_scorchia_brick_slab": {
+    "textures": "create_small_scorchia_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_scorchia_brick_stairs": {
+    "textures": "create_small_scorchia_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_scorchia_brick_wall": {
+    "textures": "create_small_scorchia_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_scorchia_bricks": {
+    "textures": "create_small_scorchia_bricks",
+    "sound": "metal"
+  },
+  "create:small_scoria_brick_slab": {
+    "textures": "create_small_scoria_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_scoria_brick_stairs": {
+    "textures": "create_small_scoria_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_scoria_brick_wall": {
+    "textures": "create_small_scoria_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_scoria_bricks": {
+    "textures": "create_small_scoria_bricks",
+    "sound": "metal"
+  },
+  "create:small_tuff_brick_slab": {
+    "textures": "create_small_tuff_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_tuff_brick_stairs": {
+    "textures": "create_small_tuff_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_tuff_brick_wall": {
+    "textures": "create_small_tuff_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_tuff_bricks": {
+    "textures": "create_small_tuff_bricks",
+    "sound": "metal"
+  },
+  "create:small_veridium_brick_slab": {
+    "textures": "create_small_veridium_brick_slab",
+    "sound": "metal"
+  },
+  "create:small_veridium_brick_stairs": {
+    "textures": "create_small_veridium_brick_stairs",
+    "sound": "metal"
+  },
+  "create:small_veridium_brick_wall": {
+    "textures": "create_small_veridium_brick_wall",
+    "sound": "metal"
+  },
+  "create:small_veridium_bricks": {
+    "textures": "create_small_veridium_bricks",
+    "sound": "metal"
+  },
+  "create:smart_fluid_pipe": {
+    "textures": "create_smart_fluid_pipe",
+    "sound": "metal"
+  },
+  "create:spruce_window": {
+    "textures": "create_spruce_window",
+    "sound": "metal"
+  },
+  "create:spruce_window_pane": {
+    "textures": "create_spruce_window_pane",
+    "sound": "metal"
+  },
+  "create:steam_whistle_extension": {
+    "textures": "create_steam_whistle_extension",
+    "sound": "metal"
+  },
+  "create:sticker": {
+    "textures": "create_sticker",
+    "sound": "metal"
+  },
+  "create:sticky_mechanical_piston": {
+    "textures": "create_sticky_mechanical_piston",
+    "sound": "metal"
+  },
+  "create:stock_link": {
+    "textures": "create_stock_link",
+    "sound": "metal"
+  },
+  "create:stock_ticker": {
+    "textures": "create_stock_ticker",
+    "sound": "metal"
+  },
+  "create:stockpile_switch": {
+    "textures": "create_stockpile_switch",
+    "sound": "metal"
+  },
+  "create:tiled_glass": {
+    "textures": "create_tiled_glass",
+    "sound": "metal"
+  },
+  "create:tiled_glass_pane": {
+    "textures": "create_tiled_glass_pane",
+    "sound": "metal"
+  },
+  "create:track": {
+    "textures": "create_track",
+    "sound": "metal"
+  },
+  "create:track_observer": {
+    "textures": "create_track_observer",
+    "sound": "metal"
+  },
+  "create:track_signal": {
+    "textures": "create_track_signal",
+    "sound": "metal"
+  },
+  "create:track_station": {
+    "textures": "create_track_station",
+    "sound": "metal"
+  },
+  "create:train_door": {
+    "textures": "create_train_door",
+    "sound": "metal"
+  },
+  "create:train_trapdoor": {
+    "textures": "create_train_trapdoor",
+    "sound": "metal"
+  },
+  "create:tuff_pillar": {
+    "textures": "create_tuff_pillar",
+    "sound": "metal"
+  },
+  "create:turntable": {
+    "textures": "create_turntable",
+    "sound": "metal"
+  },
+  "create:veridium": {
+    "textures": "create_veridium",
+    "sound": "metal"
+  },
+  "create:veridium_pillar": {
+    "textures": "create_veridium_pillar",
+    "sound": "metal"
+  },
+  "create:vertical_framed_glass": {
+    "textures": "create_vertical_framed_glass",
+    "sound": "metal"
+  },
+  "create:vertical_framed_glass_pane": {
+    "textures": "create_vertical_framed_glass_pane",
+    "sound": "metal"
+  },
+  "create:warped_window": {
+    "textures": "create_warped_window",
+    "sound": "metal"
+  },
+  "create:warped_window_pane": {
+    "textures": "create_warped_window_pane",
+    "sound": "metal"
+  },
+  "create:waxed_copper_shingle_slab": {
+    "textures": "create_waxed_copper_shingle_slab",
+    "sound": "metal"
+  },
+  "create:waxed_copper_shingle_stairs": {
+    "textures": "create_waxed_copper_shingle_stairs",
+    "sound": "metal"
+  },
+  "create:waxed_copper_shingles": {
+    "textures": "create_waxed_copper_shingles",
+    "sound": "metal"
+  },
+  "create:waxed_copper_tile_slab": {
+    "textures": "create_waxed_copper_tile_slab",
+    "sound": "metal"
+  },
+  "create:waxed_copper_tile_stairs": {
+    "textures": "create_waxed_copper_tile_stairs",
+    "sound": "metal"
+  },
+  "create:waxed_copper_tiles": {
+    "textures": "create_waxed_copper_tiles",
+    "sound": "metal"
+  },
+  "create:waxed_exposed_copper_shingle_slab": {
+    "textures": "create_waxed_exposed_copper_shingle_slab",
+    "sound": "metal"
+  },
+  "create:waxed_exposed_copper_shingle_stairs": {
+    "textures": "create_waxed_exposed_copper_shingle_stairs",
+    "sound": "metal"
+  },
+  "create:waxed_exposed_copper_shingles": {
+    "textures": "create_waxed_exposed_copper_shingles",
+    "sound": "metal"
+  },
+  "create:waxed_exposed_copper_tile_slab": {
+    "textures": "create_waxed_exposed_copper_tile_slab",
+    "sound": "metal"
+  },
+  "create:waxed_exposed_copper_tile_stairs": {
+    "textures": "create_waxed_exposed_copper_tile_stairs",
+    "sound": "metal"
+  },
+  "create:waxed_exposed_copper_tiles": {
+    "textures": "create_waxed_exposed_copper_tiles",
+    "sound": "metal"
+  },
+  "create:waxed_oxidized_copper_shingle_slab": {
+    "textures": "create_waxed_oxidized_copper_shingle_slab",
+    "sound": "metal"
+  },
+  "create:waxed_oxidized_copper_shingle_stairs": {
+    "textures": "create_waxed_oxidized_copper_shingle_stairs",
+    "sound": "metal"
+  },
+  "create:waxed_oxidized_copper_shingles": {
+    "textures": "create_waxed_oxidized_copper_shingles",
+    "sound": "metal"
+  },
+  "create:waxed_oxidized_copper_tile_slab": {
+    "textures": "create_waxed_oxidized_copper_tile_slab",
+    "sound": "metal"
+  },
+  "create:waxed_oxidized_copper_tile_stairs": {
+    "textures": "create_waxed_oxidized_copper_tile_stairs",
+    "sound": "metal"
+  },
+  "create:waxed_oxidized_copper_tiles": {
+    "textures": "create_waxed_oxidized_copper_tiles",
+    "sound": "metal"
+  },
+  "create:waxed_weathered_copper_shingle_slab": {
+    "textures": "create_waxed_weathered_copper_shingle_slab",
+    "sound": "metal"
+  },
+  "create:waxed_weathered_copper_shingle_stairs": {
+    "textures": "create_waxed_weathered_copper_shingle_stairs",
+    "sound": "metal"
+  },
+  "create:waxed_weathered_copper_shingles": {
+    "textures": "create_waxed_weathered_copper_shingles",
+    "sound": "metal"
+  },
+  "create:waxed_weathered_copper_tile_slab": {
+    "textures": "create_waxed_weathered_copper_tile_slab",
+    "sound": "metal"
+  },
+  "create:waxed_weathered_copper_tile_stairs": {
+    "textures": "create_waxed_weathered_copper_tile_stairs",
+    "sound": "metal"
+  },
+  "create:waxed_weathered_copper_tiles": {
+    "textures": "create_waxed_weathered_copper_tiles",
+    "sound": "metal"
+  },
+  "create:weathered_copper_shingle_slab": {
+    "textures": "create_weathered_copper_shingle_slab",
+    "sound": "metal"
+  },
+  "create:weathered_copper_shingle_stairs": {
+    "textures": "create_weathered_copper_shingle_stairs",
+    "sound": "metal"
+  },
+  "create:weathered_copper_shingles": {
+    "textures": "create_weathered_copper_shingles",
+    "sound": "metal"
+  },
+  "create:weathered_copper_tile_slab": {
+    "textures": "create_weathered_copper_tile_slab",
+    "sound": "metal"
+  },
+  "create:weathered_copper_tile_stairs": {
+    "textures": "create_weathered_copper_tile_stairs",
+    "sound": "metal"
+  },
+  "create:weathered_copper_tiles": {
+    "textures": "create_weathered_copper_tiles",
+    "sound": "metal"
+  },
+  "create:weathered_iron_block": {
+    "textures": "create_weathered_iron_block",
+    "sound": "metal"
+  },
+  "create:weathered_iron_window": {
+    "textures": "create_weathered_iron_window",
+    "sound": "metal"
+  },
+  "create:weathered_iron_window_pane": {
+    "textures": "create_weathered_iron_window_pane",
+    "sound": "metal"
+  },
+  "create:white_nixie_tube": {
+    "textures": "create_white_nixie_tube",
+    "sound": "metal"
+  },
+  "create:white_postbox": {
+    "textures": "create_white_postbox",
+    "sound": "metal"
+  },
+  "create:white_sail": {
+    "textures": "create_white_sail",
+    "sound": "metal"
+  },
+  "create:white_seat": {
+    "textures": "create_white_seat",
+    "sound": "metal"
+  },
+  "create:white_table_cloth": {
+    "textures": "create_white_table_cloth",
+    "sound": "metal"
+  },
+  "create:white_toolbox": {
+    "textures": "create_white_toolbox",
+    "sound": "metal"
+  },
+  "create:windmill_bearing": {
+    "textures": "create_windmill_bearing",
+    "sound": "metal"
+  },
+  "create:wooden_bracket": {
+    "textures": "create_wooden_bracket",
+    "sound": "metal"
+  },
+  "create:yellow_nixie_tube": {
+    "textures": "create_yellow_nixie_tube",
+    "sound": "metal"
+  },
+  "create:yellow_postbox": {
+    "textures": "create_yellow_postbox",
+    "sound": "metal"
+  },
+  "create:yellow_sail": {
+    "textures": "create_yellow_sail",
+    "sound": "metal"
+  },
+  "create:yellow_seat": {
+    "textures": "create_yellow_seat",
+    "sound": "metal"
+  },
+  "create:yellow_table_cloth": {
+    "textures": "create_yellow_table_cloth",
+    "sound": "metal"
+  },
+  "create:yellow_toolbox": {
+    "textures": "create_yellow_toolbox",
+    "sound": "metal"
+  },
+  "create:zinc_ore": {
+    "textures": "create_zinc_ore",
     "sound": "metal"
   }
 }

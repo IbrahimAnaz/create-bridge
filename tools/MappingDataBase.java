@@ -34,6 +34,7 @@ import com.viaversion.viaversion.api.minecraft.RegistryType;
 import com.viaversion.viaversion.api.minecraft.TagData;
 import com.viaversion.viaversion.libs.fastutil.ints.IntOpenHashSet;
 import com.viaversion.viaversion.libs.fastutil.ints.IntSet;
+import com.viaversion.viaversion.util.Key;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
@@ -269,10 +270,48 @@ public class MappingDataBase implements MappingData {
         return itemMappings;
     }
 
+    private FullMappings wrappedFullItemMappings;
+
     @Override
     public FullMappings getFullItemMappings() {
         if (itemMappings instanceof FullMappings fullItemMappings) {
-            return fullItemMappings;
+            if (wrappedFullItemMappings == null) {
+                wrappedFullItemMappings = new FullMappings() {
+                    @Override
+                    public int id(String identifier) { return fullItemMappings.id(identifier); }
+                    @Override
+                    public int mappedId(String mappedIdentifier) { return fullItemMappings.mappedId(mappedIdentifier); }
+                    @Override
+                    public Key keyFromId(int id) { return fullItemMappings.keyFromId(id); }
+                    @Override
+                    public Key keyFromMappedKey(String mappedIdentifier) { return fullItemMappings.keyFromMappedKey(mappedIdentifier); }
+                    @Override
+                    public Key mappedKeyFromMappedId(int mappedId) {
+                        Key k = fullItemMappings.mappedKeyFromMappedId(mappedId);
+                        return k != null ? k : Key.of("minecraft", "air");
+                    }
+                    @Override
+                    public Key mappedKeyFromKey(String identifier) { return fullItemMappings.mappedKeyFromKey(identifier); }
+                    @Override
+                    public boolean isIntIdIdentity() { return fullItemMappings.isIntIdIdentity(); }
+                    @Override
+                    public FullMappings inverse() { return fullItemMappings.inverse(); }
+                    @Override
+                    public int getNewId(int id) { return fullItemMappings.getNewId(id); }
+                    @Override
+                    public void setNewId(int id, int mappedId) { fullItemMappings.setNewId(id, mappedId); }
+                    @Override
+                    public int size() { return fullItemMappings.size(); }
+                    @Override
+                    public int mappedSize() { return fullItemMappings.mappedSize(); }
+                    @Override
+                    public String mappedIdentifier(int mappedId) {
+                        String s = fullItemMappings.mappedIdentifier(mappedId);
+                        return s != null ? s : "minecraft:air";
+                    }
+                };
+            }
+            return wrappedFullItemMappings;
         }
         return null;
     }

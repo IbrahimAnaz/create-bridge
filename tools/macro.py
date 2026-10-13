@@ -69,10 +69,10 @@ def cmd_patch_viaproxy(args):
     staging = "tools/staging"
     os.makedirs(staging, exist_ok=True)
 
-    print("[1/3] Compiling MappingDataBase.java and BackwardsMappingData.java with javac...")
+    print("[1/3] Compiling MappingDataBase.java, BackwardsMappingData.java, and S2CLoginGameProfilePacket.java with javac...")
     res = subprocess.run([
         JAVAC, "-proc:none", "-cp", VIAPROXY_JAR, "-d", staging,
-        "tools/MappingDataBase.java", "tools/BackwardsMappingData.java"
+        "tools/MappingDataBase.java", "tools/BackwardsMappingData.java", "tools/S2CLoginGameProfilePacket.java"
     ], capture_output=True, text=True)
     if res.returncode != 0:
         print("javac failed:\n", res.stderr)
@@ -85,21 +85,32 @@ def cmd_patch_viaproxy(args):
         print(f"Backed up to {backup}")
 
     print("[3/3] Injecting compiled classes into ViaProxy.jar...")
-    mdb_class = os.path.join(staging, "com/viaversion/viaversion/api/data/MappingDataBase.class")
-    bmd_class = os.path.join(staging, "com/viaversion/viabackwards/api/data/BackwardsMappingData.class")
+    classes_to_inject = {}
+    for root, dirs, files in os.walk(staging):
+        for f in files:
+            if f.endswith(".class") and not f.endswith("_patched.class") and root != staging:
+                full_p = os.path.join(root, f)
+                rel_p = os.path.relpath(full_p, staging).replace("\\", "/")
+                if any(rel_p.startswith(pkg) for pkg in ["com/viaversion/", "net/raphimc/"]):
+                    classes_to_inject[rel_p] = full_p
+
+    print(f"Injecting {len(classes_to_inject)} classes: {list(classes_to_inject.keys())}")
 
     tmp_jar = VIAPROXY_JAR + ".tmp"
     with zipfile.ZipFile(backup, "r") as zin:
+        existing_names = set(zin.namelist())
         with zipfile.ZipFile(tmp_jar, "w", compression=zipfile.ZIP_DEFLATED) as zout:
             for item in zin.infolist():
-                if item.filename == "com/viaversion/viaversion/api/data/MappingDataBase.class":
-                    with open(mdb_class, "rb") as pf:
-                        zout.writestr(item, pf.read())
-                elif item.filename == "com/viaversion/viabackwards/api/data/BackwardsMappingData.class":
-                    with open(bmd_class, "rb") as pf:
+                if item.filename in classes_to_inject:
+                    with open(classes_to_inject[item.filename], "rb") as pf:
                         zout.writestr(item, pf.read())
                 else:
                     zout.writestr(item, zin.read(item.filename))
+            for rel_p, full_p in classes_to_inject.items():
+                if rel_p not in existing_names:
+                    with open(full_p, "rb") as pf:
+                        zout.writestr(rel_p, pf.read())
+                        print(f"  + Added new class entry: {rel_p}")
 
     os.replace(tmp_jar, VIAPROXY_JAR)
     print("ViaProxy patch complete and verified!")

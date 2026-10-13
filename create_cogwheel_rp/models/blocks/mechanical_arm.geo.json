@@ -1,0 +1,105 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.create.mechanical_arm",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [
+          0,
+          0.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -8.0,
+                0,
+                -8.0
+              ],
+              "size": [
+                16,
+                6,
+                16
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    32.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    6.0
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    32.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    6.0
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    32.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    6.0
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    32.0,
+                    16.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    6.0
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    32.0,
+                    32.0
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    0.0,
+                    32.0
+                  ],
+                  "uv_size": [
+                    32.0,
+                    32.0
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

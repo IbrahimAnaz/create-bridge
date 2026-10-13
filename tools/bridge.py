@@ -297,6 +297,15 @@ def cmd_doctor(args):
         print(">> WARNING: Some components offline. Check 'python tools/bridge.py status' <<")
     print("=" * 60)
 
+def cmd_test_client(args):
+    """Run headless dummy Bedrock client to test handshake, chunk streaming, and entity packets."""
+    script = BASE_DIR / "tools" / "dummy_bedrock" / "dummy_client.js"
+    if not script.exists():
+        print(f"Error: {script} not found")
+        return
+    print(f"Launching headless Bedrock client via node {script.relative_to(BASE_DIR)}...")
+    subprocess.run(["node", str(script)], cwd=str(script.parent))
+
 def main():
     parser = argparse.ArgumentParser(description="Create Bridge Developer Toolkit")
     sub = parser.add_subparsers(dest="command")
@@ -331,8 +340,16 @@ def main():
     p_dis.add_argument("-f", "--filter", type=str, default=None, help="Method name or pattern to filter")
     p_dis.add_argument("-l", "--limit", type=int, default=60, help="Max lines")
 
-    # build-blocks
-    sub.add_parser("build-blocks", help="Automated extraction of Create textures, Bedrock pack, and Geyser extension")
+    # test-client
+    sub.add_parser("test-client", help="Run automated headless Bedrock client probe")
+
+    # github
+    p_gh = sub.add_parser("github", help="Bidirectional GitHub bridge for remote web IDE synchronization")
+    p_gh.add_argument("action", choices=["setup", "push", "pull", "sync", "watch", "api-read", "api-write"], help="GitHub bridge action")
+    if len(sys.argv) > 1 and sys.argv[1] == "github":
+        import subprocess
+        gh_script = BASE_DIR / "tools" / "github_bridge.py"
+        sys.exit(subprocess.run([sys.executable, str(gh_script)] + sys.argv[2:]).returncode)
 
     args = parser.parse_args()
     if args.command == "status":
@@ -347,6 +364,8 @@ def main():
         cmd_inject(args)
     elif args.command == "disasm":
         cmd_disasm(args)
+    elif args.command == "test-client":
+        cmd_test_client(args)
     elif args.command == "build-blocks":
         sys.path.insert(0, str(BASE_DIR / "tools"))
         import builder as b

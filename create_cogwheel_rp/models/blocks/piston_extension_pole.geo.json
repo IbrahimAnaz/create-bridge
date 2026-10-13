@@ -1,0 +1,110 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.create.piston_extension_pole",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [
+          0,
+          0.5,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "root",
+          "pivot": [
+            0,
+            0,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2.0,
+                0.0,
+                -2.0
+              ],
+              "size": [
+                4.0,
+                16.0,
+                4.0
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    4.0
+                  ],
+                  "uv_rotation": 270
+                },
+                "south": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    4.0
+                  ],
+                  "uv_rotation": 270
+                },
+                "east": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    4.0
+                  ],
+                  "uv_rotation": 270
+                },
+                "west": {
+                  "uv": [
+                    0.0,
+                    0.0
+                  ],
+                  "uv_size": [
+                    16.0,
+                    4.0
+                  ],
+                  "uv_rotation": 270
+                },
+                "up": {
+                  "uv": [
+                    6.0,
+                    6.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    6.0,
+                    6.0
+                  ],
+                  "uv_size": [
+                    4.0,
+                    4.0
+                  ],
+                  "uv_rotation": 90
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
