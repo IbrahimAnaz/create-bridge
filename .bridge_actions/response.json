@@ -1,0 +1,9 @@
+{
+  "id": "test-local-002",
+  "action": "status",
+  "returncode": 0,
+  "duration_sec": 3.1,
+  "timestamp": "2026-10-14 03:10:38",
+  "stdout": "Service            | Status     | Port   | PID     | Mem (MB) \n--------------------------------------------------------------\nNeoForge Server    | ONLINE     | 25565  | 35488   | 1310 MB  \nViaProxy Bridge    | ONLINE     | 25568  | 29852   | 496 MB   \nGeyser Bedrock     | ONLINE     | 19132  | 22852   | 532 MB   \n\n[Recent Server Milestones]\n  [14Oct2026 03:08:57.901] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (2.737s)! For help, type \"help\"\n  [14Oct2026 03:09:41.542] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: DummyBot[/127.0.0.1:56394] logged in with entity id 21 at (11.5, -60.0, -1.5)\n  [14Oct2026 03:09:41.620] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: DummyBot joined the game\n  [14Oct2026 03:09:53.521] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: DummyBot lost connection: Disconnected\n",
+  "stderr": ""
+}
