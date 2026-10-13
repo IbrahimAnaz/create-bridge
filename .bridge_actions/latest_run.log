@@ -1,12 +1,15 @@
-=== ACTION: status (ID: test-local-002, Code: 0, 3.1s) ===
-Service            | Status     | Port   | PID     | Mem (MB) 
---------------------------------------------------------------
-NeoForge Server    | ONLINE     | 25565  | 35488   | 1310 MB  
-ViaProxy Bridge    | ONLINE     | 25568  | 29852   | 496 MB   
-Geyser Bedrock     | ONLINE     | 19132  | 22852   | 532 MB   
-
-[Recent Server Milestones]
-  [14Oct2026 03:08:57.901] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer/]: Done (2.737s)! For help, type "help"
-  [14Oct2026 03:09:41.542] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: DummyBot[/127.0.0.1:56394] logged in with entity id 21 at (11.5, -60.0, -1.5)
-  [14Oct2026 03:09:41.620] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: DummyBot joined the game
-  [14Oct2026 03:09:53.521] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: DummyBot lost connection: Disconnected
+=== ACTION: doctor (ID: test-doctor-001, Code: 0, 1.24s) ===
+============================================================
+CREATE BRIDGE SYSTEM DIAGNOSTICS (DOCTOR)
+============================================================
+[PASS] Server Port (TCP 25565): Online
+[PASS] ViaProxy Port (TCP 25568): Online
+[PASS] Geyser Bedrock Port (UDP 19132): Online
+[PASS] Geyser -> ViaProxy Target Port: 25568 (Correct)
+[PASS] Geyser Ping Passthrough: Disabled (Prevents handshake crash)
+[PASS] ViaProxy Key.class Patch: Present
+[PASS] ViaProxy RecipeRewriter Patch: Present
+[PASS] NeoForge NetworkRegistry: Present
+============================================================
+>> ALL SYSTEMS OPERATIONAL: Ready for Bedrock connection! <<
+============================================================
