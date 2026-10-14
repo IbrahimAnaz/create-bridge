@@ -6,6 +6,7 @@ import org.cloudburstmc.math.vector.Vector2f;
 import org.cloudburstmc.math.vector.Vector3f;
 import org.cloudburstmc.math.vector.Vector3i;
 import org.cloudburstmc.nbt.NbtMap;
+import org.cloudburstmc.protocol.bedrock.data.definitions.BlockDefinition;
 import org.cloudburstmc.protocol.bedrock.data.definitions.ItemDefinition;
 import org.cloudburstmc.protocol.bedrock.data.entity.EntityDataMap;
 import org.cloudburstmc.protocol.bedrock.data.entity.EntityDataTypes;
@@ -13,12 +14,14 @@ import org.cloudburstmc.protocol.bedrock.data.entity.EntityFlag;
 import org.cloudburstmc.protocol.bedrock.data.inventory.ItemData;
 import org.cloudburstmc.protocol.bedrock.packet.AddEntityPacket;
 import org.cloudburstmc.protocol.bedrock.packet.AddItemEntityPacket;
+import org.cloudburstmc.protocol.bedrock.packet.BlockEntityDataPacket;
 import org.cloudburstmc.protocol.bedrock.packet.BlockPickRequestPacket;
 import org.cloudburstmc.protocol.bedrock.packet.CommandRequestPacket;
 import org.cloudburstmc.protocol.bedrock.packet.InventoryTransactionPacket;
 import org.cloudburstmc.protocol.bedrock.packet.MobEquipmentPacket;
 import org.cloudburstmc.protocol.bedrock.packet.PlayerHotbarPacket;
 import org.cloudburstmc.protocol.bedrock.packet.RemoveEntityPacket;
+import org.cloudburstmc.protocol.bedrock.packet.UpdateBlockPacket;
 import org.geysermc.geyser.GeyserImpl;
 import org.geysermc.geyser.entity.type.ItemFrameEntity;
 import org.geysermc.geyser.inventory.GeyserItemStack;
@@ -184,16 +187,13 @@ public final class PacketInterceptorManager {
 
     public static void onPlayerSpawned(GeyserSession session) {
         if (session == null || session.isClosed()) return;
-        session.scheduleInEventLoop(() -> {
-            if (!session.isSpawned() || session.isClosed()) return;
-            CLIENT_READY_SESSIONS.add(session);
-            System.out.println("[CreateBridge-Depot] Bedrock client fully loaded into world! Syncing " + LAST_KNOWN_DEPOTS.size() + " active depot items...");
-            for (Map.Entry<Vector3i, DepotStoredItem> entry : LAST_KNOWN_DEPOTS.entrySet()) {
-                Vector3i pos = entry.getKey();
-                DepotStoredItem item = entry.getValue();
-                spawnOrUpdateDepotItem(session, pos, item.itemId(), item.count());
-            }
-        }, 2, TimeUnit.SECONDS);
+        CLIENT_READY_SESSIONS.add(session);
+        System.out.println("[CreateBridge-Depot] Bedrock client registered as ready! Syncing " + LAST_KNOWN_DEPOTS.size() + " active depot items...");
+        for (Map.Entry<Vector3i, DepotStoredItem> entry : LAST_KNOWN_DEPOTS.entrySet()) {
+            Vector3i pos = entry.getKey();
+            DepotStoredItem item = entry.getValue();
+            spawnOrUpdateDepotItem(session, pos, item.itemId(), item.count());
+        }
     }
 
     // --- Authoritative Server Push Callbacks (< 0.1ms latency) ---
@@ -202,8 +202,11 @@ public final class PacketInterceptorManager {
         LAST_KNOWN_DEPOTS.put(pos, new DepotStoredItem(itemId, count));
         try {
             for (GeyserSession session : GeyserImpl.getInstance().onlineConnections()) {
-                if (session != null && !session.isClosed() && CLIENT_READY_SESSIONS.contains(session)) {
-                    spawnOrUpdateDepotItem(session, pos, itemId, count);
+                if (session != null && !session.isClosed()) {
+                    if (session.isSpawned() || CLIENT_READY_SESSIONS.contains(session)) {
+                        CLIENT_READY_SESSIONS.add(session);
+                        spawnOrUpdateDepotItem(session, pos, itemId, count);
+                    }
                 }
             }
         } catch (Throwable t) {
@@ -215,8 +218,11 @@ public final class PacketInterceptorManager {
         LAST_KNOWN_DEPOTS.remove(pos);
         try {
             for (GeyserSession session : GeyserImpl.getInstance().onlineConnections()) {
-                if (session != null && !session.isClosed() && CLIENT_READY_SESSIONS.contains(session)) {
-                    despawnDepotItem(session, pos);
+                if (session != null && !session.isClosed()) {
+                    if (session.isSpawned() || CLIENT_READY_SESSIONS.contains(session)) {
+                        CLIENT_READY_SESSIONS.add(session);
+                        despawnDepotItem(session, pos);
+                    }
                 }
             }
         } catch (Throwable t) {
@@ -365,11 +371,65 @@ public final class PacketInterceptorManager {
     }
 
     /**
-     * Spawns an item entity directly resting on top of the depot plate (y + 0.82f).
-     * Uses Bedrock AddItemEntityPacket, guaranteed safe and supported across all Bedrock versions.
+     * Displays a stationary flat item resting directly on top of the depot plate.
+     * Places a floor minecraft:frame (facing_direction = 1 [UP]) at pos.up() with ItemRotation = 0.0f.
      */
     private static void spawnOrUpdateDepotItem(GeyserSession session, Vector3i pos, ItemData itemData) {
-        if (session == null || !CLIENT_READY_SESSIONS.contains(session) || session.isClosed()) return;
+        if (session == null || session.isClosed()) return;
+        Vector3i framePos = pos.up();
+
+        try {
+            // 1. Build Definition for upward facing minecraft:frame (facing_direction = 1)
+            NbtMap states = NbtMap.builder()
+                .putInt("facing_direction", 1)
+                .putByte("item_frame_map_bit", (byte) 0)
+                .build();
+            NbtMap blockTag = NbtMap.builder()
+                .putString("name", "minecraft:frame")
+                .putCompound("states", states)
+                .build();
+            BlockDefinition frameDef = session.getBlockMappings().getDefinition(blockTag);
+
+            if (frameDef != null) {
+                UpdateBlockPacket updateBlock = new UpdateBlockPacket();
+                updateBlock.setDataLayer(0);
+                updateBlock.setBlockPosition(framePos);
+                updateBlock.setDefinition(frameDef);
+                updateBlock.getFlags().addAll(java.util.EnumSet.of(UpdateBlockPacket.Flag.NETWORK, UpdateBlockPacket.Flag.PRIORITY));
+                session.sendUpstreamPacket(updateBlock);
+
+                // 2. Build ItemFrame Block Entity NBT with ItemRotation = 0.0f
+                NbtMap itemTag = NbtMap.builder()
+                    .putString("Name", itemData.getDefinition().getIdentifier())
+                    .putByte("Count", (byte) itemData.getCount())
+                    .putShort("Damage", (short) itemData.getDamage())
+                    .build();
+
+                NbtMap beTag = NbtMap.builder()
+                    .putString("id", "ItemFrame")
+                    .putInt("x", framePos.getX())
+                    .putInt("y", framePos.getY())
+                    .putInt("z", framePos.getZ())
+                    .putByte("isMovable", (byte) 0)
+                    .putCompound("Item", itemTag)
+                    .putFloat("ItemRotation", 0.0f)
+                    .putFloat("ItemDropChance", 0.0f)
+                    .build();
+
+                BlockEntityDataPacket bePacket = new BlockEntityDataPacket();
+                bePacket.setBlockPosition(framePos);
+                bePacket.setData(beTag);
+                session.sendUpstreamPacket(bePacket);
+
+                System.out.println("[CreateBridge-Depot] Displayed flat ItemFrame at " + framePos
+                        + " for item " + itemData.getDefinition().getIdentifier() + " x" + itemData.getCount());
+                return;
+            }
+        } catch (Throwable t) {
+            System.err.println("[CreateBridge-Depot] Failed to place flat floor item frame: " + t.getMessage());
+        }
+
+        // Fallback: AddItemEntityPacket
         Map<Vector3i, Long> depotMap = SESSION_DEPOT_ENTITIES.computeIfAbsent(session, s -> new ConcurrentHashMap<>());
         Long oldId = depotMap.remove(pos);
         if (oldId != null) {
@@ -400,13 +460,26 @@ public final class PacketInterceptorManager {
         metadata.getOrCreateFlags().put(EntityFlag.HAS_COLLISION, false);
         add.setMetadata(metadata);
         session.sendUpstreamPacket(add);
-
-        System.out.println("[CreateBridge-Depot] Sent AddItemEntityPacket (id=" + entityId
-                + ") at " + pos + " for item " + itemData.getDefinition().getIdentifier() + " x" + itemData.getCount());
     }
 
     private static void despawnDepotItem(GeyserSession session, Vector3i pos) {
-        if (session == null || !CLIENT_READY_SESSIONS.contains(session) || session.isClosed()) return;
+        if (session == null || session.isClosed()) return;
+        Vector3i framePos = pos.up();
+
+        // 1. Clear floor item frame at pos.up() by restoring air
+        try {
+            BlockDefinition airDef = session.getBlockMappings().getBedrockAir();
+            if (airDef != null) {
+                UpdateBlockPacket updateBlock = new UpdateBlockPacket();
+                updateBlock.setDataLayer(0);
+                updateBlock.setBlockPosition(framePos);
+                updateBlock.setDefinition(airDef);
+                updateBlock.getFlags().addAll(java.util.EnumSet.of(UpdateBlockPacket.Flag.NETWORK, UpdateBlockPacket.Flag.PRIORITY));
+                session.sendUpstreamPacket(updateBlock);
+            }
+        } catch (Throwable ignored) {}
+
+        // 2. Also clear any fallback entity
         Map<Vector3i, Long> depotMap = SESSION_DEPOT_ENTITIES.get(session);
         if (depotMap != null) {
             Long entityId = depotMap.remove(pos);
@@ -414,9 +487,9 @@ public final class PacketInterceptorManager {
                 RemoveEntityPacket rem = new RemoveEntityPacket();
                 rem.setUniqueEntityId(entityId);
                 session.sendUpstreamPacket(rem);
-                System.out.println("[CreateBridge-Depot] Despawned item entity (id=" + entityId + ") at " + pos);
             }
         }
+        System.out.println("[CreateBridge-Depot] Despawned depot item at " + pos);
     }
 
     // --- Block Pick Logic ---
