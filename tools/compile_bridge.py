@@ -35,7 +35,17 @@ def find_jdk_binary(name):
 JAVAC = find_jdk_binary("javac")
 JAR_BIN = find_jdk_binary("jar")
 
+def ensure_geyser_jar():
+    if not GEYSER_JAR.exists():
+        print(f"[compile_bridge] Geyser jar not found at {GEYSER_JAR}. Downloading Geyser-Standalone...", flush=True)
+        GEYSER_JAR.parent.mkdir(parents=True, exist_ok=True)
+        import urllib.request
+        url = "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/standalone"
+        urllib.request.urlretrieve(url, GEYSER_JAR)
+        print("[compile_bridge] Geyser-Standalone jar downloaded successfully.", flush=True)
+
 def compile_and_package():
+    ensure_geyser_jar()
     print("[1/3] Preparing build directory...")
     if BIN_DIR.exists():
         shutil.rmtree(BIN_DIR)

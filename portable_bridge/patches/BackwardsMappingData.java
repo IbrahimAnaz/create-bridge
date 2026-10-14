@@ -1,0 +1,187 @@
+/*
+ * This file is part of ViaBackwards - https://github.com/ViaVersion/ViaBackwards
+ * Copyright (C) 2016-2026 ViaVersion and contributors
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package com.viaversion.viabackwards.api.data;
+
+import com.google.common.base.Preconditions;
+import com.viaversion.nbt.tag.CompoundTag;
+import com.viaversion.nbt.tag.NumberTag;
+import com.viaversion.nbt.tag.StringTag;
+import com.viaversion.nbt.tag.Tag;
+import com.viaversion.viabackwards.ViaBackwards;
+import com.viaversion.viabackwards.api.BackwardsProtocol;
+import com.viaversion.viaversion.api.Via;
+import com.viaversion.viaversion.api.data.BiMappings;
+import com.viaversion.viaversion.api.data.IdentityMappings;
+import com.viaversion.viaversion.api.data.MappingData;
+import com.viaversion.viaversion.api.data.MappingDataBase;
+import com.viaversion.viaversion.api.data.Mappings;
+import com.viaversion.viaversion.api.protocol.Protocol;
+import com.viaversion.viaversion.libs.fastutil.ints.Int2ObjectArrayMap;
+import com.viaversion.viaversion.libs.fastutil.ints.Int2ObjectMap;
+import com.viaversion.viaversion.libs.fastutil.ints.Int2ObjectOpenHashMap;
+import com.viaversion.viaversion.util.Key;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+// no nullable
+
+public class BackwardsMappingData extends MappingDataBase {
+
+    private static final int CREATE_ITEM_ID_START = 1333;
+    private static final int CREATE_ITEM_ID_OFFSET = 10000;
+
+    private final Class<? extends Protocol<?, ?, ?, ?>> vvProtocolClass;
+    protected Int2ObjectMap<MappedItem> backwardsItemMappings;
+    private Int2ObjectMap<String> enchantmentNames;
+
+    public BackwardsMappingData(final String unmappedVersion, final String mappedVersion) {
+        this(unmappedVersion, mappedVersion, null);
+    }
+
+    public BackwardsMappingData(final String unmappedVersion, final String mappedVersion, final Class<? extends Protocol<?, ?, ?, ?>> vvProtocolClass) {
+        super(unmappedVersion, mappedVersion);
+        Preconditions.checkArgument(vvProtocolClass == null || !BackwardsProtocol.class.isAssignableFrom(vvProtocolClass));
+        this.vvProtocolClass = vvProtocolClass;
+    }
+
+    @Override
+    protected void loadExtras(final CompoundTag data) {
+        final CompoundTag itemCustomModelDatas = data.getCompoundTag("custom_model_data");
+        if (itemCustomModelDatas != null) {
+            Preconditions.checkNotNull(itemMappings);
+            backwardsItemMappings = new Int2ObjectOpenHashMap<>(itemCustomModelDatas.size());
+            loadBackwardsItemMappings(itemCustomModelDatas);
+        }
+        this.enchantmentNames = loadNameByIdMappings(data, "enchantmentnames");
+    }
+
+    protected void loadBackwardsItemMappings(final CompoundTag itemCustomModelDatas) {
+        for (final Map.Entry<String, Tag> entry : itemCustomModelDatas.entrySet()) {
+            final int id = Integer.parseInt(entry.getKey());
+            final int customModelData = ((NumberTag) entry.getValue()).asInt();
+            final String identifier = getFullItemMappings().identifier(id);
+            final String fallbackName = unmappedVersion + " " + nameFromIdentifier(identifier);
+            backwardsItemMappings.put(id, new MappedItem(getNewItemId(id), identifier, fallbackName, customModelData));
+        }
+    }
+
+    private Int2ObjectMap<String> loadNameByIdMappings(final CompoundTag data, final String key) {
+        final CompoundTag nameMappings = data.getCompoundTag(key);
+        if (nameMappings == null) {
+            return null;
+        }
+
+        final Int2ObjectMap<String> map = new Int2ObjectArrayMap<>(nameMappings.size());
+        for (final Map.Entry<String, Tag> entry : nameMappings.entrySet()) {
+            final StringTag mappedTag = (StringTag) entry.getValue();
+            map.put(Integer.parseInt(entry.getKey()), mappedTag.getValue());
+        }
+        return map;
+    }
+
+    @Override
+    protected BiMappings loadBiMappings(final CompoundTag data, final String key) {
+        if (key.equals("items") && vvProtocolClass != null) {
+            Mappings mappings = super.loadMappings(data, key);
+            final MappingData mappingData = Via.getManager().getProtocolManager().getProtocol(vvProtocolClass).getMappingData();
+            if (mappingData != null && mappingData.getItemMappings() != null) {
+                final BiMappings vvItemMappings = mappingData.getItemMappings();
+                if (mappings == null) {
+                    mappings = new IdentityMappings(vvItemMappings.mappedSize(), vvItemMappings.size());
+                }
+                return ItemMappings.of(mappings, vvItemMappings);
+            }
+        }
+        return super.loadBiMappings(data, key);
+    }
+
+    /**
+     * @see #getMappedItem(int) for custom backwards mappings
+     */
+    @Override
+    public int getNewItemId(final int id) {
+        if (id >= CREATE_ITEM_ID_OFFSET) return id;
+        if (id >= CREATE_ITEM_ID_START) return CREATE_ITEM_ID_OFFSET + id;
+        if (this.itemMappings == null) return id;
+        final int mapped = this.itemMappings.getNewId(id);
+        return mapped != -1 ? mapped : id;
+    }
+
+    @Override
+    public int getNewBlockId(final int id) {
+        if (id >= 100000) return id - 100000;
+        if (this.blockMappings == null) return id;
+        final int mapped = this.blockMappings.getNewId(id);
+        return mapped != -1 ? mapped : id;
+    }
+
+    @Override
+    public int getOldItemId(final int id) {
+        if (id >= CREATE_ITEM_ID_OFFSET) return id - CREATE_ITEM_ID_OFFSET;
+        if (this.itemMappings == null) return id;
+        final int mapped = this.itemMappings.inverse().getNewId(id);
+        return mapped != -1 ? mapped : id;
+    }
+
+    @Override
+    public int getNewAttributeId(final int id) {
+        return this.attributeMappings.getNewId(id);
+    }
+
+    public MappedItem getMappedItem(final int id) {
+        return backwardsItemMappings != null ? backwardsItemMappings.get(id) : null;
+    }
+
+    public String getMappedNamedSound(final String id) {
+        return getFullSoundMappings().mappedIdentifier(id);
+    }
+
+    public String mappedEnchantmentName(final int enchantmentId) {
+        if (enchantmentNames == null) {
+            ViaBackwards.getPlatform().getLogger().log(Level.SEVERE, "No enchantment name mappings found when requesting " + enchantmentId, new RuntimeException());
+            return null;
+        }
+        return enchantmentNames.get(enchantmentId);
+    }
+
+    public Int2ObjectMap<MappedItem> getBackwardsItemMappings() {
+        return backwardsItemMappings;
+    }
+
+    public Class<? extends Protocol<?, ?, ?, ?>> getViaVersionProtocolClass() {
+        return vvProtocolClass;
+    }
+
+    @Override
+    protected Logger getLogger() {
+        return ViaBackwards.getPlatform().getLogger();
+    }
+
+    @Override
+    protected CompoundTag readMappingsFile(final String name) {
+        return BackwardsMappingDataLoader.INSTANCE.loadNBTFromDir(name);
+    }
+
+    public static String nameFromIdentifier(final String identifier) {
+        final StringBuilder result = new StringBuilder();
+        for (final String split : Key.stripMinecraftNamespace(identifier).split("_")) {
+            result.append(' ').append(Character.toUpperCase(split.charAt(0))).append(split.substring(1));
+        }
+        return result.substring(1);
+    }
+}
