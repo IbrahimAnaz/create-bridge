@@ -11,20 +11,22 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public final class BridgeSyncServer {
 
     private static final int PORT = 25575;
     private static final AtomicBoolean RUNNING = new AtomicBoolean(false);
-    private static volatile PrintWriter clientWriter = null;
+    private static final Set<PrintWriter> CLIENT_WRITERS = ConcurrentHashMap.newKeySet();
 
     public static void start() {
         if (RUNNING.compareAndSet(false, true)) {
             Thread serverThread = new Thread(BridgeSyncServer::runServer, "CreateBridge-SyncServer");
             serverThread.setDaemon(true);
             serverThread.start();
-            System.out.println("[CreateBridge-Sync] Socket server started on port " + PORT);
+            System.out.println("[CreateBridge-Sync] Multi-client socket server started on port " + PORT);
         }
     }
 
@@ -33,11 +35,13 @@ public final class BridgeSyncServer {
     }
 
     public static void requestSync() {
-        PrintWriter out = clientWriter;
-        if (out != null) {
-            out.println("{\"t\":\"query_depots\"}");
-            System.out.println("[CreateBridge-Sync] Requested depot sync from NeoForge companion");
+        String msg = "{\"t\":\"query_depots\"}";
+        for (PrintWriter out : CLIENT_WRITERS) {
+            try {
+                out.println(msg);
+            } catch (Throwable ignored) {}
         }
+        System.out.println("[CreateBridge-Sync] Requested depot sync from " + CLIENT_WRITERS.size() + " companion client(s)");
     }
 
     private static void runServer() {
@@ -46,24 +50,12 @@ public final class BridgeSyncServer {
                 try {
                     Socket socket = serverSocket.accept();
                     socket.setTcpNoDelay(true);
-                    System.out.println("[CreateBridge-Sync] Accepted connection from NeoForge companion: " + socket.getRemoteSocketAddress());
-
-                    PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
-                    BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
-                    clientWriter = out;
-
-                    String line;
-                    while ((line = in.readLine()) != null) {
-                        try {
-                            handleMessage(line);
-                        } catch (Throwable t) {
-                            System.err.println("[CreateBridge-Sync] Error handling message: " + line + " -> " + t.getMessage());
-                        }
-                    }
+                    Thread t = new Thread(() -> handleConnection(socket), "CreateBridge-SyncConnection");
+                    t.setDaemon(true);
+                    t.start();
                 } catch (Throwable t) {
-                    clientWriter = null;
                     if (!RUNNING.get()) break;
-                    System.err.println("[CreateBridge-Sync] Companion connection lost: " + t.getMessage());
+                    System.err.println("[CreateBridge-Sync] Server error: " + t.getMessage());
                 }
             }
         } catch (Throwable t) {
@@ -71,7 +63,36 @@ public final class BridgeSyncServer {
         }
     }
 
-    private static void handleMessage(String line) {
+    private static void handleConnection(Socket socket) {
+        System.out.println("[CreateBridge-Sync] Accepted connection from: " + socket.getRemoteSocketAddress());
+        PrintWriter out = null;
+        try {
+            out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8), true);
+            CLIENT_WRITERS.add(out);
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+
+            String line;
+            while ((line = in.readLine()) != null) {
+                try {
+                    handleMessage(line, out);
+                } catch (Throwable t) {
+                    System.err.println("[CreateBridge-Sync] Error handling message: " + line + " -> " + t.getMessage());
+                }
+            }
+        } catch (Throwable t) {
+            // Connection closed
+        } finally {
+            if (out != null) {
+                CLIENT_WRITERS.remove(out);
+            }
+            try {
+                socket.close();
+            } catch (Throwable ignored) {}
+            System.out.println("[CreateBridge-Sync] Connection closed: " + socket.getRemoteSocketAddress());
+        }
+    }
+
+    private static void handleMessage(String line, PrintWriter clientOut) {
         if (line == null || line.isBlank()) return;
         JsonObject obj = JsonParser.parseString(line).getAsJsonObject();
         String type = obj.has("t") ? obj.get("t").getAsString() : "";
@@ -96,6 +117,11 @@ public final class BridgeSyncServer {
 
         } else if ("companion_hello".equals(type)) {
             System.out.println("[CreateBridge-Sync] NeoForge companion online (v" + (obj.has("version") ? obj.get("version").getAsString() : "unknown") + ")");
+
+        } else if ("ping".equals(type)) {
+            if (clientOut != null) {
+                clientOut.println("{\"t\":\"pong\",\"timestamp\":" + System.currentTimeMillis() + "}");
+            }
         }
     }
 }

@@ -104,6 +104,8 @@ public class CreateBridgeExtension implements Extension {
                     FacingBlockRegistrar.register(event, name, "create_" + name, geoId, collision, rawIds);
                 } else if (com.createbridge.config.BlockProperties.hasAxis(name, rawIds)) {
                     KineticBlockRegistrar.register(event, name, "create_" + name, geoId, collision, "y", rawIds);
+                } else if ("fluid_pipe".equals(name) || "glass_fluid_pipe".equals(name)) {
+                    com.createbridge.blocks.PipeBlockRegistrar.register(event, name, "create_" + name, collision, rawIds);
                 } else {
                     CubeBlockRegistrar.registerStaticGeo(event, name, "create_" + name, geoId, collision, rawIds);
                 }
