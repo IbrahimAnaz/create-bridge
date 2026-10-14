@@ -3,7 +3,6 @@ from pathlib import Path
 
 ROOT = Path(r"c:\Users\ibrah\Downloads\crt aro")
 RP_DIR = ROOT / "create_cogwheel_rp"
-PORTABLE_PACK = ROOT / "portable_bridge" / "geyser" / "packs" / "CreateKineticPack.zip"
 HEADLESS_PACK = ROOT / "headless_server" / "geyser" / "packs" / "CreateKineticPack.zip"
 MANIFEST = RP_DIR / "manifest.json"
 
@@ -23,11 +22,10 @@ with open(MANIFEST, "w", encoding="utf-8") as f:
 
 print(f"Updated manifest.json to version {new_ver} and fresh UUIDs!")
 
-PORTABLE_PACK.parent.mkdir(parents=True, exist_ok=True)
 HEADLESS_PACK.parent.mkdir(parents=True, exist_ok=True)
 
 file_count = 0
-with zipfile.ZipFile(PORTABLE_PACK, "w", compression=zipfile.ZIP_DEFLATED) as z_out:
+with zipfile.ZipFile(HEADLESS_PACK, "w", compression=zipfile.ZIP_DEFLATED) as z_out:
     for root, dirs, files in os.walk(RP_DIR):
         for file in files:
             p = Path(root) / file
@@ -35,6 +33,5 @@ with zipfile.ZipFile(PORTABLE_PACK, "w", compression=zipfile.ZIP_DEFLATED) as z_
             z_out.write(p, str(rel_path).replace("\\", "/"))
             file_count += 1
 
-shutil.copy2(PORTABLE_PACK, HEADLESS_PACK)
-size = PORTABLE_PACK.stat().st_size
-print(f"Successfully repacked {file_count} files into CreateKineticPack.zip ({size} bytes) for both bridges!")
+size = HEADLESS_PACK.stat().st_size
+print(f"Successfully repacked {file_count} files into CreateKineticPack.zip ({size} bytes) in {HEADLESS_PACK}!")

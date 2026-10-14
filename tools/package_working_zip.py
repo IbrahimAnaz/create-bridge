@@ -18,7 +18,8 @@ EXCLUDE_DIRS = {
     "__pycache__",
     "temp_decomp",
     "com",
-    "node_modules"
+    "node_modules",
+    "reference"
 }
 
 EXCLUDE_FILES = {

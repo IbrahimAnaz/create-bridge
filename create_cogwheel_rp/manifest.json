@@ -3,11 +3,11 @@
   "header": {
     "name": "\ud83d\udd25 IBRAHIM'S CREATE ENGINE [RP] \ud83d\udd25",
     "description": ">>> VERIFIED FOR IBRAHIM: 3D Rotating Cogwheel Model & RenderDragon Kinetics <<<",
-    "uuid": "f228942a-e602-4588-9ff7-dc631a20f1f0",
+    "uuid": "de25961f-bea3-4ff8-8b1f-1ccc145a834a",
     "version": [
       1,
       0,
-      42
+      43
     ],
     "min_engine_version": [
       1,
@@ -18,11 +18,11 @@
   "modules": [
     {
       "type": "resources",
-      "uuid": "7fc6f382-0e44-4053-a459-1afdfa23c539",
+      "uuid": "dc902d31-f8e0-428b-b0da-baff033d5f98",
       "version": [
         1,
         0,
-        42
+        43
       ]
     }
   ]

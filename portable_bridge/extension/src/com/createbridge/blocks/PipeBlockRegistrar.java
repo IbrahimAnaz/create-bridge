@@ -7,7 +7,6 @@ import org.geysermc.geyser.api.block.custom.NonVanillaCustomBlockData;
 import org.geysermc.geyser.api.block.custom.component.CustomBlockComponents;
 import org.geysermc.geyser.api.block.custom.component.GeometryComponent;
 import org.geysermc.geyser.api.block.custom.component.MaterialInstance;
-import org.geysermc.geyser.api.block.custom.component.TransformationComponent;
 import org.geysermc.geyser.api.block.custom.nonvanilla.JavaBlockState;
 import org.geysermc.geyser.api.block.custom.nonvanilla.JavaBoundingBox;
 import org.geysermc.geyser.api.event.lifecycle.GeyserDefineCustomBlocksEvent;
@@ -19,24 +18,33 @@ import java.util.Map;
 
 public final class PipeBlockRegistrar {
 
-    private static final String GEO_STRAIGHT = "geometry.create.pipe_straight";
-    private static final String GEO_ELBOW    = "geometry.create.pipe_elbow";
-    private static final String GEO_HUB      = "geometry.create.pipe_hub";
+    private static final String GEO_BASE = "geometry.create.pipe_none";
+    private static final List<String> ALL_SHAPES = generateAllShapes();
+
+    private static List<String> generateAllShapes() {
+        List<String> list = new ArrayList<>();
+        list.add("none");
+        String[] dirs = {"d", "u", "n", "s", "e", "w"};
+        int n = dirs.length;
+        for (int mask = 1; mask < (1 << n); mask++) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < n; i++) {
+                if ((mask & (1 << i)) != 0) {
+                    if (sb.length() > 0) sb.append("_");
+                    sb.append(dirs[i]);
+                }
+            }
+            list.add(sb.toString());
+        }
+        return list;
+    }
 
     public static void register(GeyserDefineCustomBlocksEvent event, String name, String texture, JavaBoundingBox[] collision, List<Integer> rawIds) {
         String identifier = "create:" + name;
         if (rawIds.isEmpty()) return;
 
-        List<String> shapes = List.of(
-            "straight_y", "straight_x", "straight_z",
-            "elbow_us", "elbow_un", "elbow_ue", "elbow_uw",
-            "elbow_ds", "elbow_dn", "elbow_de", "elbow_dw",
-            "elbow_se", "elbow_sw", "elbow_ne", "elbow_nw",
-            "hub"
-        );
-
         List<CustomBlockPermutation> perms = new ArrayList<>();
-        for (String shape : shapes) {
+        for (String shape : ALL_SHAPES) {
             String geoId = "geometry.create.pipe_" + shape;
             perms.add(new CustomBlockPermutation(
                 CustomBlockComponents.builder()
@@ -47,7 +55,7 @@ public final class PipeBlockRegistrar {
         }
 
         CustomBlockComponents baseComps = CustomBlockComponents.builder()
-            .geometry(GeometryComponent.builder().identifier(GEO_HUB).build())
+            .geometry(GeometryComponent.builder().identifier(GEO_BASE).build())
             .materialInstance("*", MaterialInstance.builder()
                 .texture(texture)
                 .renderMethod("alpha_test")
@@ -60,20 +68,20 @@ public final class PipeBlockRegistrar {
             .namespace("create")
             .name(name)
             .components(baseComps)
-            .stringProperty("create:shape", shapes)
+            .stringProperty("create:shape", ALL_SHAPES)
             .permutations(perms)
             .build();
         event.register(data);
 
         Map<String, org.geysermc.geyser.api.block.custom.CustomBlockState> stateMap = new HashMap<>();
-        for (String s : shapes) {
+        for (String s : ALL_SHAPES) {
             stateMap.put(s, data.blockStateBuilder().stringProperty("create:shape", s).build());
         }
 
         for (int rawId : rawIds) {
             int shiftedId = BridgeConfig.OFFSET + rawId;
             String shape = determineShape(rawId);
-            var targetState = stateMap.getOrDefault(shape, stateMap.get("hub"));
+            var targetState = stateMap.getOrDefault(shape, stateMap.get("none"));
 
             event.registerOverride(
                 JavaBlockState.builder()
@@ -88,43 +96,29 @@ public final class PipeBlockRegistrar {
     }
 
     private static String determineShape(int rawId) {
-        boolean down = BlockProperties.isConnectionTrue(rawId, "down");
-        boolean up = BlockProperties.isConnectionTrue(rawId, "up");
-        boolean north = BlockProperties.isConnectionTrue(rawId, "north");
-        boolean south = BlockProperties.isConnectionTrue(rawId, "south");
-        boolean east = BlockProperties.isConnectionTrue(rawId, "east");
-        boolean west = BlockProperties.isConnectionTrue(rawId, "west");
-
-        int count = (down ? 1 : 0) + (up ? 1 : 0) + (north ? 1 : 0) + (south ? 1 : 0) + (east ? 1 : 0) + (west ? 1 : 0);
-
-        if (count == 2) {
-            if (up && down) return "straight_y";
-            if (east && west) return "straight_x";
-            if (north && south) return "straight_z";
-
-            if (up && south) return "elbow_us";
-            if (up && north) return "elbow_un";
-            if (up && east) return "elbow_ue";
-            if (up && west) return "elbow_uw";
-
-            if (down && south) return "elbow_ds";
-            if (down && north) return "elbow_dn";
-            if (down && east) return "elbow_de";
-            if (down && west) return "elbow_dw";
-
-            if (south && east) return "elbow_se";
-            if (south && west) return "elbow_sw";
-            if (north && east) return "elbow_ne";
-            if (north && west) return "elbow_nw";
+        StringBuilder sb = new StringBuilder();
+        if (BlockProperties.isConnectionTrue(rawId, "down")) sb.append("d");
+        if (BlockProperties.isConnectionTrue(rawId, "up")) {
+            if (sb.length() > 0) sb.append("_");
+            sb.append("u");
         }
-
-        if (count == 1) {
-            if (east || west) return "straight_x";
-            if (up || down) return "straight_y";
-            if (north || south) return "straight_z";
+        if (BlockProperties.isConnectionTrue(rawId, "north")) {
+            if (sb.length() > 0) sb.append("_");
+            sb.append("n");
         }
-
-        return "hub";
+        if (BlockProperties.isConnectionTrue(rawId, "south")) {
+            if (sb.length() > 0) sb.append("_");
+            sb.append("s");
+        }
+        if (BlockProperties.isConnectionTrue(rawId, "east")) {
+            if (sb.length() > 0) sb.append("_");
+            sb.append("e");
+        }
+        if (BlockProperties.isConnectionTrue(rawId, "west")) {
+            if (sb.length() > 0) sb.append("_");
+            sb.append("w");
+        }
+        return sb.length() == 0 ? "none" : sb.toString();
     }
 
     private PipeBlockRegistrar() {}
