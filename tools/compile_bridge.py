@@ -5,13 +5,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PORTABLE_EXT = ROOT / "portable_bridge" / "extension"
-PORTABLE_GEYSER_EXT = ROOT / "portable_bridge" / "geyser" / "extensions"
-HEADLESS_GEYSER_EXT = ROOT / "headless_server" / "geyser" / "extensions"
+HEADLESS_GEYSER = ROOT / "headless_server" / "geyser"
+HEADLESS_GEYSER_EXT = HEADLESS_GEYSER / "extensions"
 BIN_DIR = PORTABLE_EXT / "bin"
 SRC_DIR = PORTABLE_EXT / "src"
 RES_DIR = PORTABLE_EXT / "resources"
 
-GEYSER_JAR = ROOT / "portable_bridge" / "geyser" / "Geyser-Standalone.jar"
+GEYSER_JAR = HEADLESS_GEYSER / "Geyser-Standalone.jar"
 
 # Resolve javac and jar across Windows, Linux, and Cloud environments (strictly targeting Java 21)
 def find_jdk_binary(name):
@@ -76,10 +76,11 @@ def compile_and_package():
             print(f"  + Added resource: {res_file.name}")
 
     print("[3/3] Packaging CreateBridge.jar...")
-    PORTABLE_GEYSER_EXT.mkdir(parents=True, exist_ok=True)
     HEADLESS_GEYSER_EXT.mkdir(parents=True, exist_ok=True)
+    build_dir = PORTABLE_EXT / "build"
+    build_dir.mkdir(parents=True, exist_ok=True)
 
-    out_jar = PORTABLE_GEYSER_EXT / "CreateBridge.jar"
+    out_jar = build_dir / "CreateBridge.jar"
     cmd_jar = [
         JAR_BIN, "cf", str(out_jar),
         "-C", str(BIN_DIR), "."
@@ -89,9 +90,13 @@ def compile_and_package():
         print(f"Jar packaging FAILED:\n{res_jar.stderr}")
         return False
 
-    shutil.copy2(out_jar, HEADLESS_GEYSER_EXT / "CreateBridge.jar")
     size = out_jar.stat().st_size
-    print(f"Successfully generated CreateBridge.jar ({size} bytes) for both bridges!")
+    print(f"Successfully generated CreateBridge.jar ({size} bytes) in {build_dir}!")
+    try:
+        shutil.copy2(out_jar, HEADLESS_GEYSER_EXT / "CreateBridge.jar")
+        print(f"Deployed to {HEADLESS_GEYSER_EXT}")
+    except Exception as e:
+        print(f"Note: Could not copy directly to {HEADLESS_GEYSER_EXT} (file locked by active Geyser): {e}")
     return True
 
 if __name__ == "__main__":
