@@ -51,6 +51,12 @@ The repository is live on GitHub:
 
 ---
 
+### Method D: Google Cloud Platform & Cloud Shell (1-Click Browser Launch)
+* **1-Click Open in Cloud Shell**: [**Open in Google Cloud Shell**](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/IbrahimAnaz/create-bridge) (launches in-browser Linux IDE with pre-installed `gcloud` and `git`).
+* **Deploy to 24/7 GCE VM**: Run `tools/gcp_deploy.sh` to provision an `e2-standard-4` instance with open firewall ports (`19132` UDP) and background server daemons. Full documentation in `GCP_SETUP.md`.
+
+---
+
 ## 2. Architecture & Service Map
 
 The bridge architecture routes packets between Bedrock and Java NeoForge:
