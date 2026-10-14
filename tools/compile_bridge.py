@@ -13,22 +13,22 @@ RES_DIR = PORTABLE_EXT / "resources"
 
 GEYSER_JAR = ROOT / "portable_bridge" / "geyser" / "Geyser-Standalone.jar"
 
-# Resolve javac and jar across Windows, Linux, and Cloud environments
+# Resolve javac and jar across Windows, Linux, and Cloud environments (strictly targeting Java 21)
 def find_jdk_binary(name):
-    # Check PATH first
-    found = shutil.which(name)
-    if found:
-        return found
+    # Check standard Windows location for JDK 21 first
+    win_cand = Path(r"C:\Program Files\Java\jdk-21.0.12\bin") / (name + ".exe")
+    if win_cand.exists():
+        return str(win_cand)
     # Check JAVA_HOME
     java_home = os.environ.get("JAVA_HOME")
     if java_home:
         cand = Path(java_home) / "bin" / (name + (".exe" if os.name == "nt" else ""))
         if cand.exists():
             return str(cand)
-    # Check standard Windows location
-    win_cand = Path(r"C:\Program Files\Java\jdk-21.0.12\bin") / (name + ".exe")
-    if win_cand.exists():
-        return str(win_cand)
+    # Check PATH
+    found = shutil.which(name)
+    if found:
+        return found
     # Fallback to binary name
     return name
 
@@ -51,12 +51,13 @@ def compile_and_package():
         shutil.rmtree(BIN_DIR)
     BIN_DIR.mkdir(parents=True, exist_ok=True)
 
-    print("[2/3] Compiling Java classes...")
+    print("[2/3] Compiling Java classes (targeting Java 21)...")
     sources = list(SRC_DIR.rglob("*.java"))
     print(f"Found {len(sources)} source files.")
     
     cmd = [
         JAVAC,
+        "--release", "21",
         "-cp", str(GEYSER_JAR),
         "-d", str(BIN_DIR),
         *[str(s) for s in sources]
