@@ -343,11 +343,12 @@ def cmd_watch(args):
             remote_sha = run_git(["rev-parse", f"{remote}/{branch}"])
             local_sha = run_git(["rev-parse", branch])
 
-            if remote_sha != local_sha and remote_sha != last_remote_sha:
-                print(f"[{time.strftime('%H:%M:%S')}] Detected new commit from Web IDE: {remote_sha[:7]}")
-                out = run_git(["pull", "--rebase", remote, branch])
-                print(f"[{time.strftime('%H:%M:%S')}] {out}")
+            behind_count = int(run_git(["rev-list", "--count", f"{branch}..{remote}/{branch}"], check=False) or "0")
+            if behind_count > 0 and remote_sha != last_remote_sha:
                 last_remote_sha = remote_sha
+                print(f"[{time.strftime('%H:%M:%S')}] Detected {behind_count} new commit(s) from Web IDE ({remote_sha[:7]})")
+                out = run_git(["pull", "--rebase", remote, branch], check=False)
+                print(f"[{time.strftime('%H:%M:%S')}] {out}")
 
                 # Check if there is an action request in this commit
                 process_remote_actions(remote, branch)
