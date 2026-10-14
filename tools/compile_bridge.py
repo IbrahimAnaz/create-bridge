@@ -3,7 +3,7 @@ import subprocess
 import shutil
 from pathlib import Path
 
-ROOT = Path(r"c:\Users\ibrah\Downloads\crt aro")
+ROOT = Path(__file__).resolve().parent.parent
 PORTABLE_EXT = ROOT / "portable_bridge" / "extension"
 PORTABLE_GEYSER_EXT = ROOT / "portable_bridge" / "geyser" / "extensions"
 HEADLESS_GEYSER_EXT = ROOT / "headless_server" / "geyser" / "extensions"
@@ -12,8 +12,28 @@ SRC_DIR = PORTABLE_EXT / "src"
 RES_DIR = PORTABLE_EXT / "resources"
 
 GEYSER_JAR = ROOT / "portable_bridge" / "geyser" / "Geyser-Standalone.jar"
-JAVAC = r"C:\Program Files\Java\jdk-21.0.12\bin\javac.exe"
-JAR_BIN = r"C:\Program Files\Java\jdk-21.0.12\bin\jar.exe"
+
+# Resolve javac and jar across Windows, Linux, and Cloud environments
+def find_jdk_binary(name):
+    # Check PATH first
+    found = shutil.which(name)
+    if found:
+        return found
+    # Check JAVA_HOME
+    java_home = os.environ.get("JAVA_HOME")
+    if java_home:
+        cand = Path(java_home) / "bin" / (name + (".exe" if os.name == "nt" else ""))
+        if cand.exists():
+            return str(cand)
+    # Check standard Windows location
+    win_cand = Path(r"C:\Program Files\Java\jdk-21.0.12\bin") / (name + ".exe")
+    if win_cand.exists():
+        return str(win_cand)
+    # Fallback to binary name
+    return name
+
+JAVAC = find_jdk_binary("javac")
+JAR_BIN = find_jdk_binary("jar")
 
 def compile_and_package():
     print("[1/3] Preparing build directory...")

@@ -44,8 +44,10 @@ def save_config(cfg):
     with open(CONFIG_FILE, "w", encoding="utf-8") as f:
         json.dump(cfg, f, indent=2)
 
-def run_git(args, check=True, capture=True):
+def run_git(args, check=True, capture=True, timeout=30):
     cmd = ["git"] + args
+    env = dict(os.environ)
+    env["GIT_TERMINAL_PROMPT"] = "0"
     try:
         res = subprocess.run(
             cmd,
@@ -53,9 +55,14 @@ def run_git(args, check=True, capture=True):
             check=check,
             text=True,
             capture_output=capture,
-            errors="replace"
+            errors="replace",
+            env=env,
+            timeout=timeout
         )
         return res.stdout.strip() if capture else ""
+    except subprocess.TimeoutExpired:
+        print(f"[Git Error] Command timed out after {timeout}s: {' '.join(cmd)}", file=sys.stderr)
+        raise
     except subprocess.CalledProcessError as e:
         if capture:
             print(f"[Git Error] {e.stderr.strip()}", file=sys.stderr)
@@ -304,7 +311,7 @@ def process_remote_actions(remote, branch):
 
     # Commit and push response back to GitHub
     try:
-        run_git(["add", str(RESPONSE_FILE), str(ACTIONS_DIR / "latest_run.log")])
+        run_git(["add", "-f", str(RESPONSE_FILE), str(ACTIONS_DIR / "latest_run.log")])
         run_git(["commit", "-m", f"bridge(action): result for {action} [{req_id}]"])
         run_git(["push", remote, branch], capture=False)
         print(f"[Remote Action Dispatcher] >>> Pushed action response back to GitHub! <<<")

@@ -32,6 +32,31 @@ def is_tcp_listening(host: str, port: int) -> bool:
 
 def get_process_info(port: int, proto: str = "TCP"):
     try:
+        if os.name != "nt":
+            # Linux / Colab implementation
+            pids = set()
+            try:
+                out = subprocess.check_output(["ss", "-lptn" if proto.upper() == "TCP" else "-lpun", f"sport = :{port}"], text=True, errors="ignore")
+                for m in re.finditer(r"pid=(\d+)", out):
+                    pids.add(int(m.group(1)))
+            except Exception:
+                try:
+                    out = subprocess.check_output(["fuser", f"{port}/{proto.lower()}"], text=True, errors="ignore")
+                    for p in out.strip().split():
+                        pids.add(int(p))
+                except Exception:
+                    pass
+            if not pids:
+                return None
+            pid = list(pids)[0]
+            try:
+                rss_kb = int(subprocess.check_output(["ps", "-p", str(pid), "-o", "rss="], text=True, errors="ignore").strip() or 0)
+                comm = subprocess.check_output(["ps", "-p", str(pid), "-o", "comm="], text=True, errors="ignore").strip()
+                return {"pid": pid, "name": comm or "java", "mem_mb": round(rss_kb / 1024)}
+            except Exception:
+                return {"pid": pid, "name": "java", "mem_mb": 0}
+
+        # Windows implementation
         cmd = f'netstat -ano | findstr "{port}"'
         out = subprocess.check_output(cmd, shell=True, text=True, errors="ignore")
         pids = set()

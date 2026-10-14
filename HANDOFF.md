@@ -1,120 +1,144 @@
 # Create Mod Bedrock-Java Bridge: Master Handoff & Architecture Record
 
-> **Document Version**: 2.0 (Post-Chunk & Protocol Resolution)  
-> **Date**: October 8, 2026  
+> **Document Version**: 3.0 (Dynamic Geometries, ID Firewall & Protocol Alignment)  
+> **Date**: October 9, 2026  
 > **Environment**: Minecraft Bedrock Client (v1.21.x) $\rightarrow$ Geyser Standalone $\rightarrow$ ViaProxy $\rightarrow$ Headless NeoForge 1.21.1 Server (`create-1.21.1-6.0.8.jar`).
 
 ---
 
 ## 1. Executive Summary & Live Status
 
-### System Health
+### System Architecture
 ```mermaid
 flowchart LR
-    A["Bedrock Client\n(FickleMirror67)\nUDP 19132"] -->|"RakNet Live"| B["Geyser Standalone\nv2.6.2 (Port 19132)\nCustom Extension & Packs"]
-    B -->|"TCP 25568 Live\nJava Protocol 1.21.2"| C["ViaProxy CLI\nv3.4.14 (Port 25568)\nPatched Protocol Engine"]
-    C -->|"TCP 25565 Live\nNeoForge Protocol 1.21.1"| D["NeoForge Server\n(Port 25565)\nCreate Mod 6.0.8"]
+    A["Bedrock Client\n(v1.21.x)\nUDP 19132"] -->|"RakNet / Custom RP"| B["Geyser Standalone\nv2.11.3 (Port 19132)\nCreateBridge Extension"]
+    B -->|"TCP 25568\nJava Protocol 1.21.2"| C["ViaProxy CLI\nv3.4.14 (Port 25568)\nASM-Patched Firewall Engine"]
+    C -->|"TCP 25565\nNeoForge Protocol 1.21.1"| D["NeoForge Server\n(Port 25565)\nCreate Mod 6.0.8"]
 ```
 
-* **Server Port (TCP 25565)**: `ONLINE` (PID `5496`, `task-4874`)
-* **ViaProxy Port (TCP 25568)**: `ONLINE` (PID `25648`, `task-5704`)
-* **Geyser Gateway (UDP 19132)**: `ONLINE` (PID `9820`, `task-5706`)
-* **All Diagnostics**: Pass (`python tools/bridge.py doctor`)
-
-### What is 100% Working Right Now
-1. **Connection & Handshake**: Bedrock clients connect seamlessly, complete the RakNet/NetherNet handshake, and stay connected indefinitely with zero timeouts.
-2. **Terrain & Chunk Streaming**: All world chunks, terrain, lighting, entities (e.g. chickens, mobs), and vanilla blocks render without lag or void dropouts.
-3. **Item Identity Preservation**:
-   - The **Swap-to-Stone (ID 1)** bug is permanently fixed: Hand swapping (`F`) or moving slots retains items cleanly.
-   - The **Unmapped Item-to-Air (-1)** bug is permanently fixed: Server-to-client item synchronization preserves item IDs without turning them into `AIR`.
-4. **Placement Rollback Prevention**: Client prediction rollback aborts are eliminated because held-item validation no longer mismatches against `AIR`.
+### Process Status
+* **NeoForge Server (Port 25565)**: `ONLINE` (Daemon task `task-1087`)
+* **ViaProxy Bridge (Port 25568)**: `ONLINE` (Daemon task `task-7115`)
+* **Geyser Gateway (Port 19132 UDP)**: `ONLINE` (Daemon task `task-7117`)
 
 ---
 
-## 2. Complete Chronology of Problems Solved (Yesterday & Today)
+## 2. Progress Completed Since Version 2.0
 
-| Issue | Root Cause | Solution Applied | Files Involved |
-|---|---|---|---|
-| **Ping Passthrough Crash** | Geyser crashed on startup when pinging NeoForge server due to custom MOTD structure | Disabled `ping-passthrough` in Geyser config | `headless_server/geyser/config.yml` |
-| **Crash on Join (Component ID 101)** | ViaVersion crashed parsing 1.20.5+ Structured Data Components when encountering Create mod custom components (ID 101) | ASM tree patch in `readData` injecting `IFNULL` jumps to safely skip unknown components | `tools/PatchItemType.java`, `ViaProxy.jar` |
-| **Recipe Rewriter Crash** | ViaVersion crashed when NeoForge sent custom Create recipe serializers | Bytecode patch to pass through unmapped recipe serializers | `tools/PatchRecipeRewriter.java`, `ViaProxy.jar` |
-| **Swap-to-Stone (ID 1)** | Upstream ViaVersion GitHub code had `getNewIdOrDefault(id, 1)` hardcoded in `MappingDataBase.java` (ID 1 = Stone) | Downloaded upstream GitHub source; patched `getOldItemId` and `getOldBlockId` fallback to `id` | `tools/MappingDataBase.java`, `ViaProxy.jar` |
-| **Items Turn to Air (-1)** | Upstream ViaBackwards `getNewItemId` returned `-1` for unmapped IDs, causing Geyser to register held item as `AIR` | Patched `BackwardsMappingData.java` to return `mapped != -1 ? mapped : id` | `tools/BackwardsMappingData.java`, `ViaProxy.jar` |
-| **Void / Chunks Not Loading** | Geyser's `BlockMappings.getBedrockBlockId(int)` called `.getRuntimeId()` on `null` for unmapped palette states, crashing every chunk packet with NPE | Created ASM patcher injecting `bedrockAir` null-fallback in `BlockMappings.class` | `tools/PatchGeyserBlockMappings.java`, `Geyser-Standalone.jar` |
+### A. Dynamic Model Mining & 3D Geometries
+1. **Automated Asset Extraction (`model_miner.py`)**:
+   - Mined **44 real 3D geometry models** directly from `create-1.21.1-6.0.8.jar` block models and blockstate JSON definitions.
+   - Built consolidated resource pack `headless_server/geyser/packs/CreateKineticPack.zip` containing Bedrock `.geo.json` geometries, textures, sound events, and terrain definitions.
+2. **Multi-Axis Block Permutations (`CreateBridgeExtension.java`)**:
+   - **Kinetic 3-Axis Blocks**: `cogwheel`, `large_cogwheel`, `shaft`, `clutch`, `gearbox`, `gearshift`, `water_wheel` registered with Molang `q.block_property('create:axis')` (`x`, `y`, `z`) rotations.
+   - **Facing 6-Way Blocks**: `creative_motor`, `encased_fan`, `mechanical_drill`, `mechanical_saw`, `deployer`, `mechanical_harvester`, `mechanical_plough`, all 16 dyed valve handles, and `hand_crank` registered with `create:facing` (`down`, `up`, `north`, `south`, `west`, `east`) permutations.
+   - **Full Dynamic Dump**: Auto-registers 644 Create blocks, 700 Create items, and 31,389 non-vanilla blockstate overrides dynamically mined from the server registry dump (`create_registry_dump.json`).
 
----
+### B. Protocol ID Firewall & Vanilla Overlap Fixes
+1. **Coordinated Offset Architecture**:
+   - Create items shifted by **`+10,000`** (`11,333..12,031`) to clear 1.21.2 vanilla items (`0..1,374`).
+   - Create blockstates shifted by **`+100,000`** (`126,684..158,072`) to clear 1.21.2 vanilla blockstates (`0..27,317`).
+   - Create block IDs shifted by **`+100,000`** (`101,060..101,702`) to clear 1.21.2 vanilla blocks (`0..1,083`).
+2. **Bytecode ASM ID Firewall (`tools/PatchViaProxyItems.java`)**:
+   - Patched `com/viaversion/viaversion/api/data/MappingDataBase.class`:
+     - Calibrated blockstate shift threshold to exact 1.21 vanilla size **`26,684`** (fixing 1,684 vanilla blockstates previously shifted by a premature `25,000` check).
+     - Calibrated block ID shift threshold to exact 1.21 vanilla size **`1,060`** (fixing 60 vanilla blocks previously shifted by a premature `1,000` check).
+     - Removed rogue fallback in `getOldBlockId` so all client IDs $< 100,000$ properly route through `blockMappings.inverse()`.
+   - Patched `com/viaversion/viabackwards/api/data/BackwardsMappingData.class`:
+     - Removed `if (id >= 1333) return id;` in `getNewItemId`. Client item IDs $< 10,000$ are strictly vanilla 1.21.2 items ($1333..1374$) and are now correctly reverse-mapped to 1.21.1 instead of colliding with Create server items.
+     - Removed `if (id >= 1000) return id;` in `getNewBlockId`. Client block IDs $< 100,000$ route to `super.getNewBlockId(id)`.
+   - Patches compiled and injected directly into `headless_server/viaproxy/ViaProxy.jar`.
 
-## 3. The Current Active Challenge: Blockstates & Item Palette Collision
-
-### The Symptom
-In the recent screenshot (`media_1791457193668.png`), the world is fully rendered, but holding or placing certain Create items (casings, brass block) displays them as **vanilla Deepslate Brick Walls**.
-
-### The Root Cause: Protocol 1.21.1 $\leftrightarrow$ 1.21.2 Palette Overlap
-1. **NeoForge Server Protocol (1.21.1)**:
-   - In Minecraft 1.21.1, vanilla blockstates ended around index ~26,000.
-   - NeoForge dynamically registered Create Mod blockstates in the `27,000` – `35,000` range (e.g. `32328` for `create:andesite_casing`).
-   - Create Mod item IDs were registered around `1430` – `1680`.
-2. **Client/Geyser Protocol (1.21.2)**:
-   - In Minecraft 1.21.2, Mojang introduced new blocks, items, and renumbered registries.
-   - Vanilla 1.21.2 blockstates now extend up to **32,366**.
-   - Vanilla 1.21.2 item IDs extend up to ~1,500.
-   - **The Collision**: State ID `32328` in 1.21.2 happens to be **`minecraft:deepslate_brick_wall`**! Item ID `1430` in 1.21.2 is a vanilla item!
-3. **Geyser's Custom Block Constraint**:
-   - Geyser strictly validates:
-     `Non vanilla custom block state overrides runtime ID must start after the last vanilla block state (32366)`
-   - Any custom block registered with a raw Java ID $< 32366$ throws an immediate startup exception.
-
-### The Two Working Hypotheses for the Next Step
-1. **Option A: Coordinated Offset (The 100k Pipeline)**:
-   - In ViaProxy (`MappingDataBase.java`): Translate unmapped blockstates $> 25,000$ by adding an offset (e.g. `100000 + id`) when sending from server to client.
-   - In Geyser (`CreateBridge.jar`): Register the custom blocks with `javaId = 100000 + id`.
-   - On placement (client $\rightarrow$ server): ViaProxy strips the `100000` offset (`id - 100000`) before sending `ServerboundUseItemOnPacket` to the NeoForge server.
-2. **Option B: Dynamic Registry Dump & Translation Table**:
-   - Generate an exact 1:1 mapping table from `headless_server/dumps/registry/minecraft/` dumping all Create Mod blockstate IDs and item IDs.
-   - Map them to custom Bedrock runtime block IDs directly inside `CreateBridgeExtension`.
+### C. Bedrock UI, Commands & Inventory Desyncs
+1. **Command Palette & Autocomplete Restoration**:
+   - In `onServerDefineCommands`, dynamically converted all item and block command enums with $> 50$ choices (including `/give`, `/clear`, `/item`, `/setblock`, `/fill`) into **soft enums** (`isSoft = true`).
+   - Restored command chips and autocomplete without causing Bedrock client command parser overflow crashes or UI lockups.
+2. **Creative Inventory Transaction Desync**:
+   - Hooked Bedrock `ItemStackRequestPacket` in Geyser to forward `CRAFT_CREATIVE` requests directly to `session.getPlayerInventoryHolder().translateRequests(...)`.
+   - Removed destructive `fixCustomBlockItemMappings()` which had cleared Bedrock ItemData and collapsed held items into `AIR`.
+3. **Texture & Asset Sanitization**:
+   - Eliminated rogue `"dirt"` entry in `create_cogwheel_rp/textures/terrain_texture.json` which caused vanilla dirt blocks to render as missing black/magenta textures.
 
 ---
 
-## 4. Key Repository Assets & File Map
+## 3. Current Setbacks & Active Challenges (Field Confirmed)
 
-### Core Executables & Working Dirs
-* `headless_server/run.bat`: Starts the NeoForge 1.21.1 server (`25565`).
-* `headless_server/viaproxy/ViaProxy.jar`: The patched protocol proxy (`25568`).
-* `headless_server/geyser/Geyser-Standalone.jar`: The patched Geyser gateway (`19132`).
-* `headless_server/geyser/extensions/CreateBridge.jar`: The Geyser extension handling custom blocks/items.
+### 1. Item Identity & Name Substitution (Mechanical Saw $\rightarrow$ Clutch)
+* **Symptom**: 
+  - The server successfully executes `/give @a create:mechanical_saw` and logs `Gave 1 [block.create.mechanical_saw] to FickleMirror67`.
+  - However, in Bedrock hotbar slot 2, the item literally has the display name **"Clutch"** and acts as `create:clutch` (shifted ID `11345`, raw ID `1345`) instead of `create:mechanical_saw` (shifted ID `11420`, raw ID `1420`).
+* **Root Causes Under Investigation**:
+  - **Item Definition & Palette Mapping in Geyser**: In `CreateBridgeExtension`, items are registered dynamically. If Bedrock assigns custom item runtime IDs based on registration sequence or if `ItemComponentPacket` has mismatched identifier-to-ID bindings, Bedrock resolves slot item IDs to the wrong item definition (`clutch` instead of `mechanical_saw`).
+  - **Creative Inventory Desync (`ItemStackRequestPacket`)**: When selecting or moving items in the Bedrock creative menu, creative action transactions (`CRAFT_CREATIVE`) can request or acknowledge the wrong slot index or item ID, swapping the item on the client or server.
+  - **Visual Texture Atlas Multiplier**: In `item_texture.json`, 38 items (including `mechanical_saw`) referenced `textures/blocks/*` ($64\times 32$ 3D unwrapped UV maps) where the top-left $16\times 16$ tile is an andesite casing with shaft hole, compounding the visual resemblance to a clutch.
 
-### Development & Diagnostic Tools (`tools/`)
-| File | Description |
-|---|---|
-| `tools/bridge.py` | CLI diagnostic suite (`python tools/bridge.py doctor` / `status`) |
-| `tools/MappingDataBase.java` | Clean Java 17 source for ViaVersion fallback mapping |
-| `tools/BackwardsMappingData.java` | Clean Java 17 source for ViaBackwards unmapped item pass-through |
-| `tools/apply_viaproxy_patch.py` | Automated compilation & zip injection tool for ViaProxy |
-| `tools/PatchGeyserBlockMappings.java` | ASM patcher eliminating the chunk translation NPE |
-| `tools/extension/src/.../CreateBridgeExtension.java` | Source code for Geyser's custom block and item bridge |
+### 2. Stray Item Insertion & Unintended Advancement (Crying Obsidian / "Who is Cutting Onions?")
+* **Symptom**: 
+  - At `16:59:33`, the server announced:  
+    `FickleMirror67 has made the advancement [Who is Cutting Onions?]`.
+  - Screenshot 1 reveals literal **Crying Obsidian** (`minecraft:crying_obsidian`, ID `1227`) sitting unexpectedly in Slot 4 of the player's hotbar.
+* **Root Cause**:
+  - The advancement `[Who is Cutting Onions?]` (`minecraft:nether/obtain_crying_obsidian`) requires possessing item ID `1227`.
+  - Vanilla item IDs run up to $\sim 1330$, while Create items begin at raw ID $1333$. An inventory transaction packet, slot offset, or off-by-index shift in the inventory translation layer caused an item operation to be interpreted by the NeoForge server as item `1227` (`minecraft:crying_obsidian`).
 
-### Bedrock Resource & Behavior Packs
-* `create_cogwheel_rp/`: Textures, geometry (`cogwheel.geo.json`, `wrench.geo.json`), and sound definitions.
-* `create_cogwheel_bp/`: Entity definitions and `.mcfunction` animation controllers.
+### 3. Block Orientation & Transformation Pitch Offset
+* **Symptom**: When placed on the ground, `create:mechanical_saw` renders its 3D model tipped over horizontally/sideways on the grass (confirmed in Screenshot 1).
+* **Root Cause**:
+  - In `registerFacingBlock()`, the Bedrock permutation component applies `TransformationComponent(90, 0, 0)` for `north`, `(90, 180, 0)` for `south`, etc.
+  - Because the mined 3D geometry in `geo_blocks.json` has its base origin and pivot aligned differently from vanilla directional blocks, applying a $90^\circ$ X-rotation causes the saw body to lay flat on the ground rather than standing upright facing forward.
+  - Permutations only map up to 12 states (`idx == 0..11`), whereas `create:mechanical_saw` has **24 Java blockstates** in Create mod, causing states 12..23 to fall back to `stateUp`.
+
+### 4. Downstream `ClientboundLevelParticlesPacket` Decode Error
+* **Symptom**: In `headless_server/geyser/logs/geyser.log`:
+  ```
+  [WARN] Downstream packet error! (ClientboundLevelParticlesPacket) Packet "ClientboundLevelParticlesPacket" not fully read.
+  java.lang.IllegalStateException: Packet "ClientboundLevelParticlesPacket" not fully read.
+      at org.geysermc.mcprotocollib.network.netty.PacketCodec.decode(PacketCodec.java:91)
+  ```
+* **Root Cause**:
+  - When kinetic machines run or interact with blocks, Create sends custom particles (e.g. wood chips, sparks, kinetic dust).
+  - Geyser's downstream protocol codec (MCProtocolLib 1.21.2) expects vanilla particle option formats and aborts or throws an illegal state exception when unmapped particle data is encountered in the stream.
+
+### 5. Custom Block State Palette Scaling & Compression
+* **Technical Limitation**:
+  - Create contains 31,389 blockstate variations. Compressing these into 981 states across 650 custom blocks avoids Bedrock network packet threshold crashes, but unmapped kinetic/waterlogged permutations lose fine visual state fidelity.
+
+### 6. Depot Entity Tracking Overhead
+* **Status**: Functional, but relies on spawning invisible Bedrock armor stands with head items. High entity counts across chunk borders introduce packet overhead and require active garbage collection on chunk unload (`ClientboundForgetLevelChunkPacket`).
 
 ---
 
-## 5. Verification Commands for the Next Session
+## 4. Immediate Action Plan & Next Steps
+
+1. **Fix Item Identity Mappings & Bedrock Item Palette**:
+   - Audit `CustomItemRegistryPopulator` and Geyser item registration sequence to ensure `create:mechanical_saw` (raw ID 1420 $\rightarrow$ shifted 11420) and `create:clutch` (raw ID 1345 $\rightarrow$ shifted 11345) have exact 1-to-1 runtime ID and display name alignment in Bedrock.
+   - Redirect 38 items in `item_texture.json` from `textures/blocks/*` to `textures/items/create/*` and disable `useBlockIcon = true` so items always render their clean 2D sprites.
+2. **Fix Inventory Transaction Accounting (Crying Obsidian Bug)**:
+   - Trace client-to-server `ItemStackRequestPacket` / container slot clicks to prevent stray item ID index slips (e.g. requesting/injecting ID `1227`).
+3. **Calibrate 3D Block Facing Rotations**:
+   - Recalibrate `TransformationComponent` angles in `registerFacingBlock()` so directional blocks (saws, drills, fans, motors) stand upright facing forward instead of laying flat on the ground.
+   - Extend permutation handling for blocks with 24 states.
+4. **Automate Continuous Health Checks**:
+   - Keep diagnostic scripts (`python tools/bridge.py doctor`) active to catch any packet desync or memory leaks during testing.
+
+---
+
+## 5. Quick Reference Commands
 
 ```powershell
-# 1. Check system health across all 3 services
-python tools/bridge.py doctor
+# 1. Compile & inject ViaProxy patches (if modifying ID firewall)
+& "C:\Program Files\Java\jdk-21.0.12\bin\javac.exe" -cp "headless_server\viaproxy\ViaProxy.jar;headless_server\libraries\org\ow2\asm\asm\9.7\asm-9.7.jar" -d tools tools\PatchViaProxyItems.java
+& "C:\Program Files\Java\jdk-21.0.12\bin\java.exe" -cp "tools;headless_server\viaproxy\ViaProxy.jar;headless_server\libraries\org\ow2\asm\asm\9.7\asm-9.7.jar" PatchViaProxyItems
+python tools/inject_viaproxy.py
 
-# 2. Check running tasks
-# Server: TCP 25565
-# ViaProxy: TCP 25568
-# Geyser: UDP 19132
+# 2. Compile & package Geyser CreateBridge extension
+& "C:\Program Files\Java\jdk-21.0.12\bin\javac.exe" -cp "headless_server\geyser\Geyser-Standalone.jar;headless_server\geyser\plugins\*;headless_server\geyser\extensions\*" -d tools\extension\bin tools\extension\src\com\createbridge\CreateBridgeExtension.java
+Copy-Item -Path tools\extension\resources\* -Destination tools\extension\bin -Force
+& "C:\Program Files\Java\jdk-21.0.12\bin\jar.exe" -cf headless_server\geyser\extensions\CreateBridge.jar -C tools\extension\bin .
 
-# 3. If rebuilding ViaProxy patches:
-javac --release 17 -cp "headless_server/viaproxy/ViaProxy.jar;tools/staging" tools/MappingDataBase.java tools/BackwardsMappingData.java
-python tools/apply_viaproxy_patch.py
-
-# 4. If rebuilding CreateBridge extension:
-javac -cp "headless_server/geyser/Geyser-Standalone.jar" -d "tools/extension/classes" "tools/extension/src/com/createbridge/CreateBridgeExtension.java"
-jar cf "headless_server/geyser/extensions/CreateBridge.jar" -C "tools/extension/classes" .
+# 3. Restart daemons
+# ViaProxy:
+& "C:\Program Files\Java\jdk-21.0.12\bin\java.exe" -jar ViaProxy.jar cli (in headless_server\viaproxy)
+# Geyser:
+& "C:\Program Files\Java\jdk-21.0.12\bin\java.exe" -jar Geyser-Standalone.jar (in headless_server\geyser)
 ```

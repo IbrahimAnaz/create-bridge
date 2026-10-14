@@ -26,9 +26,11 @@ ACTIONS_DIR = BASE_DIR / ".bridge_actions"
 REQUEST_FILE = ACTIONS_DIR / "request.json"
 RESPONSE_FILE = ACTIONS_DIR / "response.json"
 
-def run_git(args, check=True):
+def run_git(args, check=True, timeout=30):
     cmd = ["git"] + args
-    res = subprocess.run(cmd, cwd=BASE_DIR, check=check, text=True, capture_output=True, errors="replace")
+    env = dict(os.environ)
+    env["GIT_TERMINAL_PROMPT"] = "0"
+    res = subprocess.run(cmd, cwd=BASE_DIR, check=check, text=True, capture_output=True, errors="replace", env=env, timeout=timeout)
     return res.stdout.strip()
 
 def main():

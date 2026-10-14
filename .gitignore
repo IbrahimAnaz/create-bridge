@@ -41,6 +41,13 @@ Header*.class
 Test*.class
 tools/staging/
 tools/extension/bin/
-*.javap
-reference/
+# Scratch / test temp
+Test*.java
+bridge_cache/
+headless_server/test_temp/
+headless_server/world_backup/
+tools/*.javap
 
+# Whitelist remote action dispatch files
+!.bridge_actions/
+!.bridge_actions/**
